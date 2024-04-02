@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './crear-gato.component.html',
-  styleUrl: './crear-gato.component.css'
+  styleUrls: ['./crear-gato.component.css']
 })
 export class CrearGatoComponent {
 
