@@ -1,1 +1,50 @@
-<p>crear-gato works!</p>
+<div class="contenedordelform">
+
+    <form th:object="${gato}" th:action="@{/muestra/agregar}" method="post">
+        <div class="form-field">
+            <label for="nombre"></label>
+            <input th:field="*{nombre}" type="text" id="nombre" placeholder="Ingresa el nombre gato">
+        </div>
+
+        <div class="form-field">
+            <label for="raza"></label>
+        
+               
+            <input th:field="*{raza}" type="text" id="raza" placeholder="Ingresa la raza del gato">
+        </div>
+
+        <div class="form-field">
+            <label for="edad"></label>
+            <input  th:field="*{edad}" type="number" id="edad" placeholder="Ingresa la edad del gato">
+        </div>
+        <div class="form-field">
+            <label for="cedula"></label>
+            <input type="number" id="cedula" name="cedula" placeholder="Cedula del dueño">
+        </div>
+        <div class="form-field">
+            <label for="catNeutered"></label>
+            <select id="catNeutered" name="catNeutered" class="uniform-select">
+                <option value="neutered">¿Esta castrado?</option>
+                <option value="yes">Sí</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-field">
+            <label for="foto"></label>
+            <input th:field="*{foto}" type="text" id="foto" placeholder="Ingresa una foto del gato URL">
+        </div>
+
+        <div class="form-field">
+            <label for="catInfo"></label>
+            <textarea id="catInfo" name="catInfo"> </textarea>
+        </div>
+
+        <div class="form-field">
+            <button type="submit">Registrar a tu gato</button>
+        </div>
+    </form>
+    <div class="comentariogato"><p class="reminder">Recuerda que puedes registrar a más peluditos!!</p></div>
+    <img class="gatoform" src="https://media-public.canva.com/81dxs/MAFmMg81dxs/1/t.png" alt="gatoform">
+    
+</div>

@@ -1,1 +1,34 @@
 
+
+
+<br><br><br>
+<img class="gatotier2" src="https://media-public.canva.com/XwNS0/MAE2hoXwNS0/1/s.png" alt="gato2">
+<img class="pelota" src="https://media-public.canva.com/3cOTo/MAFjDf3cOTo/1/tl.png" alt="pelota">
+<div class="contenedor-modificar">
+    <form th:object="${gato}" th:action="@{/muestra/update/{id}(id=${gato.id})}" method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input th:field="*{nombre}" type="text" id="nombre" placeholder="Ingresa el nombre gato">
+        </div>
+        <img class="gatotier" src="https://media-public.canva.com/7o3nc/MAFsqp7o3nc/1/t.png" alt="gato">
+
+
+        <div class="form-group">
+            <label for="raza">Raza:</label>
+            <input th:field="*{raza}" type="text" id="raza" placeholder="Ingresa la raza del gato">
+        </div>
+
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input  th:field="*{edad}" type="number" id="edad" placeholder="Ingresa la edad del gato">
+        </div>
+
+        <div class="form-group">
+            <label for="foto">Imagen:</label>
+            <input th:field="*{foto}" type="text" id="foto" placeholder="Ingresa una foto del gato">
+        </div>
+        
+        <div class="form-group"> <button type="submit" class="send">Enviar</button>  </div>
+       
+    </form>
+</div>
