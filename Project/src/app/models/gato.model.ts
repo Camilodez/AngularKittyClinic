@@ -8,6 +8,8 @@ export interface Gato {
   raza: string;
   edad: number;
   foto: string;
+  enfermedad: string;
+  estado: boolean;
   usuario?: Usuario;  // Relación con Usuario
   tratamientos?: Tratamiento[];  // Relación con Tratamientos
 }
