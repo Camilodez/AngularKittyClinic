@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
 html {
     overflow-x: hidden;
-   background: url(/img/fondo2.png); 
+    background: url(/assets/img/fondo2.png); 
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
