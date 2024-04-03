@@ -1,3 +1,4 @@
+
 .header{
     font-family: "Protest Riot", sans-serif;
     font-weight: 100;
@@ -9,6 +10,7 @@
     padding: 12px;
     caret-color: transparent;
 }
+
 
 #linea{
     border-top: 3px solid #104c5a;
@@ -35,7 +37,7 @@
   padding-left: 30px;
   padding-top: 50px;
   padding-bottom: 8px;
-  background-color: #4ea9bd;
+  background-color: #4fa9ba;
   position: absolute;
   z-index: 999;
   font-size: 16px;
@@ -50,39 +52,23 @@
 
 #lista1 a{
     font-weight: 120;
-    color: black;
+    color: white;
 }
 
 #lista1 a:hover{
-    color: orange;
+    font-weight: 600;
+    color: #104b58;
 }
 
 #lista2 a{
     font-weight: 120;
-    color: black;
+    color: #104b58;
 }
 
 #lista2 a:hover{
     color: aqua;
 }
 
-#lista3 a{
-    font-weight: 120;
-    color: black;
-}
-
-#lista3 a:hover{
-    color: aqua;
-}
-
-#lista4 a{
-    font-weight: 120;
-    color: black;
-}
-
-#lista4 a:hover{
-    color: aqua;
-}
 
 .lista li {
     margin-bottom: 10px; /* Ajusta el espacio entre elementos aumentando o disminuyendo el valor de margin-bottom */
@@ -100,9 +86,8 @@ en la opción */
     display: block;
     opacity: 1; /* La lista se vuelve visible */
 }
-
 .inicio{
-    background-color:#4ea9bd;
+    background-color: #4fa9ba;
 }
 
 .nav{
@@ -119,7 +104,7 @@ en la opción */
 }
 
 .nav a:hover{
-    color: black;
+    color: #104a5a;
 }
 
 .nav i{
@@ -131,7 +116,7 @@ en la opción */
 }
 
 .contenedor{
-    max-width: 1200px;
+    max-width: 1300px;
     width: 95%;
     margin: 0 auto;
 }
@@ -141,9 +126,4 @@ en la opción */
     height: 100px;
 }
 
-
-.contenedor{
-    max-width: 1200px;
-    width: 95%;
-    margin: 0 auto;
-}
+/* ------------------------------------------------------------------------------------------*/
