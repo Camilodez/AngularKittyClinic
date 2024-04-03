@@ -30,6 +30,19 @@
 }
 
 
+.fa-cat:hover {
+    animation: colorChange 1s infinite alternate;
+}
+
+@keyframes colorChange {
+    from {
+        color: #000; /* Color inicial */
+    }
+    to {
+        color: #e98726; /* Nuevo color */
+    }
+}
+
 .lista {
   display: none;
   list-style: none;
