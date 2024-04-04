@@ -64,7 +64,12 @@
     line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
 }
 
-
+.raza{
+    font-size: 20px;
+    color: #104c5a;
+    font-family: Arial, Helvetica, sans-serif;  
+    font-style: italic;
+}
 
 .contenedor-gatos {
     display: flex;
