@@ -12,6 +12,9 @@ form {
     position: relative;
 }
 
+#linea{
+    border-top: 3px solid #104c5a;
+}
 
 /* Estilos para el contenedor del formulario */
 .contenedor-modificar {
@@ -38,8 +41,7 @@ label {
 }
 
 /* Estilos para los campos de entrada */
-input[type="text"],
-input[type="number"] {
+input{
     font-style: italic;
     width: 95%; /* Ancho completo */
     padding: 10px; /* Espaciado interno */
