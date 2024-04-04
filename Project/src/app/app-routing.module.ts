@@ -4,6 +4,7 @@ import { CrearGatoComponent } from './crear-gato/crear-gato.component';
 import { ModificarGatoComponent } from './modificar-gato/modificar-gato.component';
 import { GatoComponent } from './gato/gato.component';
 import { LandingComponent } from './landing/landing.component';
+import { ListaComponent } from './lista/lista.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'mascotas', component: GatoComponent },
   { path: 'crear-mascota', component: CrearGatoComponent },
   { path: 'modificar-mascota', component: ModificarGatoComponent },
+  { path: 'lista', component: ListaComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
