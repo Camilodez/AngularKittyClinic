@@ -13,7 +13,7 @@ export class ListaComponent {
 
   mostrarSidebar(): void {
     this.sidebar.nativeElement.classList.add('show');
-    this.vineta.nativeElement.style.display = 'none';
+    this.vineta.nativeElement.style.display = 'block';
   }
 
   mostrarVineta(): void {
