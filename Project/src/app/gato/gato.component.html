@@ -17,18 +17,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="gato : ${gatos}">
-                <td th:text="${gato.nombre}"></td>
-                <td th:text="${gato.edad}"></td>
-                <td th:text="${gato.raza}"></td>
-                <td><img class="gatos" th:src="${gato.foto}"></td>
-                <td><a class="info" th:href="@{/muestra/gato/{id}(id=${gato.id})}"><img src="/img/informacion.png" alt=""></a></td>
-                <td>
-                    <a class="btn btn-info" th:href="@{/muestra/update/{id}(id=${gato.id})}"><img src="/img/editar.png" alt=""></a>
-                </td>
-                <td><a class="btn btn-danger" th:href="@{/muestra/delete/{id}(id=${gato.id})}"><img src="/img/trash.png" alt=""></a>
-                </td>
-            </tr> 
+            <ng-container *ngFor="let gato of ListaGatos">
+            <tr>
+                <td>{{gato.nombre}}</td>
+                <td>{{gato.edad}}</td>
+                <td>{{gato.raza}}</td>
+                <td><img class="gatos" [src]="gato.foto" alt=""></td> 
+                <td><a class="info"><img src="/img/informacion.png" alt=""></a></td>
+                <td><a [routerLink]="['/modificar-gato',gato.id]" class="btn btn-info"><img src="/img/editar.png" alt=""></a></td>
+                <td><button class="btn btn-danger" (click)="eliminarGato(gato)"><img src="/img/trash.png" alt=""></button></td>
+            </tr>
+            </ng-container>
+            
         </tbody>
         
     </table>
@@ -41,13 +41,14 @@
     </div>
     <ul>
         <div class="botonesvi">
-            <li><a type="button" class="btn btn-primary" th:href="@{/muestra/add}"><span><p>Agregar felino</p> <img src="/img/agregarfelino.png" alt="agregar felino"></span></a></li>
+            <li><a type="button" class="btn btn-primary"><span><p>Agregar felino</p> <img src="/img/agregarfelino.png" alt="agregar felino"></span></a></li>
         
-        <li><a type="button" class="btn btn-primary" th:href="@{/muestra/add}"><span><p>Ver tratamientos</p> <img src="/img/tratamientos.png" alt="tramamiento"></span></a></li>
+        <li><a type="button" class="btn btn-primary"><span><p>Ver tratamientos</p> <img src="/img/tratamientos.png" alt="tramamiento"></span></a></li>
         </div>
        
     </ul>
 </div>
 <div class="vineta"><i class="fa-solid fa-shield-cat"></i></div>
     
+
 
