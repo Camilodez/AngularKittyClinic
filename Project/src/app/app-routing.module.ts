@@ -5,6 +5,7 @@ import { ModificarGatoComponent } from './modificar-gato/modificar-gato.componen
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { GatoComponent } from './gato/gato.component';
+import { InfoComponent } from './info/info.component';
 
 const routes: Routes = [
   { path: 'home', component: LandingComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'crear-gato', component: CrearGatoComponent },
   { path: 'modificar-gato/:id', component: ModificarGatoComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'info', component: InfoComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 

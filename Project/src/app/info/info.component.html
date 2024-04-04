@@ -1,1 +1,34 @@
-<p>info works!</p>
+<app-header></app-header>
+
+<div id="linea"></div>
+
+<section id="historial" class="infogatuna">
+    <div class="part1">
+        <!-- Nuevo contenedor para datos-gato y foto-gato -->
+        <h2 th:text="${gato.nombre}"></h2>
+        <div class="contenedor-gatos">
+            <div class="obersaciones-gato"> 
+                <h3 class="h3-obser">Observaciones</h3>
+                <p>El gato presenta una molestía en su pata izquierda, segun el dueño dice 
+                    que se lastimo cazando un raton. Tambien presenta lagrimales obstruidos 
+                </p>
+            </div>
+            <div class="foto-gato">
+                <img th:src="${gato.foto}">
+            </div>
+            <div class=" datos-gato">
+                <p><strong>Características:</strong></p> <p th:text="${gato.nombre}"></p><p> Es una gata muy cariñosa y juguetona. Se lleva bien con niños y otros animales. Tiene un pelaje largo y suave, predominantemente gris con rayas oscuras.</p>
+
+            </div>
+
+        </div>
+        <!-- contenedor edad-gato se mantiene aquí -->
+        <div class="edad-gato">
+            <p><strong>Edad:</strong> <span th:text="${gato.edad}"></span></p>
+            <p><strong>Última cita:</strong> <span>24/12/24</span></p>
+        </div>
+    </div>
+ 
+</section>
+
+<app-footer></app-footer>
