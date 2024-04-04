@@ -3,7 +3,7 @@
     font-family: "Protest Riot", sans-serif;
     font-weight: 100;
     font-style: normal;
-    font-size: 30px;
+    font-size: 28px;
     display: flex;
     justify-content: space-between;
     height: 100px;
@@ -11,37 +11,6 @@
     caret-color: transparent;
 }
 
-
-#linea{
-    border-top: 3px solid #104c5a;
-}
-
-.fa-user:hover {
-    animation: colorChange 1s infinite alternate;
-}
-
-@keyframes colorChange {
-    from {
-        color: #000; /* Color inicial */
-    }
-    to {
-        color: #e98726; /* Nuevo color */
-    }
-}
-
-
-.fa-cat:hover {
-    animation: colorChange 1s infinite alternate;
-}
-
-@keyframes colorChange {
-    from {
-        color: #000; /* Color inicial */
-    }
-    to {
-        color: #e98726; /* Nuevo color */
-    }
-}
 
 .lista {
   display: none;
@@ -61,7 +30,6 @@
     flex-direction: column;
     align-items: center;
 }
-
 
 #lista1 a{
     font-weight: 120;
@@ -99,6 +67,7 @@ en la opción */
     display: block;
     opacity: 1; /* La lista se vuelve visible */
 }
+
 .inicio{
     background-color: #4fa9ba;
 }
@@ -137,6 +106,33 @@ en la opción */
 .logo{
     width: 160px;
     height: 100px;
+}
+
+.fa-user:hover {
+    animation: colorChange 1s infinite alternate;
+}
+
+@keyframes colorChange {
+    from {
+        color: #000; /* Color inicial */
+    }
+    to {
+        color: #e98726; /* Nuevo color */
+    }
+}
+
+
+.fa-cat:hover {
+    animation: colorChange 1s infinite alternate;
+}
+
+@keyframes colorChange {
+    from {
+        color: #000; /* Color inicial */
+    }
+    to {
+        color: #e98726; /* Nuevo color */
+    }
 }
 
 /* ------------------------------------------------------------------------------------------*/

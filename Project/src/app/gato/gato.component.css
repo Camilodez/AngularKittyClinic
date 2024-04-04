@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+
+h1{
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 0px;
+    margin-left: 33%;
+    text-align: left;
+    color: black;
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+}
+
+#linea{
+    border-top: 3px solid #104c5a;
+}
+
+/* ------------------------------------------------------------------------------------------*/
+
+
+.contenedor{
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
 
 /* Estilos para la barra lateral */
 .sidebar {
@@ -8,7 +35,6 @@
     top: 0;
     right: 0;
     margin-top: 11%;
-   
     padding-top: 20px;
     background-color: #4ea9bd;
     padding-bottom: 2%;
@@ -62,8 +88,6 @@ h3{
     flex-direction: row;
     font-size: 18px;
 }
-
-
 
 
 .sidebar .profile {
@@ -178,6 +202,7 @@ th, td {
 th {
     background-color: #4ea9bd;
     color: white;
+    text-align: center;
 }
 
 td{
@@ -214,15 +239,9 @@ td{
 }
 
 
-
-
-
-
 .info:hover{
     color: rgb(161, 97, 38);
 }
-
-
 
 
 .fa-circle-info{
@@ -244,3 +263,4 @@ body {
     flex: 1; /* Permite que el contenido principal ocupe el espacio restante */
 }
  
+/* ------------------------------------------------------------------------------------------*/
