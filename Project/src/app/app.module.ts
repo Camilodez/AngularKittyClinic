@@ -8,7 +8,6 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { ModificarGatoComponent } from './modificar-gato/modificar-gato.component';
 import { GatoComponent } from './gato/gato.component';
-import { ListaComponent } from './lista/lista.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +15,6 @@ import { ListaComponent } from './lista/lista.component';
     FooterComponent,
     LandingComponent,
     LoginComponent,
-    ListaComponent,
     ModificarGatoComponent,
     GatoComponent
   ],
