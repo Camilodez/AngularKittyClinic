@@ -1,15 +1,14 @@
-
+<app-header></app-header>
 <br><br><br>
 <img class="gatotier2" src="https://media-public.canva.com/XwNS0/MAE2hoXwNS0/1/s.png" alt="gato2">
 <img class="pelota" src="https://media-public.canva.com/3cOTo/MAFjDf3cOTo/1/tl.png" alt="pelota">
 <div class="contenedor-modificar">
-    <form>
+    <form  ngSubmit="modificarGato(gato)"   >
         <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input value="{{gato.nombre}}" id="nombre" placeholder="Ingresa el nombre gato">
         </div>
         <img class="gatotier" src="https://media-public.canva.com/7o3nc/MAFsqp7o3nc/1/t.png" alt="gato">
-
 
         <div class="form-group">
             <label for="raza">Raza:</label>

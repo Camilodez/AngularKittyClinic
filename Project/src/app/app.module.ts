@@ -17,8 +17,8 @@ import { ListaComponent } from './lista/lista.component';
     LandingComponent,
     LoginComponent,
     ListaComponent,
-    ModificarGatoComponent
-    GatoComponent,
+    ModificarGatoComponent,
+    GatoComponent
   ],
   imports: [
     BrowserModule,

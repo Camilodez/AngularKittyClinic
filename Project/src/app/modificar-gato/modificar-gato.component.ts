@@ -34,6 +34,7 @@ export class ModificarGatoComponent {
 
     modificarGato(gato: Gato) {
       
+      
       this.gatoService.actualizarGato(gato);
     }
 }
