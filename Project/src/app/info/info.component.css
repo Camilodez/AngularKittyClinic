@@ -2,14 +2,13 @@
 .infogatuna {
     display: flex;
     flex-direction: row;
-    max-width: 1100px;
+    max-width: 1000px;
     background-color: #F5F5DC;
     margin: 50px ;
- 
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-left: 370px;
+    margin: auto;
     border: solid 1px #4ea9bd;
 }
 
@@ -76,6 +75,12 @@
     width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
 }
 
+p{
+    font-size: 20px;
+    color: #104c5a;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
 .h3-obser
 {
     text-align: center;
@@ -107,9 +112,6 @@
 .edad-gato {
     align-items: center; /* Centra los elementos hijos verticalmente dentro de edad-gato */
 }
-
-
-
 
 
 

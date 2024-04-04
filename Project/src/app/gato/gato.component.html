@@ -27,7 +27,7 @@
                 <td>{{gato.edad}}</td>
                 <td>{{gato.raza}}</td>
                 <td><img class="gatos" [src]="gato.foto" alt=""></td> 
-                <td><a [routerLink]="[]" class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
+                <td><a [routerLink]="['/info',gato.id]" class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
                 <td><a [routerLink]="['/modificar-gato',gato.id]" class="btn btn-info"><img src="/assets/img/editar.png" alt=""></a></td>
                 <td><button class="btn btn-danger" (click)="eliminarGato(gato)"><img src="/assets/img/trash.png" alt=""></button></td>
             </tr>

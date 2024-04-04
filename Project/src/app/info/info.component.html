@@ -2,6 +2,8 @@
 
 <div id="linea"></div>
 
+<br><br><br>
+
 <section id="historial" class="infogatuna">
     <div class="part1">
         <!-- Nuevo contenedor para datos-gato y foto-gato -->
@@ -17,15 +19,16 @@
                 <img th:src="${gato.foto}">
             </div>
             <div class=" datos-gato">
-                <p><strong>Características:</strong></p> <p th:text="${gato.nombre}"></p><p> Es una gata muy cariñosa y juguetona. Se lleva bien con niños y otros animales. Tiene un pelaje largo y suave, predominantemente gris con rayas oscuras.</p>
+                <h3 class="h3-obser">Caracteristicas</h3> <p th:text="${gato.nombre}"></p>
+                <p> Es una gata muy cariñosa y juguetona. Se lleva bien con niños y otros animales. Tiene un pelaje largo y suave, predominantemente gris con rayas oscuras.</p>
 
             </div>
 
         </div>
         <!-- contenedor edad-gato se mantiene aquí -->
         <div class="edad-gato">
-            <p><strong>Edad:</strong> <span th:text="${gato.edad}"></span></p>
-            <p><strong>Última cita:</strong> <span>24/12/24</span></p>
+            <h3 class="h3-obser">Edad</h3> <p><span th:text="${gato.edad}"></span></p>
+            <p><strong>Última cita: </strong> <span>24/12/24</span></p>
         </div>
     </div>
  

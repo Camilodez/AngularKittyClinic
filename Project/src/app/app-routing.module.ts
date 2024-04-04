@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'crear-gato', component: CrearGatoComponent },
   { path: 'modificar-gato/:id', component: ModificarGatoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'info', component: InfoComponent },
+  { path: 'info/:id', component: InfoComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 
