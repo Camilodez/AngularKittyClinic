@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { GatoService } from '../service/gato.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gato } from '../models/gato.model';

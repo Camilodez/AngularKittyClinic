@@ -2,7 +2,7 @@
 .infogatuna {
     display: flex;
     flex-direction: row;
-    max-width: 1000px;
+    max-width: 1200px;
     background-color: #F5F5DC;
     margin: 50px ;
     padding: 20px;
@@ -61,7 +61,7 @@
 
 .datos-gato p {
     margin-top: 10px; /* Espacio arriba de cada párrafo */
-    line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
+    line-height: 1.2; /* Espaciado entre líneas para mejorar la legibilidad */
 }
 
 .raza{
