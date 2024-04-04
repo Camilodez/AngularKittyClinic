@@ -25,7 +25,7 @@ export class ModificarGatoComponent {
     edad: 0,
     foto: '',
     enfermedad: '',
-    estado: true,
+    estado: true, 
   };
 
     displayinfo(id: number) {
