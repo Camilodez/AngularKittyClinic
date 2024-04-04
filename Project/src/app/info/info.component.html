@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div class="foto-gato">
-                <img th:src="${gato.foto}">
+                <img class="gatos" [src]="gato.foto" alt="">
             </div>
             <div class=" datos-gato">
                 <h3 class="h3-obser">Caracteristicas</h3> <p th:text="${gato.nombre}"></p>
