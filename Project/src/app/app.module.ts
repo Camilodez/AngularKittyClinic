@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { ModificarGatoComponent } from './modificar-gato/modificar-gato.component';
 import { GatoComponent } from './gato/gato.component';
 import { CrearGatoComponent } from './crear-gato/crear-gato.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CrearGatoComponent } from './crear-gato/crear-gato.component';
     LoginComponent,
     ModificarGatoComponent,
     CrearGatoComponent,
-    GatoComponent
+    GatoComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
