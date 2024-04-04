@@ -3,7 +3,7 @@
         <img src="/assets/img/logo.png" alt="logo" class="logo">
         <div class="nav">
             <div class="opciones">
-                <a href="/">Inicio</a> <!-- Asumiendo que estás usando rutas de Angular, cambia th:href a href -->
+                <a [routerLink]="['/home']">Inicio</a> <!-- Asumiendo que estás usando rutas de Angular, cambia th:href a href -->
             </div>
             <div class="opciones">
                 <a href="">Servicios</a>
@@ -22,12 +22,12 @@
                 <a href="">Sobre Nosotros</a>
             </div>
             <div>
-                <a href="/muestra/lista">
+                <a [routerLink]="['/mascotas']">
                     <i class="fa-solid fa-cat"></i>
                 </a>
             </div>
             <div>
-                <a href="../login/">
+                <a [routerLink]="['/login']">
                     <i class="fas fa-user"></i>
                 </a>                    
             </div>
