@@ -3,6 +3,7 @@ import { RouteConfigLoadStart, RouterModule, Routes } from '@angular/router';
 import { CrearGatoComponent } from './crear-gato/crear-gato.component';
 import { ModificarGatoComponent } from './modificar-gato/modificar-gato.component';
 import { LandingComponent } from './landing/landing.component';
+import { ListaComponent } from './lista/lista.component';
 import { LoginComponent } from './login/login.component';
 import { GatoComponent } from './gato/gato.component';
 

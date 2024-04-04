@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<div id="linea"></div>
+
+<br>
+  
+
+<h1 class="titulo">Lista de Pacientes</h1>
+
+<div class="tabla-pacientes">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Raza</th>
+                <th>Foto</th>
+                <th>Info</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="gato : ${gatos}">
+                <td th:text="${gato.nombre}"></td>
+                <td th:text="${gato.edad}"></td>
+                <td th:text="${gato.raza}"></td>
+                <td><img class="gatos" th:src="${gato.foto}"></td>
+                <td><a class="info" th:href="@{/muestra/gato/{id}(id=${gato.id})}"><img src="/assets/img/informacion.png" alt=""></a></td>
+                <td>
+                    <a class="btn btn-info" th:href="@{/muestra/update/{id}(id=${gato.id})}"><img src="/assets/img/editar.png" alt=""></a>
+                </td>
+                <td><a class="btn btn-danger" th:href="@{/muestra/delete/{id}(id=${gato.id})}"><img src="/assets/img/trash.png" alt=""></a>
+                </td>
+            </tr> 
+        </tbody>
+        
+    </table>
+</div>
+
+<div class="sidebar"  #sidebar (mouseleave)="ocultarSidebar()">
+    <div class="profile">
+        <img src="/assets/img/fotodelveterinario.jpg" alt="Foto del Veterinario">
+        <h3>Nombre del Veterinario</h3>
+    </div>
+    <ul>
+        <div class="botonesvi">
+            <li><a type="button" class="btn btn-primary" th:href="@{/muestra/add}"><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
+        
+        <li><a type="button" class="btn btn-primary" th:href="@{/muestra/add}"><span><p>Ver tratamientos</p> <img src="/assets/img/tratamientos.png" alt="tramamiento"></span></a></li>
+        </div>
+       
+    </ul>
+</div>
+<div class="vineta" #vineta (mouseenter)="mostrarSidebar()" (transitionend)="mostrarVineta()">
+    <i class="fa-solid fa-shield-cat"></i>
+</div>

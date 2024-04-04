@@ -6,8 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
-import { GatoComponent } from './gato/gato.component';
 import { ModificarGatoComponent } from './modificar-gato/modificar-gato.component';
+import { GatoComponent } from './gato/gato.component';
+import { ListaComponent } from './lista/lista.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,8 +16,9 @@ import { ModificarGatoComponent } from './modificar-gato/modificar-gato.componen
     FooterComponent,
     LandingComponent,
     LoginComponent,
-    GatoComponent,
+    ListaComponent,
     ModificarGatoComponent
+    GatoComponent,
   ],
   imports: [
     BrowserModule,
