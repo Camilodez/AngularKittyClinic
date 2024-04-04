@@ -1,8 +1,9 @@
 // modificar-gato.component.ts
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { GatoService } from '../service/gato.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Gato } from '../models/gato.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modificar-gato',
@@ -11,13 +12,32 @@ import { Gato } from '../models/gato.model';
 })
 export class ModificarGatoComponent {
 
-    constructor(private gatoService: GatoService, private route: ActivatedRoute) { }
+  constructor(private gatoService: GatoService, private route: ActivatedRoute, 
+    public formBuilder: FormBuilder, public router: Router) {
 
-    ngOnInit() {
-      this.route.params.subscribe(params => {
-        this.displayinfo(parseInt(params['id']));
-      })
-    }
+    this.route.params.subscribe(params => {
+      this.displayinfo(parseInt(params['id']));
+      console.log(this.gato)
+
+    })
+
+    this.gatoForm = this.formBuilder.group({
+      nombre: [''],
+      raza: [''],
+      edad: [''],
+      foto: ['']
+    })
+
+  }
+
+
+  ngOnInit() {
+    this.gatoForm.patchValue(this.gato);
+    console.log(this.gato)
+  }
+
+  gatoForm!: FormGroup;
+
   gato: Gato = {
     id: 0,
     nombre: '',
@@ -28,13 +48,14 @@ export class ModificarGatoComponent {
     estado: true,
   };
 
-    displayinfo(id: number) {
-      this.gato = this.gatoService.findById(id)!;
-    }
+  displayinfo(id: number) {
+    this.gato = this.gatoService.findById(id)!;
+  }
 
-    modificarGato(gato: Gato) {
-      
-      
-      this.gatoService.actualizarGato(gato);
-    }
+  onSubmit() {
+    this.gato = this.gatoForm.value;
+    console.log(this.gato)
+    this.gatoService.actualizarGato(this.gato);
+    this.router.navigate(['/mascotas']);
+  }
 }
