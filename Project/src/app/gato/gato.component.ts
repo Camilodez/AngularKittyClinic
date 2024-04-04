@@ -14,7 +14,7 @@ export class GatoComponent {
 
   mostrarSidebar(): void {
     this.sidebar.nativeElement.classList.add('show');
-    this.vineta.nativeElement.style.display = 'block';
+    this.vineta.nativeElement.style.display = 'none';
   }
 
   mostrarVineta(): void {
@@ -24,7 +24,7 @@ export class GatoComponent {
   }
 
   ocultarSidebar(): void {
-    this.sidebar.nativeElement.classList.remove('show');
+    this.sidebar.nativeElement.classList.remove('none');
   }
 
 
