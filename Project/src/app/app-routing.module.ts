@@ -9,7 +9,7 @@ import { GatoComponent } from './gato/gato.component';
 const routes: Routes = [
   { path: 'home', component: LandingComponent },
   { path: 'mascotas', component: GatoComponent },
-  { path: 'crear-mascota', component: CrearGatoComponent },
+  { path: 'crear-gato', component: CrearGatoComponent },
   { path: 'modificar-gato/:id', component: ModificarGatoComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }

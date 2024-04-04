@@ -1,5 +1,9 @@
 <app-header></app-header>
+
+<div id="linea"></div>
 <br>
+
+
 
 <h1 class="titulo">Lista de Pacientes</h1>
 
@@ -23,7 +27,7 @@
                 <td>{{gato.edad}}</td>
                 <td>{{gato.raza}}</td>
                 <td><img class="gatos" [src]="gato.foto" alt=""></td> 
-                <td><a class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
+                <td><a [routerLink]="[]" class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
                 <td><a [routerLink]="['/modificar-gato',gato.id]" class="btn btn-info"><img src="/assets/img/editar.png" alt=""></a></td>
                 <td><button class="btn btn-danger" (click)="eliminarGato(gato)"><img src="/assets/img/trash.png" alt=""></button></td>
             </tr>
@@ -41,7 +45,7 @@
     </div>
     <ul>
         <div class="botonesvi">
-            <li><a type="button" class="btn btn-primary" th:href="@{/muestra/add}"><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
+            <li><a [routerLink]="['/crear-gato']" type="button" class="btn btn-primary"><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
         
         <li><a type="button" class="btn btn-primary" th:href="@{/muestra/add}"><span><p>Ver tratamientos</p> <img src="/assets/img/tratamientos.png" alt="tramamiento"></span></a></li>
         </div>
