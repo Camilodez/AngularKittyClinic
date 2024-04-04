@@ -8,6 +8,8 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { ModificarGatoComponent } from './modificar-gato/modificar-gato.component';
 import { GatoComponent } from './gato/gato.component';
+import { CrearGatoComponent } from './crear-gato/crear-gato.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,7 @@ import { GatoComponent } from './gato/gato.component';
     LandingComponent,
     LoginComponent,
     ModificarGatoComponent,
+    CrearGatoComponent,
     GatoComponent
   ],
   imports: [
