@@ -10,6 +10,7 @@ import { ModificarGatoComponent } from './modificar-gato/modificar-gato.componen
 import { GatoComponent } from './gato/gato.component';
 import { CrearGatoComponent } from './crear-gato/crear-gato.component';
 import { InfoComponent } from './info/info.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { InfoComponent } from './info/info.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
