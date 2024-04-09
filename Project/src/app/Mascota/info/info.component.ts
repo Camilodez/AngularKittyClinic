@@ -1,22 +1,21 @@
-// modificar-gato.component.ts
-import { Component, EventEmitter } from '@angular/core';
-import { GatoService } from '../service/gato.service';
+import { Component } from '@angular/core';
+import { GatoService } from '../../service/gato.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Gato } from '../models/gato.model';
+import { Gato } from '../../models/gato.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-modificar-gato',
-  templateUrl: './modificar-gato.component.html',
-  styleUrls: ['./modificar-gato.component.css']
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.css']
 })
-export class ModificarGatoComponent {
+export class InfoComponent {
 
   constructor(private gatoService: GatoService, private route: ActivatedRoute, 
     public formBuilder: FormBuilder, public router: Router) {
 
     this.route.params.subscribe(params => {
-      this.displayinfo(parseInt(params['id']));
+    this.displayinfo(parseInt(params['id']));
       console.log(this.gato)
 
     })
@@ -29,7 +28,6 @@ export class ModificarGatoComponent {
     })
 
   }
-
 
   ngOnInit() {
     this.gatoForm.patchValue(this.gato);
@@ -58,4 +56,6 @@ export class ModificarGatoComponent {
     this.gatoService.actualizarGato(this.gato);
     this.router.navigate(['/mascotas']);
   }
+
 }
+

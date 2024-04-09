@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Gato } from '../models/gato.model';
-import { GatoService } from '../service/gato.service';
+import { Gato } from '../../models/gato.model';
+import { GatoService } from '../../service/gato.service';
 
 @Component({
   selector: 'app-gato',
