@@ -47,14 +47,11 @@ export class InfoComponent {
   };
 
   displayinfo(id: number) {
-    this.gato = this.gatoService.findById(id)!;
+   
   }
 
   onSubmit() {
-    this.gato = this.gatoForm.value;
-    console.log(this.gato)
-    this.gatoService.actualizarGato(this.gato);
-    this.router.navigate(['/mascotas']);
+  
   }
 
 }

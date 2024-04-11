@@ -39,7 +39,8 @@ export class GatoComponent {
   }
 
   ngOnInit(): void {
-    this.ListaGatos = this.gatoService.findAll();
+     this.gatoService.findAll();
+
   }
 
   //metodos
@@ -48,14 +49,10 @@ export class GatoComponent {
   }
 
   agregarGato(gato: Gato) {
-    this.ListaGatos.push(gato);
-    this.gatoService.agregarGato(gato);
   }
 
   eliminarGato(gato: Gato) {
-    var index = this.ListaGatos.indexOf(gato)
-    this.ListaGatos.splice(index, 1);
-    this.gatoService.borrarGato(gato.id);
+
   }
 
 }
