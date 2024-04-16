@@ -1,6 +1,6 @@
 // modificar-gato.component.ts
 import { Component, EventEmitter } from '@angular/core';
-import { GatoService } from '../../service/gato.service';
+import { GatoService } from '../../services/gato.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gato } from '../../models/gato.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -50,9 +50,15 @@ export class ModificarGatoComponent {
     estado: true,
   };
 
-  displayinfo(id: number) {
-
-  
+  async displayinfo(id: number) {
+    try{
+    const response: AxiosResponse = await axios.get(`http://localhost:8090/mascota/gato/${id}`);
+     console.log(response);
+    this.gato = response.data;
+    }
+    catch(error){
+      console.error(error);
+    }
   }
 
   onSubmit() {

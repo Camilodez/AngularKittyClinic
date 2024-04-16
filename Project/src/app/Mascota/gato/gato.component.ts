@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Gato } from '../../models/gato.model';
-import { GatoService } from '../../service/gato.service';
+import { GatoService } from '../../services/gato.service';
 import axios, { AxiosResponse } from 'axios';
 
 
@@ -42,8 +42,7 @@ export class GatoComponent {
 
   ngOnInit(): void {
     this.buscarTodos();
-     this.gatoService.findAll();
-
+  
   }
 
   //metodos
@@ -59,14 +58,15 @@ export class GatoComponent {
   }
 
   async buscarTodos() {
-    try{
-      const response: AxiosResponse = await axios.get('http://localhost:8090/mascota/lista');
-      console.log(response);
-      this.ListaGatos = response.data;
-    }
-    catch(error){
-      console.error(error);
-    }
+    // try{
+    //   const response: AxiosResponse = await axios.get('http://localhost:8090/mascota/lista');
+    //   console.log(response);
+    //   this.ListaGatos = response.data;
+    // }
+    // catch(error){
+    //   console.error(error);
+    // }
+    this.ListaGatos = (await this.gatoService.findAll()).data;
   }
 
 }
