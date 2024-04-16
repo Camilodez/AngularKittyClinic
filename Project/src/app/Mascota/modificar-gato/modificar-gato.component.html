@@ -4,29 +4,29 @@
 <img class="pelota" src="https://media-public.canva.com/3cOTo/MAFjDf3cOTo/1/tl.png" alt="pelota">
 <div class="contenedor-modificar">
 
-    <form [formGroup]="gatoForm">
-        <div class="form-group">
+    <form #gatoForm="ngForm" (ngSubmit)="onSubmit(gatoForm)">
+        <div>
             <label for="nombre">Nombre:</label>
-            <input value="{{gato.nombre}}" id="nombre"  name="nombre" type="text" formControlName="nombre">
+            <input value="{{gato.nombre}}" id="nombre"  name="nombre" type="text" [(ngModel)]="gato.nombre">
         </div>
         <img class="gatotier" src="https://media-public.canva.com/7o3nc/MAFsqp7o3nc/1/t.png" alt="gato">
 
-        <div class="form-group">
+        <div>
             <label for="raza">Raza:</label>
-            <input value="{{gato.raza}}" id="raza" name="raza" type="text" formControlName="raza">
+            <input value="{{gato.raza}}" id="raza" name="raza" type="text" [(ngModel)]="gato.raza">
         </div>
 
-        <div class="form-group">
+        <div>
             <label for="edad">Edad:</label>
-            <input value="{{gato.edad}}"  id="edad" name="edad" type="number" formControlName="edad">
+            <input value="{{gato.edad}}"  id="edad" name="edad" type="number" [(ngModel)]="gato.edad">
         </div>
 
-        <div class="form-group">
+        <div>
             <label for="foto">Imagen:</label>
-            <input value="{{gato.foto}}" id="foto" name="foto" type="text" formControlName="foto">
+            <input value="{{gato.foto}}" id="foto" name="foto" type="text" [(ngModel)]="gato.foto">
         </div>
         
-        <div class="form-group"> <button (click)="onSubmit()" type="submit" class="send">Enviar</button> </div>
+        <div> <button type="submit" class="send">Enviar</button> </div>
        
     </form>
 </div>

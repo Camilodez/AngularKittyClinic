@@ -22,23 +22,13 @@ export class ModificarGatoComponent {
       console.log(this.gato)
 
     })
-
-    this.gatoForm = this.formBuilder.group({
-      nombre: [''],
-      raza: [''],
-      edad: [''],
-      foto: ['']
-    })
-
+    console.log("entre al constructor")
   }
 
 
   ngOnInit() {
-    this.gatoForm.patchValue(this.gato);
     console.log(this.gato)
   }
-
-  gatoForm!: FormGroup;
 
   gato: Gato = {
     id: 0,
@@ -51,17 +41,13 @@ export class ModificarGatoComponent {
   };
 
   async displayinfo(id: number) {
-    try{
-    const response: AxiosResponse = await axios.get(`http://localhost:8090/mascota/gato/${id}`);
-     console.log(response);
-    this.gato = response.data;
-    }
-    catch(error){
-      console.error(error);
-    }
+    this.gato = (await this.gatoService.findById(id)).data;
   }
 
-  onSubmit() {
-
+  onSubmit(form:any) {
+    this.gato = Object.assign({}, this.gato);
+    console.log(this.gato);
+    this.gatoService.update(this.gato);
+    this.router.navigate(['/mascotas']);
   }
 }

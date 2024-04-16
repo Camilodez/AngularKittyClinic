@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Gato } from '../../models/gato.model';
 import { GatoService } from '../../services/gato.service';
-import axios, { AxiosResponse } from 'axios';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -36,13 +36,12 @@ export class GatoComponent {
 
   seleccion: Gato | undefined;
 
-  constructor(private gatoService: GatoService) { 
+  constructor(private gatoService: GatoService, public router: Router) { 
 
   }
 
   ngOnInit(): void {
     this.buscarTodos();
-  
   }
 
   //metodos
@@ -51,21 +50,16 @@ export class GatoComponent {
   }
 
   agregarGato(gato: Gato) {
+    
   }
 
   eliminarGato(gato: Gato) {
-
+    this.gatoService.deletebyId(gato.id!);
+    this.buscarTodos();
+    window.location.reload();
   }
 
   async buscarTodos() {
-    // try{
-    //   const response: AxiosResponse = await axios.get('http://localhost:8090/mascota/lista');
-    //   console.log(response);
-    //   this.ListaGatos = response.data;
-    // }
-    // catch(error){
-    //   console.error(error);
-    // }
     this.ListaGatos = (await this.gatoService.findAll()).data;
   }
 

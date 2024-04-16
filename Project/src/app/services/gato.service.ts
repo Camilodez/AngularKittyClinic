@@ -17,12 +17,21 @@ export class GatoService {
     return axios.get(`http://localhost:8090/mascota/gato/${id}`);
   }
 
-  deletebyId(id: number): Promise<AxiosResponse<any>> {
-    return axios.delete(`http://localhost:8090/delete/gato/${id}`);
+  async deletebyId(id: number) {
+    try{
+      const response: AxiosResponse = await axios.delete(`http://localhost:8090/mascota/delete/${id}`);
+      console.log(response);
+    }
+    catch(error){
+      console.error(error);
+    }
   }
 
   save(gato: Gato): Promise<AxiosResponse<Gato>> {
     return axios.post('http://localhost:8090/mascota/agregar', gato);
+  }
+  update(gato: Gato): Promise<AxiosResponse<Gato>> {  
+    return axios.put(`http://localhost:8090/mascota/update/${gato.id}`, gato);
   }
 }
 
