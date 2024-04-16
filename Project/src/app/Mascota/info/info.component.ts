@@ -3,6 +3,8 @@ import { GatoService } from '../../service/gato.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gato } from '../../models/gato.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import axios, { AxiosResponse } from 'axios';
+
 
 @Component({
   selector: 'app-info',
@@ -46,8 +48,15 @@ export class InfoComponent {
     estado: true,
   };
 
-  displayinfo(id: number) {
-   
+  async displayinfo(id: number) {
+   try{
+    const response: AxiosResponse = await axios.get(`http://localhost:8090/mascota/gato/${id}`);
+    console.log(response);
+    this.gato = response.data;
+   }
+   catch(error){
+    console.error(error);
+   }
   }
 
   onSubmit() {

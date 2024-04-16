@@ -4,6 +4,8 @@ import { GatoService } from '../../service/gato.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gato } from '../../models/gato.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import axios, { AxiosResponse } from 'axios';
+
 
 @Component({
   selector: 'app-modificar-gato',
@@ -49,6 +51,7 @@ export class ModificarGatoComponent {
   };
 
   displayinfo(id: number) {
+
   
   }
 
