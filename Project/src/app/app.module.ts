@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VerMisMascotasComponent } from './Usuario/ver-mis-mascotas/ver-mis-mascotas.component';
+import { ListaUsuarioComponent } from './Veterinario/lista-usuario/lista-usuario.component';
+import { ActualizarUsuarioComponent } from './Veterinario/actualizar-usuario/actualizar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,12 @@ import { HttpClientModule } from '@angular/common/http';
     ModificarGatoComponent,
     CrearGatoComponent,
     GatoComponent,
-    InfoComponent
+    InfoComponent,
+    VerMisMascotasComponent,
+    VerMisMascotasComponent,
+    ActualizarUsuarioComponent,
+    ListaUsuarioComponent,
+    ActualizarUsuarioComponent
   ],
   imports: [
     BrowserModule,
