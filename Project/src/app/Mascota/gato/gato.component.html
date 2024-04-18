@@ -17,7 +17,7 @@
                 <th>Foto</th>
                 <th>Info</th>
                 <th>Actualizar</th>
-                <th>Eliminar</th>
+                <th>Estado</th>
             </tr>
         </thead>
         <tbody>
@@ -26,13 +26,15 @@
                 <td>{{gato.nombre}}</td>
                 <td>{{gato.edad}}</td>
                 <td>{{gato.raza}}</td>
+                
                 <td><img class="gatos" [src]="gato.foto" alt=""></td> 
                 <td><a [routerLink]="['/info',gato.id]" class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
                 <td><a [routerLink]="['/modificar-gato',gato.id]" class="btn btn-info"><img src="/assets/img/editar.png" alt=""></a></td>
-                <td><button class="btn btn-danger" (click)="eliminarGato(gato)"><img src="/assets/img/trash.png" alt=""></button></td>
+                <td><button type="button" class="btn btn-outline-success"  (click)="cambiarEstado(gato.id,gato)">Cambiar Estado </button></td>
+                <td>{{ gato.estado }}</td>
             </tr>
             </ng-container>
-            
+             
         </tbody>
         
     </table>

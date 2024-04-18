@@ -1,69 +1,70 @@
-import { Component } from '@angular/core';
-import { GatoService } from '../../services/gato.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Gato } from '../../models/gato.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import axios, { AxiosResponse } from 'axios';
-
+import { GatoService } from '../../services/gato.service';
+import { Gato } from '../../models/gato.model';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css']
 })
-export class InfoComponent {
+export class InfoComponent implements OnInit {
+  gatoForm: FormGroup;
+  gato: Gato;
 
-  constructor(private gatoService: GatoService, private route: ActivatedRoute, 
-    public formBuilder: FormBuilder, public router: Router) {
-
-    this.route.params.subscribe(params => {
-    this.displayinfo(parseInt(params['id']));
-      console.log(this.gato)
-
-    })
-
+  constructor(
+    private gatoService: GatoService,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
+    // Initialize the form
     this.gatoForm = this.formBuilder.group({
       nombre: [''],
       raza: [''],
       edad: [''],
       foto: ['']
-    })
+    });
 
+    // Subscribe to route params to get the cat id
+    this.route.params.subscribe(params => {
+      const id = parseInt(params['id'], 10);
+      if (id) {
+        this.displayInfo(id);
+      }
+    });
+
+    // Initialize the gato with default values
+    this.gato = {
+      id: 0,
+      nombre: '',
+      raza: '',
+      edad: 0,
+      foto: '',
+      enfermedad: '',
+      estado: true,
+    };
   }
 
-  ngOnInit() {
-    this.gatoForm.patchValue(this.gato);
-    console.log(this.gato)
+  ngOnInit(): void {
+    // The form will be patched with the cat details once they are loaded
   }
 
-  gatoForm!: FormGroup;
-
-  gato: Gato = {
-    id: 0,
-    nombre: '',
-    raza: '',
-    edad: 0,
-    foto: '',
-    enfermedad: '',
-    estado: true,
-  };
-
-  async displayinfo(id: number) {
-  //  try{
-  //   const response: AxiosResponse = await axios.get(`http://localhost:8090/mascota/gato/${id}`);
-  //   console.log(response);
-  //   this.gato = response.data;
-  //  }
-  //  catch(error){
-  //   console.error(error);
-  //  }
-
-    this.gato = (await this.gatoService.findById(id)).data;
+  displayInfo(id: number): void {
+    this.gatoService.findById(id).subscribe({
+      next: (gato: Gato) => {
+        this.gato = gato;
+        this.gatoForm.patchValue(this.gato); // Patch the form when data is available
+      },
+      error: (error) => {
+        console.error('Error fetching gato details:', error);
+      }
+    });
   }
 
-  onSubmit() {
-  
+  onSubmit(): void {
+    // Implement form submission logic here
+    console.log('Form submitted', this.gatoForm.value);
   }
-
 }
-

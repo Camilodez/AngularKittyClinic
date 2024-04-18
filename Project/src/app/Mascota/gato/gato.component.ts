@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GatoComponent {
 
+
   @ViewChild('sidebar') sidebar!: ElementRef;
   @ViewChild('vineta') vineta! :ElementRef;
 
@@ -27,6 +28,7 @@ export class GatoComponent {
 
   ocultarSidebar(): void {
     this.sidebar.nativeElement.classList.remove('none');
+    this.vineta.nativeElement.style.display = 'block';
   }
 
 
@@ -41,7 +43,7 @@ export class GatoComponent {
   }
 
   ngOnInit(): void {
-    this.buscarTodos();
+    this.loadCats();
   }
 
   //metodos
@@ -53,14 +55,20 @@ export class GatoComponent {
     
   }
 
-  eliminarGato(gato: Gato) {
-    this.gatoService.deletebyId(gato.id!);
-    this.buscarTodos();
-    window.location.reload();
+  cambiarEstado(id: number, gato: Gato): void {
+   
+    this.gatoService.updateEstado(id).subscribe(_=>(this.gatoService.getEstado(id).subscribe(v=>this.gatoService.setEstado(v,gato))));
   }
 
-  async buscarTodos() {
-    this.ListaGatos = (await this.gatoService.findAll()).data;
+
+
+  
+  loadCats() {
+    this.gatoService.findAll().subscribe({
+      next: (cats: Gato[]) => this.ListaGatos = cats,
+      error: (error: any) => console.error('Error fetching cats', error)
+    });
   }
 
+ 
 }

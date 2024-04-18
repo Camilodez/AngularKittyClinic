@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VerMisMascotasComponent } from './Usuario/ver-mis-mascotas/ver-mis-mascotas.component';
 import { ListaUsuarioComponent } from './Veterinario/lista-usuario/lista-usuario.component';
 import { ActualizarUsuarioComponent } from './Veterinario/actualizar-usuario/actualizar-usuario.component';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ActualizarUsuarioComponent } from './Veterinario/actualizar-usuario/act
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
