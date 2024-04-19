@@ -1,0 +1,248 @@
+
+
+/*-------------------------------------------------------------------------------------------------*/
+
+/* Estilos para la barra lateral */
+.sidebar {
+    border: 2px solid #104c5a;
+    width: 280px;
+    height: 440px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 11%;
+   
+    padding-top: 20px;
+    background-color: #4ea9bd;
+    padding-bottom: 2%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    border-radius: 25px;
+    font-family: sans-serif; /* Aplica la fuente sans-serif a todos los elementos dentro del sidebar */
+}
+.sidebar {
+    font-family: 'Pacifico', cursive;
+    font-size: 17px;
+}
+
+
+.fa-shield-cat{
+    color: #fff8f4;
+    font-size: 48px;
+    padding: 6px;
+}
+
+h3{
+    font-family: sans-serif;
+    color: #fff8f4;
+}
+
+.sidebar.show {
+    transform: translateX(0);
+    margin-right: 20px;
+}
+
+/* Estilo para la viñeta */
+.vineta {
+    position: fixed;
+    right: 0; /* Asegura que esté alineado con el borde derecho */
+    top: 50%; /* Centra la viñeta verticalmente */
+    transform: translateY(-50%);
+    width: 60px; /* Ajusta al tamaño deseado */
+    height: 60px; /* Ajusta al tamaño deseado */
+    background-color: #4ea9bd;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%; /* Mantiene la forma circular */
+    text-align: center;
+    font-size: 30px;
+   /* Opcional: añade un borde si deseas */
+}
+
+.botonesvi{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 18px;
+}
+
+
+
+
+.sidebar .profile {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profilevete{
+    border: 2px solid #104c5a;
+}
+
+.sidebar .profile img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin perder proporción */
+}
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    margin: 0 auto;
+  
+}
+
+.sidebar ul li {
+    text-align: center;
+}
+
+
+
+.sidebar ul li a span {
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    color: #fff8f4;
+    display: inline-block; /* Asegura que el span se comporte como inline pero permitiendo padding/margin */
+    padding: 5px; /* Espaciado alrededor del texto para el efecto hover, ajusta según necesidad */
+}
+
+
+
+.sidebar ul li a span img {
+    transition: transform 0.3s ease; /* Añade una transición suave para el efecto de escala */
+    transform-origin: center bottom;
+    height: 60px;
+}
+
+.sidebar ul li a span:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen un 10% */
+}
+
+.botonesvi{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 18px;
+}
+
+.sidebar ul li a span {
+    transition: transform 0.3s ease; /* Añade una transición suave para el efecto de escala */
+    transform-origin: center bottom;
+}
+
+.sidebar ul li a span:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del span un 10%, afectando tanto al texto como a la imagen */
+}
+.handle {
+    position: absolute;
+    left: -30px; /* Ajustar según el tamaño del handle */
+    top: 0;
+    width: 30px; /* Tamaño del handle */
+    height: 100%;
+    background-color: #24778c; /* Color del handle */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Cambia el cursor para indicar que se puede arrastrar */
+    user-select: none; /* Evita la selección del texto al arrastrar */
+}
+
+/*----------------------------------------- Estilo para la tabla ----------------------*/
+.tabla-pacientes {
+    padding-top: 40px;
+    padding-left: 20px;
+    width: 70% !important;
+    margin-left: 5% !important;
+    overflow-x: auto; /* Agregamos una barra de desplazamiento horizontal si es necesario */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Ajuste para que coincida con el grosor y color de las celdas */
+    
+}
+
+
+
+th, td {
+    border: 2px solid #104c5a; /* Asegura que el color y grosor del borde sea uniforme */
+    padding: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+}
+
+th {
+    background-color: #4ea9bd;
+    color: white;
+}
+
+td{
+    background-color: #F5F5DC;
+    text-align: center;
+}
+
+
+
+
+.btn-info, .info, .btn-danger {
+    color: #fff8f4;
+    border: none;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex; /* Cambiado de inline-block a inline-flex */
+    align-items: center; /* Alinea los elementos hijos verticalmente en el centro */
+    justify-content: center; /* Alinea los elementos hijos horizontalmente en el centro */
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
+
+.btn-info img, .btn-danger img, .info img {
+    transition: transform 0.3s ease; /* Transición suave para el efecto de escala */
+}
+
+.btn-info:hover img, .btn-danger:hover img, .info:hover img {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen un 20% */
+}
+
+
+
+
+
+
+.info:hover{
+    color: rgb(161, 97, 38);
+}
+
+
+
+
+.fa-circle-info{
+    color: #4ea9bd;
+    font-size: 15px;
+    padding: 6px;
+
+}
+
+/* Estilos para fotos */
+.gatos {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: 3px solid #104c5a;
+}
+
+body {
+    flex: 1; /* Permite que el contenido principal ocupe el espacio restante */
+}

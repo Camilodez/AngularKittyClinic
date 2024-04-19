@@ -8,6 +8,11 @@ import { LaboratoriosComponent } from './Landing/laboratorios/laboratorios.compo
 import { CirugiasComponent } from './Landing/cirugias/cirugias.component';
 import { ListaGatosComponent } from './Mascotas/lista-gatos/lista-gatos.component';
 import { LoginComponent } from './Landing/login/login.component';
+import { HeaderComponent } from './Landing/header/header.component';
+import { FooterComponent } from './Landing/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { LoginComponent } from './Landing/login/login.component';
     LaboratoriosComponent,
     CirugiasComponent,
     ListaGatosComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent,
+    ModificarGatoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

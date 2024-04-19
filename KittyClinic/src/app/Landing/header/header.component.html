@@ -1,0 +1,37 @@
+
+<div class="inicio">
+    <header class="header contenedor">
+        <img src="/assets/img/logo.png" alt="logo" class="logo">
+        <div class="nav">
+            <div class="opciones">
+                <a [routerLink]="['/home']">Inicio</a> <!-- Asumiendo que estás usando rutas de Angular, cambia th:href a href -->
+            </div>
+            <div class="opciones">
+                <a href="">Servicios</a>
+                <ul class="lista" id="lista1">
+                    <li><a href="">Cirugías</a></li>
+                    <li><a href="">Exámenes</a></li>
+                    <li><a href="">Laboratorio Clínico</a></li>
+                    <li><a href="">Urgencias</a></li>
+                    <li><a href="">Peluquería</a></li>
+                </ul>
+            </div>
+            <div class="opciones">
+                <a href="">Contáctanos</a>
+            </div>
+            <div class="opciones">
+                <a href="">Sobre Nosotros</a>
+            </div>
+            <div>
+                <a [routerLink]="['/mascotas']">
+                    <i class="fa-solid fa-cat"></i>
+                </a>
+            </div>
+            <div>
+                <a [routerLink]="['/login']">
+                    <i class="fas fa-user"></i>
+                </a>                    
+            </div>
+        </div> <!-- Cierra el div de la clase "nav" -->
+    </header>
+</div>
