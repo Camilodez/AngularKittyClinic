@@ -24,6 +24,10 @@ export class GatoService {
     return this.http.get<Gato>("http://localhost:8090/mascota/gato/"+id);;
   }
 
+  cambiarEstado(id:number){
+   
+  }
+
   findById(id: number): Promise<AxiosResponse<Gato>> {
     return axios.get(`http://localhost:8090/mascota/gato/${id}`);
   }
