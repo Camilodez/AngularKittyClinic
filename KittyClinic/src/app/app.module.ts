@@ -13,6 +13,7 @@ import { FooterComponent } from './Landing/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
 import { FormsModule } from '@angular/forms';
+import { InfoComponent } from './Mascotas/info/info.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    ModificarGatoComponent
+    ModificarGatoComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

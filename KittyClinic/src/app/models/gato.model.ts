@@ -10,6 +10,6 @@ export interface  Gato {
     foto: string ;
     enfermedad: string;
     estado: boolean;
-    usuario: Usuario;  
+    usuario?: Usuario;  
     tratamientos: Tratamiento[];  
 }

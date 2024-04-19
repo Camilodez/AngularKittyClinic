@@ -2,6 +2,10 @@
 
 /*-------------------------------------------------------------------------------------------------*/
 
+
+.titulo{
+    text-align: center;
+}
 /* Estilos para la barra lateral */
 .sidebar {
     border: 2px solid #104c5a;
