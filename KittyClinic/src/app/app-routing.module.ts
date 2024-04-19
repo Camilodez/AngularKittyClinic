@@ -5,13 +5,15 @@ import { PaginaPrincipalComponent } from './Landing/pagina-principal/pagina-prin
 import { RouteConfigLoadStart } from '@angular/router';
 import { InfoComponent } from './Mascotas/info/info.component';
 import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
+import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
 
 const routes: Routes = [
   {path: 'mascotas', component: ListaGatosComponent},
-  { path: 'info/:id', component: InfoComponent },
+  {path: 'info/:id', component: InfoComponent },
   {path: 'home', component: PaginaPrincipalComponent},
   {path: 'modificar-gato/:id', component: ModificarGatoComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'crear-gato', component: CrearGatoComponent},
 
 ];
 

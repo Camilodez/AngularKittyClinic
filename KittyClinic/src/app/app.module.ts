@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
 import { FormsModule } from '@angular/forms';
 import { InfoComponent } from './Mascotas/info/info.component';
+import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InfoComponent } from './Mascotas/info/info.component';
     HeaderComponent,
     FooterComponent,
     ModificarGatoComponent,
-    InfoComponent
+    InfoComponent,
+    CrearGatoComponent
   ],
   imports: [
     BrowserModule,
