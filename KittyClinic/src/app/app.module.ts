@@ -7,6 +7,7 @@ import { PaginaPrincipalComponent } from './Landing/pagina-principal/pagina-prin
 import { LaboratoriosComponent } from './Landing/laboratorios/laboratorios.component';
 import { CirugiasComponent } from './Landing/cirugias/cirugias.component';
 import { ListaGatosComponent } from './Mascotas/lista-gatos/lista-gatos.component';
+import { LoginComponent } from './Landing/login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ListaGatosComponent } from './Mascotas/lista-gatos/lista-gatos.componen
     PaginaPrincipalComponent,
     LaboratoriosComponent,
     CirugiasComponent,
-    ListaGatosComponent
+    ListaGatosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,9 @@ export interface  Gato {
     nombre: string;
     raza: string;
     edad: number;
-    foto: string;
+    foto: string ;
     enfermedad: string;
     estado: boolean;
-    usuario: number;  
-    tratamientos?: Tratamiento[];  
+    usuario: Usuario;  
+    tratamientos: Tratamiento[];  
 }
