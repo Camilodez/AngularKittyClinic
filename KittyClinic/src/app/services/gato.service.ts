@@ -7,8 +7,8 @@ import axios, { AxiosResponse } from 'axios';
   providedIn: 'root'
 })
 export class GatoService {
-  update(gato: Gato) {
-    throw new Error('Method not implemented.');
+  update(gato: Gato): Promise<AxiosResponse<Gato>> {  
+    return axios.put(`http://localhost:8090/mascota/update/${gato.id}`, gato);
   }
 
   constructor(

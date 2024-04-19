@@ -17,9 +17,41 @@ export class ModificarGatoComponent {
   constructor(private gatoService: GatoService, private route: ActivatedRoute, 
     public formBuilder: FormBuilder, public router: Router) {
 
-   
+      this.route.params.subscribe(params => {
+        this.displayinfo(parseInt(params['id']));
+        console.log(this.gato)
+  
+      })
+      console.log("entre al constructor")
+    }
+  
+  
+    ngOnInit() {
+      console.log(this.gato)
+    }
+  
+    gato: Gato = {
+      id: 0,
+      nombre: '',
+      raza: '',
+      edad: 0,
+      foto: '',
+      enfermedad: '',
+      estado: true,
+      tratamientos: []
+    };
+  
+    async displayinfo(id: number) {
+      this.gato = (await this.gatoService.findById(id)).data;
+    }
+  
+    onSubmit(form:any) {
+      this.gato = Object.assign({}, this.gato);
+      console.log(this.gato);
+      this.gatoService.update(this.gato);
+      this.router.navigate(['/mascotas']);
+    }
   }
 
 
 
-}
