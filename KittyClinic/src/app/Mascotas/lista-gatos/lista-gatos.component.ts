@@ -50,8 +50,12 @@ export class ListaGatosComponent {
       }
     );
   }
-  CambiarEstado(_t20: Gato) {
-    throw new Error('Method not implemented.');
-    }
+  CambiarEstado(id: number) {
+    this.gatoService.cambiarEstado(id).subscribe({
+      next: (response) => {
+        window.location.reload();
+      }
+    });
+}
 
 }

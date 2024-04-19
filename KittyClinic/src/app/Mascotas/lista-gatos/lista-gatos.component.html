@@ -30,9 +30,10 @@
                 <td><img class="gatos" [src]="gato.foto" alt=""></td> 
                 <td><a [routerLink]="['/info',gato.id]" class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
                 <td><a [routerLink]="['/modificar-gato',gato.id]" class="btn btn-info"><img src="/assets/img/editar.png" alt=""></a></td>
-                <td><button (click)="CambiarEstado(gato)"> CambiarEstado</button></td>
+                <td><button (click)="CambiarEstado(gato.id)"> CambiarEstado</button></td>
           
                 <td>{{gato.estado}}</td>
+              
             </tr>
             </ng-container>
             
