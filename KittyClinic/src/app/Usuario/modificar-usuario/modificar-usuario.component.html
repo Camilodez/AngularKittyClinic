@@ -1,0 +1,34 @@
+<div class="contenedor-modificar">
+    <form th:object="${usuario}" th:action="@{/cliente/update/{id}(id=${usuario.id})}" method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input th:field="*{nombre}" type="text" id="nombre" placeholder="Ingresa el nombre gato">
+        </div>
+
+        <div class="form-group">
+            <label for="genero">Género</label>
+            <select th:field="*{genero}" id="genero">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input  th:field="*{edad}" type="number" id="edad" placeholder="Ingresa la edad del gato">
+        </div>
+
+        <div class="form-group">
+            <label for="cedula">Cedula</label>
+            <input th:field="*{cedula}" type="number" id="cedula" placeholder="Ingresa una foto del gato">
+        </div>
+
+        <div class="form-group">
+            <label for="correo">Correo</label>
+            <input th:field="*{correo}" type="text" id="correo" placeholder="Ingresa una foto del gato">
+        </div>
+
+    
+        <div class="form-group"> <button type="submit" class="btn-primary">Enviar</button>   </div>
+    </form>
+</div>

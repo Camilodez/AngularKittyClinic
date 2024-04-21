@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { InfoComponent } from './Mascotas/info/info.component';
 import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
 import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.component';
+import { PerfilUsuarioComponent } from './Usuario/perfil-usuario/perfil-usuario.component';
+import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.com
     ModificarGatoComponent,
     InfoComponent,
     CrearGatoComponent,
-    ListaUsuarioComponent
+    ListaUsuarioComponent,
+    PerfilUsuarioComponent,
+    ModificarUsuarioComponent
   ],
   imports: [
     BrowserModule,

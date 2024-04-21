@@ -7,6 +7,7 @@ import { InfoComponent } from './Mascotas/info/info.component';
 import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
 import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
 import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.component';
+import { PerfilUsuarioComponent } from './Usuario/perfil-usuario/perfil-usuario.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'crear-gato', component: CrearGatoComponent},
   {path: 'lista-usuarios', component: ListaUsuarioComponent},
+  {path: 'perfil-usuario', component: PerfilUsuarioComponent},
 
 ];
 

@@ -21,10 +21,10 @@
                 <td>{{ usuario.genero }}</td>
                 <td>{{ usuario.cedula }}</td>
                 <td>{{ usuario.correo }}</td>
-                <td><a [href]="'/cliente/usuario/' + usuario.id"><i class="fa-solid fa-circle-info"></i>Ver mascotas</a></td>
+                <td><a [routerLink]="['/perfil-usuario',usuario.id]"><i class="fa-solid fa-circle-info"></i>Ver mascotas</a></td>
                 <td>
-                    <a class="btn btn-info" [href]="'/cliente/update/' + usuario.id">Editar</a>
-                    <a class="btn btn-danger" [href]="'/cliente/delete/' + usuario.id">Eliminar</a>
+                    <a class="btn btn-info" [routerLink]="'/cliente/update/' + usuario.id">Editar</a>
+                    <a class="btn btn-danger" [routerLink]="'/cliente/delete/' + usuario.id">Eliminar</a>
                 </td>
             </tr>
         </tbody>

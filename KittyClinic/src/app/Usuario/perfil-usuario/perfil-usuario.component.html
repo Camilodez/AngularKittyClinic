@@ -1,0 +1,68 @@
+
+<div class="sidebar-right">
+    <div class="handle">&#9776;</div> 
+    <div class="usuario-info">
+        <img [src]="'/img/usuariodecoracion.png'" alt="icono usuario">
+        <h2>{{ usuario.nombre }}</h2>
+        <p>{{ usuario.genero }}</p>
+        <p>{{ usuario.edad }}</p>
+        <p>{{ usuario.cedula }}</p>
+        <p>{{ usuario.correo }}</p>
+    </div>
+</div>
+
+
+<div class="tabla-contenedor">
+    <table>
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mascota of usuario.gato">
+                <td><img [src]="mascota.foto" alt="Foto de Mascota" class="foto-mascota" /></td>
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.raza }}</td>
+                <td>{{ mascota.edad }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div id="infoGatoContenedor">
+    <h2 id="nombreGato">{{ gato.nombre }}</h2>
+    <div class="contenido-horizontal"> 
+        <div class="Historial-gatuno">
+            <h3>Historial</h3>
+            <ul>
+                <li>Servicio: Urgencias</li>
+                <!-- Agregar otros servicios según sea necesario -->
+            </ul>
+        </div>
+        <div class="foto-contenedor">
+            <img [src]="gato.foto" id="fotoGato" alt="Foto del gato">
+        </div>
+        <div class="flechas">
+            <button (click)="anteriorGato()" class="icon-button"><i class="fas fa-chevron-up"></i></button>
+            <button (click)="siguienteGato()" class="icon-button"><i class="fas fa-chevron-down"></i></button>
+        </div>
+    </div>
+    <div class="info-adicional">
+        <p>{{ gato.edad }}</p>
+        <p id="ultimaCita">Última Cita: 29/02/2024</p>
+    </div>
+    <button (click)="cerrarInfo()" class="icon-button"><i class="fas fa-times"></i></button>
+</div>
+
+
+<div id="fondoOscuro"></div>
+
+
+    
+            
