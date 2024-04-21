@@ -1,1 +1,45 @@
-<p>lista-veterinario works!</p>
+<app-header></app-header>
+
+
+<br>
+
+<h1 class="titulo">Lista de Veterinarios</h1>
+
+<button><a [routerLink]="['/modificar-veterinario']">Agregar veterinario</a></button>
+
+<div>
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cédula</th>
+                    <th>Especialidad</th>
+                    <th>Foto</th>
+                    <th>Información</th>
+                    <th>Actualizar</th>
+                    <th>Tratamientos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let veterinario of ListaVeterinarios">
+                <tr>
+                    <td>{{veterinario.nombre}}</td>
+                    <td>{{veterinario.apellido}}</td>
+                    <td>{{veterinario.cedula}}</td>
+                    <td>{{veterinario.especialidad}}</td>
+                    <td><img class="veterinarios" [src]="veterinario.foto" alt="Foto de {{veterinario.nombre}}"></td> 
+                    <td><a [routerLink]="['/info-veterinario',veterinario.id]" class="info"><img src="/assets/img/informacion.png" alt="Info"></a></td>
+                    <td><a class="btn btn-info" [routerLink]="['/modificar-veterinario',veterinario.id]" ><img src="/assets/img/editar.png" alt="Editar"></a></td>
+                    <td><a [routerLink]="['/tratamientos-veterinario',veterinario.id]" >Ver Tratamientos</a></td>
+                  
+                </tr>
+                </ng-container>
+                
+            </tbody>
+            
+        </table>  
+  
+    
+</div>

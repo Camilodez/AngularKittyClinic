@@ -9,7 +9,8 @@ import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.com
 import { PerfilUsuarioComponent } from './Usuario/perfil-usuario/perfil-usuario.component';
 import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
 import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar-usuario.component';
-
+import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veterinario.component'; 
+import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
 
 const routes: Routes = [
   {path: 'mascotas', component: ListaGatosComponent},
@@ -21,7 +22,11 @@ const routes: Routes = [
   {path: 'lista-usuarios', component: ListaUsuarioComponent},
   {path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
   { path: 'modificar-usuario', component: ModificarUsuarioComponent },
-{ path: 'modificar-usuario/:id', component: ModificarUsuarioComponent }
+  { path: 'modificar-usuario/:id', component: ModificarUsuarioComponent },
+  { path: 'veterinarios', component: ListaVeterinarioComponent },
+  { path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
+  { path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
+
 
 ];
 
