@@ -18,6 +18,8 @@ import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
 import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.component';
 import { PerfilUsuarioComponent } from './Usuario/perfil-usuario/perfil-usuario.component';
 import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar-usuario.component';
+import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veterinario.component';
+import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar
     CrearGatoComponent,
     ListaUsuarioComponent,
     PerfilUsuarioComponent,
-    ModificarUsuarioComponent
+    ModificarUsuarioComponent,
+    ListaVeterinarioComponent,
+    ModificarVeterinarioComponent
   ],
   imports: [
     BrowserModule,

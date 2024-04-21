@@ -1,35 +1,51 @@
 <div class="contenedor-modificar">
-    <form #usuarioForm="ngForm" (ngSubmit)="onSubmit(usuarioForm)">
+    <form #usuarioForm="ngForm" (ngSubmit)="usuarioForm.valid && onSubmit(usuarioForm)" novalidate>
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre">
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" #nombre="ngModel" required>
+            <div *ngIf="nombre.touched && nombre.errors?.['required']" class="alert alert-danger">
+                El nombre es requerido.
+            </div>
         </div>
 
         <div class="form-group">
             <label for="genero">Género</label>
-            <select id="genero" name="genero" [(ngModel)]="usuario.genero">
+            <select id="genero" name="genero" [(ngModel)]="usuario.genero" #genero="ngModel" required>
+                <option value="" disabled selected>Seleccione un género</option>
                 <option value="Femenino">Femenino</option>
                 <option value="Masculino">Masculino</option>
             </select>
+            <div *ngIf="genero.touched && genero.errors?.['required']" class="alert alert-danger">
+                El género es requerido.
+            </div>
         </div>
 
         <div class="form-group">
             <label for="edad">Edad</label>
-            <input type="text" id="edad" name="edad" [(ngModel)]="usuario.edad">
+            <input type="text" id="edad" name="edad" [(ngModel)]="usuario.edad" #edad="ngModel" required>
+            <div *ngIf="edad.touched && edad.errors?.['required']" class="alert alert-danger">
+                La edad es requerida.
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="cedula">Cedula</label>
-            <input type="text" id="cedula" name="cedula" [(ngModel)]="usuario.cedula">
+            <label for="cedula">Cédula</label>
+            <input type="text" id="cedula" name="cedula" [(ngModel)]="usuario.cedula" #cedula="ngModel" required>
+            <div *ngIf="cedula.touched && cedula.errors?.['required']" class="alert alert-danger">
+                La cédula es requerida.
+            </div>
         </div>
 
         <div class="form-group">
             <label for="correo">Correo</label>
-            <input type="text" id="correo" name="correo" [(ngModel)]="usuario.correo">
+            <input type="text" id="correo" name="correo" [(ngModel)]="usuario.correo" #correo="ngModel" required>
+            <div *ngIf="correo.touched && correo.errors?.['required']" class="alert alert-danger">
+                El correo es requerido.
+            </div>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="send">Enviar</button>
+            <button type="submit" class="send" [disabled]="!usuarioForm.valid">Enviar</button>
         </div>
     </form>
 </div>

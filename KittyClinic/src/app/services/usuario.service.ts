@@ -32,8 +32,9 @@ export class UsuarioService {
     return axios.put<Usuario>(`${'http://localhost:8090/cliente/update'}/${usuario.id}`, usuario);
   }
 
-  agregar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${'http://localhost:8090'}`, usuario);
+ 
+  agregar(usuario: Usuario): Promise<Usuario> {
+    return axios.post('http://localhost:8090/cliente/agregar', usuario);
   }
 
   eliminarPorId(id: number): Observable<any> {

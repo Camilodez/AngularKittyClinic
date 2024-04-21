@@ -20,7 +20,8 @@ const routes: Routes = [
   {path: 'crear-gato', component: CrearGatoComponent},
   {path: 'lista-usuarios', component: ListaUsuarioComponent},
   {path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
-  {path: 'modificar-usuario/:id', component: ModificarUsuarioComponent},
+  { path: 'modificar-usuario', component: ModificarUsuarioComponent },
+{ path: 'modificar-usuario/:id', component: ModificarUsuarioComponent }
 
 ];
 

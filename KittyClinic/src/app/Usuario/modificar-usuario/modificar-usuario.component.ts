@@ -1,11 +1,7 @@
-
-import { Component, EventEmitter } from '@angular/core';
-import { GatoService } from '../../services/gato.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Gato } from '../../models/gato.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import axios, { AxiosResponse } from 'axios';
+import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 import { Usuario } from 'src/app/models/usuario.model';
 
 @Component({
@@ -13,45 +9,50 @@ import { Usuario } from 'src/app/models/usuario.model';
   templateUrl: './modificar-usuario.component.html',
   styleUrls: ['./modificar-usuario.component.css']
 })
-export class ModificarUsuarioComponent {
+export class ModificarUsuarioComponent implements OnInit {
+  usuario: Usuario = {
+    id: 0,
+    nombre: '',
+    correo: '',
+    cedula: 0,
+    genero: '',
+    edad: 0
+  };
 
-  
-  constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, 
-    public formBuilder: FormBuilder, public router: Router) {
+  constructor(
+    private usuarioService: UsuarioService, 
+    private route: ActivatedRoute, 
+    public formBuilder: FormBuilder, 
+    public router: Router
+  ) { }
 
-      this.route.params.subscribe(params => {
-        this.displayinfo(parseInt(params['id']));
-        console.log(this.usuario)
-  
-      })
-      console.log("entre al constructor")
-    }
-  
-  
-    ngOnInit() {
-      console.log(this.usuario)
-    }
-  
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      const id = parseInt(params['id']);
+      if (id === 0) {
+        // Preparar para crear un nuevo usuario
+        console.log('Preparar para crear un nuevo usuario');
+      } else {
+        // Cargar información del usuario existente
+        this.displayinfo(id);
+      }
+    });
+  }
 
-    usuario: Usuario={
-      id: 0,
-      nombre: '',
-      correo: '',
-      cedula: 0,
-      genero: '',
-      edad: 0
-    };
-    
-  
-    async displayinfo(id: number) {
-      this.usuario = (await this.usuarioService.buscarPorIdAxios(id)).data;
-    }
-  
-    onSubmit(form:any) {
-      this.usuario = Object.assign({}, this.usuario);
+  async displayinfo(id: number) {
+    try {
+      const response = await this.usuarioService.buscarPorIdAxios(id);
+      this.usuario = response.data;
       console.log(this.usuario);
-      this.usuarioService.actualizar(this.usuario);
-      this.router.navigate(['/lista-usuarios']);
+    } catch (error) {
+      console.error('Error cargando el usuario', error);
     }
+  }
 
+  onSubmit(form: any) {
+    this.usuario = Object.assign({}, this.usuario);
+    console.log(this.usuario);
+    this.usuarioService.agregar(this.usuario);
+    this.router.navigate(['/lista-usuarios']);
+  }
 }
