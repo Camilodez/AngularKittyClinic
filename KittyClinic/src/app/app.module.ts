@@ -15,6 +15,7 @@ import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato
 import { FormsModule } from '@angular/forms';
 import { InfoComponent } from './Mascotas/info/info.component';
 import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
+import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
     FooterComponent,
     ModificarGatoComponent,
     InfoComponent,
-    CrearGatoComponent
+    CrearGatoComponent,
+    ListaUsuarioComponent
   ],
   imports: [
     BrowserModule,
