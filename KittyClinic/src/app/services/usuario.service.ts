@@ -1,29 +1,46 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Usuario} from 'src/app/models/usuario.model';
-
+import { Usuario } from '../models/usuario.model';
+import { Gato } from '../models/gato.model';
+import axios, { AxiosResponse } from 'axios';
 
 @Injectable({
-    providedIn: 'root'
-  })
-  export class UsuarioService {
+  providedIn: 'root'
+})
+export class UsuarioService {
 
-    constructor(private http: HttpClient) { }
+  private baseUrl = 'http://localhost:8090'; 
 
+  constructor(private http: HttpClient) { }
 
-
-      findAll():Observable<Usuario[]>{
-        return this.http.get<Usuario[]>("http://localhost:8090/cliente/lista");
-      }
-
-      SearchUser(id:number):Observable<Usuario>{
-        return this.http.get<Usuario>("http://localhost:8090/cliente/misgatos/"+id);
-      }
-
-      
-
-
-
-
+  buscarPorId(id: number): Observable<Gato[]> {
+    return this.http.get<Gato[]>('http://localhost:8090/cliente/misgatos/'+id);
   }
+
+  buscarPorIdAxios(id: number): Promise<AxiosResponse<Usuario>> {
+    return axios.get(`http://localhost:8090/cliente/usuario/${id}`);
+  }
+
+  findAll(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>('http://localhost:8090/cliente/login');
+  }
+
+  
+
+  actualizar(usuario: Usuario): Promise<AxiosResponse<Usuario>> {
+    return axios.put<Usuario>(`${'http://localhost:8090/cliente/update'}/${usuario.id}`, usuario);
+  }
+
+  agregar(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(`${'http://localhost:8090'}`, usuario);
+  }
+
+  eliminarPorId(id: number): Observable<any> {
+    return this.http.delete(`${'http://localhost:8090'}/${id}`);
+  }
+
+  login(cedula: number): Observable<Usuario> {
+    return this.http.post<Usuario>(`${'/http://localhost:8090'}/${cedula}`, cedula);
+  }
+}
