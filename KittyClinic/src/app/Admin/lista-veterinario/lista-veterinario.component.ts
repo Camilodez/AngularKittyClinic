@@ -12,6 +12,7 @@ import { VeterinarioService } from 'src/app/services/veterinario.service';
 export class ListaVeterinarioComponent {
 
 
+
   ListaVeterinarios : Veterinario[] = [];
 
 
@@ -33,6 +34,20 @@ export class ListaVeterinarioComponent {
         this.ListaVeterinarios = vets;
       }
     );
+  }
+
+
+  delete(id: number) {
+    this.veterinarioService.delete(id).subscribe(
+      {
+        next: (resp) => {
+          window.location.reload();
+        },
+        error: (error) => {
+          console.error('Error al eliminar el usuario', error);
+        }
+      });
+    
   }
 
 

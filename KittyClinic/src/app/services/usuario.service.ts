@@ -10,7 +10,6 @@ import axios, { AxiosResponse } from 'axios';
 })
 export class UsuarioService {
 
-  private baseUrl = 'http://localhost:8090'; 
 
   constructor(private http: HttpClient) { }
 

@@ -17,9 +17,9 @@
                     <th>Cédula</th>
                     <th>Especialidad</th>
                     <th>Foto</th>
-                    <th>Información</th>
                     <th>Actualizar</th>
                     <th>Tratamientos</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,10 +30,10 @@
                     <td>{{veterinario.cedula}}</td>
                     <td>{{veterinario.especialidad}}</td>
                     <td><img class="veterinarios" [src]="veterinario.foto" alt="Foto de {{veterinario.nombre}}"></td> 
-                    <td><a [routerLink]="['/info-veterinario',veterinario.id]" class="info"><img src="/assets/img/informacion.png" alt="Info"></a></td>
+                 
                     <td><a class="btn btn-info" [routerLink]="['/modificar-veterinario',veterinario.id]" ><img src="/assets/img/editar.png" alt="Editar"></a></td>
                     <td><a [routerLink]="['/tratamientos-veterinario',veterinario.id]" >Ver Tratamientos</a></td>
-                  
+                    <td><a class="btn btn-danger" (click)="delete(veterinario.id)">Eliminar</a></td>
                 </tr>
                 </ng-container>
                 
