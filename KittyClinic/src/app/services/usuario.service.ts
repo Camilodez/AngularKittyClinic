@@ -37,7 +37,7 @@ export class UsuarioService {
   }
 
   eliminarPorId(id: number): Observable<any> {
-    return this.http.delete(`${'http://localhost:8090'}/${id}`);
+    return this.http.delete(`${'http://localhost:8090/cliente/delete'}/${id}`);
   }
 
   login(cedula: number): Observable<Usuario> {
