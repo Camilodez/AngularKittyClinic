@@ -13,27 +13,24 @@ export class ListaVeterinarioComponent {
 
 
 
-  ListaVeterinarios : Veterinario[] = [];
-
-
+  
+  
   constructor(
     private veterinarioService: VeterinarioService,
     private http: HttpClient,
     public router: Router
   ) { }
-
-
+  
+  
+  ListaVeterinarios : Veterinario[] = [];
 
   ngOnInit(): void {
     this.searchVets();
   }
 
-  searchVets() {
-    this.veterinarioService.findAll().subscribe(
-      (vets: Veterinario[]) => {
-        this.ListaVeterinarios = vets;
-      }
-    );
+  async searchVets() {
+    this.ListaVeterinarios = (await this.veterinarioService.findAll()).data;
+    console.log(this.ListaVeterinarios);
   }
 
 

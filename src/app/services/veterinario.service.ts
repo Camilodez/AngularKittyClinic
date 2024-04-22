@@ -14,8 +14,8 @@ export class VeterinarioService {
 
     constructor(private http: HttpClient) { }
 
-    findAll(): Observable<Veterinario[]> {
-        return this.http.get<Veterinario[]>('http://localhost:8090/admin/veterinario');
+    findAll(): Promise<AxiosResponse<Veterinario[]>> {
+        return axios.get('http://localhost:8090/Admin/veterinario');
     }
 
     add(veterinario: Veterinario): Observable<Veterinario> {

@@ -21,11 +21,11 @@ const routes: Routes = [
   {path: 'crear-gato', component: CrearGatoComponent},
   {path: 'lista-usuarios', component: ListaUsuarioComponent},
   {path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
-  { path: 'modificar-usuario', component: ModificarUsuarioComponent },
-  { path: 'modificar-usuario/:id', component: ModificarUsuarioComponent },
-  { path: 'veterinarios', component: ListaVeterinarioComponent },
-  { path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
-  { path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
+  {path: 'modificar-usuario', component: ModificarUsuarioComponent },
+  {path: 'modificar-usuario/:id', component: ModificarUsuarioComponent },
+  {path: 'veterinarios', component: ListaVeterinarioComponent },
+  {path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
+  {path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
 
 ];
 
