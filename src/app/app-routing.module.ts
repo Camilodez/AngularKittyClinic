@@ -27,7 +27,6 @@ const routes: Routes = [
   { path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
   { path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
 
-
 ];
 
 @NgModule({
