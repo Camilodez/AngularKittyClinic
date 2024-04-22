@@ -17,10 +17,14 @@ export class ModificarVeterinarioComponent implements OnInit {
         this.displayinfo(parseInt(params['id']));
         console.log(this.veterinario);
       })
+  
     }
     
     ngOnInit() {
-      
+      this.route.params.subscribe(params => {
+        this.displayinfo(parseInt(params['id']));
+        console.log(this.veterinario);
+      })
     }
 
     veterinario: Veterinario = {
