@@ -30,7 +30,7 @@
                     <td>{{veterinario.cedula}}</td>
                     <td>{{veterinario.especialidad}}</td>
                     <td><img class="veterinarios" [src]="veterinario.foto" alt="Foto de {{veterinario.nombre}}"></td> 
-                 
+                    
                     <td><a class="btn btn-info" [routerLink]="['/modificar-veterinario',veterinario.id]" ><img src="/assets/img/editar.png" alt="Editar"></a></td>
                     <td><a [routerLink]="['/tratamientos-veterinario',veterinario.id]" >Ver Tratamientos</a></td>
                     <td><a class="btn btn-danger" (click)="delete(veterinario.id)">Eliminar</a></td>
