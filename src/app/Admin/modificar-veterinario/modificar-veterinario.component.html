@@ -6,7 +6,7 @@
   
       <div class="mb-3">
         <label for="cedula" class="form-label">Cédula:</label>
-        <input type="number" class="form-control" id="cedula" value = "{{veterinario.cedula}}" [(ngModel)]="veterinario.cedula" required>
+        <input type="number" class="form-control" id="cedula" name="cedula" value ="{{veterinario.cedula}}" [(ngModel)]="veterinario.cedula" #cedula="ngModel" required>
       </div>
   
       <div class="mb-3">
