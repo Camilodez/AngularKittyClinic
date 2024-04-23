@@ -8,5 +8,6 @@ export interface Veterinario {
     password: string;
     foto: string;
     especialidad: string;
+    estado: boolean;
     tratamientos?: Tratamiento[];  // Relación con Tratamiento
   }

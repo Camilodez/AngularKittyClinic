@@ -47,5 +47,11 @@ export class VeterinarioService {
     veterinariosInactivo(){
         return this.http.get<number>('http://localhost:8090/admin/veterinario/inactivos/count');
     }
+
+    cambiarEstado(id: number): Observable<any> {
+        return this.http.put(`http://localhost:8090/admin/estado/${id}`, null);
+      }
     
+
+
 }
