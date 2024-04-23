@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuarioservice.service';
+import { Usuario } from '../models/usuario.model';
+
+
 
 @Component({
   selector: 'app-login',
@@ -6,5 +11,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  listaUsuarios!: Usuario[];
+  cedula: number = 0;
 
+  constructor(
+    private usuarioservice: UsuarioService, 
+    private router: Router) { }
+
+    ngOnInit(): void {
+      this.usuarioservice.findAll().subscribe(data => {
+        this.listaUsuarios = data;
+      });
+    }
+
+    loginUsuario(cedula:number): void {
+    const clienteEncontrado = this.listaUsuarios.find(cliente => cliente.cedula === cedula);
+
+    if (clienteEncontrado) {
+      this.router.navigate(['/loginuser/' + clienteEncontrado.id]);
+    } else {
+      
+    }
+    }
 }

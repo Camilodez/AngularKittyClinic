@@ -1,1 +1,36 @@
-<p>login works!</p>
+<div class="contenedor">
+    <div class="cajaPrincipal">
+
+        <div class="cajaFondo">
+            <img src="../assets/img/gatoFondoLogin.png" alt="Gato Login" class="gatoLogin">
+        </div>
+
+        
+        <div class="login">
+            <div class="login__container">
+                <img src="../assets/img/logo.png" alt="Gato logo" class="logo">
+                <h1>Inicio</h1>
+                <p class="frase1">¿Todavia no tienes una cuenta? </p><p class="frase2">Crea una Ahora</p>
+                <p></p>
+                <div class="formdesign">
+
+
+                    <form name="form" action="/cliente/registro" method="post">
+                        <div class="login_container_input">
+
+                            <i class="fas fa-user"></i>
+                            <input class="campo-correo" [(ngModel)]="cedula" type="number" name="username" id="username" placeholder="Correo Electrónico" required>
+
+                        </div>
+                        <button type="submit" class="login_container_button" (click)="loginUsuario(cedula)">Iniciar sesión</button>
+                    </form>
+                </div>
+                <br>
+                <br>
+                <p class="frase1">Si no tienes una cuenta puedes crearla ahora mismo, pueder dar click </p> <p class="frase2">aquí</p>
+                <p></p>
+            </div>
+        </div>
+
+    </div>
+</div>
