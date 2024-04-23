@@ -21,6 +21,7 @@ import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar
 import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veterinario.component';
 import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
+import { LoginuserComponent } from './loginuser/loginuser.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
     ModificarUsuarioComponent,
     ListaVeterinarioComponent,
     ModificarVeterinarioComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginuserComponent
   ],
   imports: [
     BrowserModule,
