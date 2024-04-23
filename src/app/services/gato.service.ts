@@ -43,12 +43,12 @@ export class GatoService {
   }
 
   mascotaActivo(){
-    return this.http.get<number>('http://localhost:8090/mascota/count');
+    return this.http.get<number>('http://localhost:8090/mascota/activos');
 }
 
-mascotaInactivo(){
-  return this.http.get<number>('http://localhost:8090/mascota/inactivo');
-}
+  mascotaTotal(){
+    return this.http.get<number>('http://localhost:8090/mascota/total');
+  }
 
   
 }

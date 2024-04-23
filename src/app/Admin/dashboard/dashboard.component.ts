@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GatoService } from 'src/app/services/gato.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
+import { DrogaService } from 'src/app/services/droga.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,10 +13,13 @@ export class DashboardComponent implements OnInit{
   cantiVetiActi: any;
   cantiVetiInacti: any;
   cantiMascoActi: any;
-  cantiMascoInacti: any;
+  cantiMascoTotal: any;
+  ventasTot: any;
+  ganancias:any;
 
   constructor(
     private veterinarioService: VeterinarioService,
+    private drogaService: DrogaService,
     private gatoService: GatoService
   ) { }
 
@@ -33,8 +37,16 @@ export class DashboardComponent implements OnInit{
       this.cantiMascoActi = data;
     });
 
-    this.gatoService.mascotaInactivo().subscribe((data) => {
-      this.cantiMascoInacti = data;
+    this.gatoService.mascotaTotal().subscribe((data) => {
+      this.cantiMascoTotal = data;
+    });
+
+    this.drogaService.ventasTotales().subscribe((data) => {
+      this.ventasTot = data;
+    });
+
+    this.drogaService.ganancia().subscribe((data) => {
+      this.ganancias = data;
     });
 
   }
