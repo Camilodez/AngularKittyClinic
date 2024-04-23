@@ -47,5 +47,12 @@ export class ListaVeterinarioComponent {
     
   }
 
+  CambiarEstado(id: number) {
+    this.veterinarioService.cambiarEstado(id).subscribe({
+      next: (response) => {
+        window.location.reload();
+      }
+    });
+}
 
 }

@@ -5,7 +5,7 @@
 
 <h1 class="titulo">Lista de Veterinarios</h1>
 
-<button><a [routerLink]="['/modificar-veterinario']">Agregar veterinario</a></button>
+<a class="btn btn-info"  [routerLink]="['/modificar-veterinario']">Agregar veterinario</a>
 
 <div>
     
@@ -19,6 +19,7 @@
                     <th>Foto</th>
                     <th>Actualizar</th>
                     <th>Tratamientos</th>
+                    <th>Cambiar Estado</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
@@ -33,6 +34,8 @@
                     
                     <td><a class="btn btn-info" [routerLink]="['/modificar-veterinario',veterinario.id]" ><img src="/assets/img/editar.png" alt="Editar"></a></td>
                     <td><a [routerLink]="['/tratamientos-veterinario',veterinario.id]" >Ver Tratamientos</a></td>
+                    <td><a class="btn btn-info" (click)="CambiarEstado(veterinario.id)">{{veterinario.estado}}</a></td>
+                    
                     <td><a class="btn btn-danger" (click)="delete(veterinario.id)">Eliminar</a></td>
                 </tr>
                 </ng-container>

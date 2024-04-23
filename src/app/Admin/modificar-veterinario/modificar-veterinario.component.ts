@@ -35,6 +35,7 @@ export class ModificarVeterinarioComponent implements OnInit {
       password: '',
       foto: '',
       especialidad: '',
+      estado: true
     };
 
   
