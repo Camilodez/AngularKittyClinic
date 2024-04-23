@@ -20,6 +20,7 @@ import { PerfilUsuarioComponent } from './Usuario/perfil-usuario/perfil-usuario.
 import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar-usuario.component';
 import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veterinario.component';
 import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
+import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/mod
     PerfilUsuarioComponent,
     ModificarUsuarioComponent,
     ListaVeterinarioComponent,
-    ModificarVeterinarioComponent
+    ModificarVeterinarioComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

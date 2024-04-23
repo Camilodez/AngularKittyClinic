@@ -41,7 +41,14 @@ export class GatoService {
   delete(id:number){
     this.http.delete("http://localhost:8090/mascota/gato/"+id).subscribe();
   }
-  
+
+  mascotaActivo(){
+    return this.http.get<number>('http://localhost:8090/mascota/count');
+}
+
+mascotaInactivo(){
+  return this.http.get<number>('http://localhost:8090/mascota/inactivo');
+}
 
   
 }

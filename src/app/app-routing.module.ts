@@ -11,6 +11,7 @@ import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato
 import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar-usuario.component';
 import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veterinario.component'; 
 import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
+import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: 'mascotas', component: ListaGatosComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'modificar-usuario', component: ModificarUsuarioComponent },
   {path: 'modificar-usuario/:id', component: ModificarUsuarioComponent },
   {path: 'veterinarios', component: ListaVeterinarioComponent },
+  {path: 'dashboard', component: DashboardComponent },
   {path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
   {path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
 

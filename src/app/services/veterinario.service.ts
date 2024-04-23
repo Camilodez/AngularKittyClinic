@@ -39,5 +39,13 @@ export class VeterinarioService {
     delete(id: number): Observable<Veterinario> {
         return this.http.delete<Veterinario>(`http://localhost:8090/admin/delete/${id}`);
     }
+
+    veterinariosActivo(){
+        return this.http.get<number>('http://localhost:8090/admin/veterinario/activos/count');
+    }
+
+    veterinariosInactivo(){
+        return this.http.get<number>('http://localhost:8090/admin/veterinario/inactivos/count');
+    }
     
 }
