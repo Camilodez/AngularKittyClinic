@@ -33,6 +33,7 @@ table th, table td {
     text-align: left;
     padding: 8px;
     border-bottom: 1px solid #ddd;
+    margin-left: 10px;
 }
 
 table tbody tr:hover {
@@ -41,6 +42,14 @@ table tbody tr:hover {
 
 
 
+.usuario-info{
+    margin-left: 15%;
+    margin-right: 250px;
+    padding: 1rem;
+    background: #F5F5DC;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
 
 
 
