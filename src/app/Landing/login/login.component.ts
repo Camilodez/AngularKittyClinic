@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuarioservice.service';
-import { Usuario } from '../models/usuario.model';
+import { Usuario } from 'src/app/models/usuario.model';
 
 
 
