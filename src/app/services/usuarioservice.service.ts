@@ -14,7 +14,7 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   buscarPorId(id: number): Observable<Gato[]> {
-    return this.http.get<Gato[]>('http://localhost:8090/cliente/usuario/'+id);
+    return this.http.get<Gato[]>('http://localhost:8090/cliente/misgatos/'+id);
   }
 
   findAll(): Observable<Usuario[]> {
