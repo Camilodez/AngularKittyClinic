@@ -16,6 +16,8 @@ export class DashboardComponent implements OnInit{
   cantiMascoTotal: any;
   ventasTot: any;
   ganancias:any;
+  tratamientosUlti: any;
+  tratamientos: any;
 
   constructor(
     private veterinarioService: VeterinarioService,
@@ -47,6 +49,31 @@ export class DashboardComponent implements OnInit{
 
     this.drogaService.ganancia().subscribe((data) => {
       this.ganancias = data;
+    });
+
+    this.drogaService.tratamientosUltimos().subscribe((data) => {
+      this.tratamientosUlti = data;
+    });
+
+    this.drogaService.tratamientosCanti().subscribe((data) => {
+      this.tratamientos = data;
+      console.log(this.tratamientos);
+    });
+    
+
+    this.drogaService.tratamientosCanti().subscribe((data) => {
+      this.tratamientos = data;
+
+      // Lista para almacenar element[0]
+      const listaElement0: any[] = this.tratamientos.map(
+        (element: any) => element[0]
+      );
+
+      // Lista para almacenar element[1]
+      const listaElement1: any[] = this.tratamientos.map(
+        (element: any) => element[1]
+      );
+      
     });
 
   }

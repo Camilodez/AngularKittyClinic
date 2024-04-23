@@ -17,7 +17,6 @@ h1{
     caret-color: transparent;
 }
 
-
 .caja1:hover{
     cursor: pointer;
     box-shadow: 0 0 10px 5px rgba(192, 121, 121, 0.7);
@@ -119,6 +118,24 @@ h1{
     border-top-right-radius: 10px;
 }
   
+
+.caja7 {
+    position: absolute;
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 280px;
+    height: 200px;
+    background-color: rgb(80, 203, 225); /* Solo para visualización */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tam7{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
   
 .fondo {
     position: absolute; /* Establece la posición absoluta */
@@ -151,3 +168,47 @@ h1{
     font-size: 15px;
     color: white;
 }
+
+
+
+.tablaprinci {
+    margin: 20px auto; /* Centra la tabla horizontalmente */
+    width: 60%; /* Ancho de la tabla */
+    display: flex;
+    gap: 230px;
+  }
+  
+  .tabla {
+    width: 100%;
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+  }
+  
+  .tabla th,
+  .tabla td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Borde inferior de las filas */
+  }
+  
+  .tabla th {
+    background-color: #4CAF50; /* Color de fondo del encabezado */
+    color: white; /* Color del texto del encabezado */
+  }
+  
+  /* Estilo para las filas impares */
+  .tabla tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Color de fondo de las filas impares */
+  }
+  
+  /* Estilo al pasar el cursor sobre las filas */
+  .tabla tbody tr:hover {
+    background-color: #ddd; /* Color de fondo al pasar el cursor */
+  }
+  
+  /* Estilo para las celdas de cantidad */
+  .tabla td:nth-child(2) {
+    text-align: center; /* Centra el texto en las celdas de cantidad */
+    color: #4CAF50; /* Color del texto de las celdas de cantidad */
+    font-weight: bold; /* Texto en negrita en las celdas de cantidad */
+  }
+  

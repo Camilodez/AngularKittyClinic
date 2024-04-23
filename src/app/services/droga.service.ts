@@ -20,4 +20,12 @@ export class DrogaService {
   ganancia(){
     return this.http.get<number>('http://localhost:8090/droga/ganancias');
   }
+
+  tratamientosUltimos(){
+    return this.http.get<number>('http://localhost:8090/tratamiento/realizados');
+  }
+
+  tratamientosCanti(){
+    return this.http.get<Object[]>('http://localhost:8090/tratamiento/por_droga');
+  }
 }

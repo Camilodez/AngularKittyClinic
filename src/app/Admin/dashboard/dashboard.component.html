@@ -47,14 +47,14 @@
             </div>
         </div>
 
-        <div class="tam5">
+
             <div class="caja5">
                 <i class="contenido contenido1"> {{ ventasTot }}<p class="cont">Ventas</p></i>
                 <i class="fa-solid fa-dollar-sign contenido"></i>
                 <div class="fondo">
                     <p class="fondocont">Ventas Totales</p>
                 </div>
-            </div>
+
         </div>
 
         <div class="tam6">
@@ -67,4 +67,35 @@
             </div>
         </div>
     </div>
-</div>
+
+
+
+
+    <div class="tablaprinci">
+
+        <div class="tam7">
+            <div class="caja7">
+                <i class="contenido contenido1"> {{ tratamientosUlti }}<p class="cont">Tratamientos</p></i>
+                <i class="fa-solid fa-kit-medical contenido"></i>
+                <div class="fondo">
+                    <p class="fondocont">Tratamientos Realizados en el ultimo mes</p>
+                </div>
+            </div>
+        </div>
+
+        <table id="mytabla" class="tabla">
+            <thead>
+                <tr>
+                    <th>Tratamientos</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trat of tratamientos">
+                    <td>{{ trat[0] }}</td>
+                    <td>{{ trat[1] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
