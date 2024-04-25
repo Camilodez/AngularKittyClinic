@@ -14,6 +14,7 @@ import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/mod
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { LoginComponent } from './Landing/login/login.component';
 import { LoginuserComponent } from './loginuser/loginuser.component';
+import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-veterinario.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent },
   {path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
   {path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
+  {path: 'login-veterinario', component: LoginVeterinarioComponent }
 
 ];
 
