@@ -36,8 +36,8 @@ export class VeterinarioService {
         return this.http.put<Veterinario>('http://localhost:8090/admin/update/veterinario', veterinario);
     }
 
-    delete(id: number): Observable<Veterinario> {
-        return this.http.delete<Veterinario>(`http://localhost:8090/admin/delete/${id}`);
+    delete(id: number){
+        return this.http.delete(`http://localhost:8090/admin/delete/${id}`);
     }
 
     veterinariosActivo(){

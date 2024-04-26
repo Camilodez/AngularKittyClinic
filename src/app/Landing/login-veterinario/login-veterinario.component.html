@@ -2,7 +2,7 @@
     <div class="cajaPrincipal">
 
         <div class="cajaFondo">
-           
+            <img src="../assets/img/veterinariologin.jpg" alt="Gato Login" class="gatoLogin">
         </div>
 
 
@@ -13,7 +13,8 @@
 
             <div class="login__container">
                 <img src="../assets/img/logo.png" alt="Gato logo" class="logo">
-                <h1>Inicio</h1>
+                <br>
+                <h1 class = "titulo">Inicio</h1>
                
                 <p></p>
                 <div class="formdesign">
@@ -23,9 +24,11 @@
                         <div class="login_container_input">
 
                             <i class="fas fa-user"></i>
-                            <input class="campo-correo" [(ngModel)]="cedula" type="number" name="username" id="username" placeholder="Correo Electrónico" required>
+                           
+                            <input class="campo-correo" [(ngModel)]="cedula" type="number" name="username" id="username" placeholder="Cedula" required>
+                            <i class="fa-solid fa-lock"></i> 
                             <input type="text" class="campo-contrasena" [(ngModel)]="password" name="password" id="password"  placeholder="Contraseña" required>
-
+                          
                         </div>
                         <button type="submit" class="login_container_button" >Iniciar sesión</button>
                     </form>

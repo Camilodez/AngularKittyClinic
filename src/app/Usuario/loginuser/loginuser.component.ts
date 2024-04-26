@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UsuarioService } from '../services/usuarioservice.service';
-import { Gato } from '../models/gato.model';
-import { Usuario } from '../models/usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Gato } from 'src/app/models/gato.model';
 
 
 
