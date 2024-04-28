@@ -13,7 +13,7 @@ import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veter
 import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { LoginComponent } from './Landing/login/login.component';
-import { LoginuserComponent } from './loginuser/loginuser.component';
+import { LoginuserComponent } from './Usuario/loginuser/loginuser.component';
 import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-veterinario.component';
 
 

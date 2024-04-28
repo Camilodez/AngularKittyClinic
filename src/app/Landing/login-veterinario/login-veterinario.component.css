@@ -5,10 +5,15 @@
     overflow-x: hidden;
 }
 
+.titulo{
+    font-size: 50px;
+    animation: zoomIn 1s ease forwards;
+}
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .animated {
@@ -34,9 +39,10 @@
 
 .logo{
     width: 160px;
-    height: 100px;
+    height: 120px;
     padding-top: 6%;
     caret-color: transparent; /* Ocultar la barra titilante */
+    animation: zoomIn 1s ease forwards;
 }
 
 .cajaPrincipal {
@@ -52,6 +58,7 @@
     display: inline;
     font-size: 20px;
     font-family: "Noto Sans JP", sans-serif;
+    animation: zoomIn 3s ease forwards;
     
 }
 
@@ -63,6 +70,7 @@
     cursor: pointer;
     font-size: 20px;
     font-family: "Noto Sans JP", sans-serif;
+    animation: zoomIn 3s ease forwards;
 }
 
 .formdesign{
@@ -71,6 +79,7 @@
     padding-bottom: 50px;
     border-radius: 5%;
     caret-color: transparent; /* Ocultar la barra titilante */
+    animation: zoomIn 0.75s ease forwards;
 }
 
 .login_container_input{
