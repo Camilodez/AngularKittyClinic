@@ -112,7 +112,7 @@
 
 /* Agrega estilos adicionales según sea necesario */
 
-.campo-correo {
+.ced {
     /* Estilos básicos */
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -124,9 +124,7 @@
     color: #333; /* Color del texto */
 }
 
-.campo-correo:focus, .login_container_button:hover {
-    animation: pulse 0.75s infinite alternate;
-}
+
 
 @keyframes pulse {
     from {
