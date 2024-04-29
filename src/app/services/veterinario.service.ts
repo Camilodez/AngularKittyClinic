@@ -10,12 +10,14 @@ import axios, { AxiosResponse } from "axios";
 
 export class VeterinarioService {
 
+    private URL: string = "http://localhost:8090/admin"
+
 
 
     constructor(private http: HttpClient) { }
 
     findAll(): Promise<AxiosResponse<Veterinario[]>> {
-        return axios.get('http://localhost:8090/admin/veterinario');
+        return axios.get(`${this.URL}/veterinario`);
     }
 
     add(veterinario: Veterinario): Observable<Veterinario> {
@@ -51,6 +53,17 @@ export class VeterinarioService {
     cambiarEstado(id: number): Observable<any> {
         return this.http.put(`http://localhost:8090/admin/estado/${id}`, null);
       }
+
+    async login(correo: string, password: string): Promise<Veterinario|null> {
+        try{
+            const response = await axios.post<Veterinario>(`${this.URL}/login`, { correo, password });
+            return response.data;
+        }
+        catch(error){
+            console.error(error);
+            return null;
+        }
+    }
     
 
 

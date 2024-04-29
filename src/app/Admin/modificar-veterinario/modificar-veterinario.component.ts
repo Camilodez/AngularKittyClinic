@@ -32,6 +32,7 @@ export class ModificarVeterinarioComponent implements OnInit {
       cedula: 0,
       nombre: '',
       apellido: '',
+      correo: '',
       password: '',
       foto: '',
       especialidad: '',
