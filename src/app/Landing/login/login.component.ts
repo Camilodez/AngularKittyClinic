@@ -12,7 +12,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class LoginComponent {
   listaUsuarios!: Usuario[];
-  cedula: number = 0;
+  cedula!: number;
 
   constructor(
     private usuarioservice: UsuarioService, 

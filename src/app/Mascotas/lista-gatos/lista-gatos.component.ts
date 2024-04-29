@@ -3,6 +3,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Gato } from 'src/app/models/gato.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
 import { GatoService } from 'src/app/services/gato.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-lista-gatos',
@@ -36,6 +37,7 @@ export class ListaGatosComponent {
   constructor(private gatoService: GatoService, private http: HttpClient,
   ) {
     const vetDataString = sessionStorage.getItem("veterinario");
+    private sharedService: SharedService
 
     if (vetDataString !== null) {
       // Convertir el JSON del sessionStorage en un objeto de tipo VeterinarioData
@@ -71,6 +73,7 @@ export class ListaGatosComponent {
   vet: Veterinario | null = null;
 
   ngOnInit(): void {
+    this.sharedService.mostrarOcultar = true;
     this.buscarGatos();
     console.log("Veterinario:", this.vet);
   }
