@@ -5,6 +5,7 @@ import { Veterinario } from 'src/app/models/veterinario.model';
 import { GatoService } from 'src/app/services/gato.service';
 import { SharedService } from 'src/app/shared.service';
 
+
 @Component({
   selector: 'app-lista-gatos',
   templateUrl: './lista-gatos.component.html',
@@ -13,6 +14,7 @@ import { SharedService } from 'src/app/shared.service';
 export class ListaGatosComponent {
 
 
+  // para el sidebar de vineta
   @ViewChild('sidebar') sidebar!: ElementRef;
   @ViewChild('vineta') vineta!: ElementRef;
 

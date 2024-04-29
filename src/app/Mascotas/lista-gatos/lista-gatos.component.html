@@ -43,9 +43,9 @@
 </div>
 
 <div class="sidebar"  #sidebar (mouseleave)="ocultarSidebar()">
-    <div class="profile">
+    <div *ngIf="vet" class="profile">
         <img src="/assets/img/fotodelveterinario.jpg" alt="Foto del Veterinario">
-        <h3>Nombre del Veterinario</h3>
+        <h3>{{vet.nombre}}</h3>
     </div>
     <ul>
         <div class="botonesvi">
