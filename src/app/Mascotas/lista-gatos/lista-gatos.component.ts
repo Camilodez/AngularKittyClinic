@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Gato } from 'src/app/models/gato.model';
 import { GatoService } from 'src/app/services/gato.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-lista-gatos',
@@ -34,10 +35,12 @@ export class ListaGatosComponent {
   ListaGatos: Gato[] = [];
   constructor(
     private gatoService: GatoService,
-    private http: HttpClient
+    private http: HttpClient,
+    private sharedService: SharedService
   ) { }
 
   ngOnInit(): void {
+    this.sharedService.mostrarOcultar = true;
     this.buscarGatos();
   }
   buscarGatos() {

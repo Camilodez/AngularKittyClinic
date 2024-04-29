@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GatoService } from 'src/app/services/gato.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
 import { DrogaService } from 'src/app/services/droga.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +23,8 @@ export class DashboardComponent implements OnInit{
   constructor(
     private veterinarioService: VeterinarioService,
     private drogaService: DrogaService,
-    private gatoService: GatoService
+    private gatoService: GatoService,
+    private sharedService: SharedService
   ) { }
 
 
@@ -75,6 +77,8 @@ export class DashboardComponent implements OnInit{
       );
       
     });
+
+    this.sharedService.mostrarOcultar = true;
 
   }
 }

@@ -3,7 +3,7 @@
         <img src="/assets/img/logo.png" alt="logo" class="logo">
         <div class="nav">
             <div class="opciones">
-                <a [routerLink]="['/home']">Inicio</a> <!-- Asumiendo que estás usando rutas de Angular, cambia th:href a href -->
+                <a [routerLink]="['/home']">Inicio</a>
             </div>
             <div class="opciones">
                 <a href="">Servicios</a>
@@ -22,6 +22,13 @@
                 <a href="">Sobre Nosotros</a>
             </div>
           
+            <!-- header.component.html -->
+            <div *ngIf="sharedService.mostrarOcultar">
+                <a [routerLink]="['/mascotas']">
+                    <i class="fas fa-cat"></i>
+                </a>
+            </div>
+
             <div>
                 <a [routerLink]="['/login']">
                     <i class="fas fa-user"></i>
