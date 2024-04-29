@@ -50,20 +50,7 @@ export class InfoComponent {
   };
 
   async displayinfo(id: number) {
-  //  try{
-  //   const response: AxiosResponse = await axios.get(`http://localhost:8090/mascota/gato/${id}`);
-  //   console.log(response);
-  //   this.gato = response.data;
-  //  }
-  //  catch(error){
-  //   console.error(error);
-  //  }
-
     this.gato = (await this.gatoService.findById(id)).data;
-  }
-
-  onSubmit() {
-  
   }
 
 }
