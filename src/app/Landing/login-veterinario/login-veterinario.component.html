@@ -6,9 +6,6 @@
         </div>
 
 
-  
-
-        
         <div class="login">
 
             <div class="login__container">
@@ -24,13 +21,13 @@
                         <div class="login_container_input">
 
                             <i class="fas fa-user"></i>
-                           
-                            <input class="campo-correo" [(ngModel)]="cedula" type="number" name="username" id="username" placeholder="Cedula" required>
+
+                            <input class="campo-correo" [(ngModel)]="correo" type="text" name="username" id="username" placeholder="Correo Electronico" required>
                             <i class="fa-solid fa-lock"></i> 
-                            <input type="text" class="campo-contrasena" [(ngModel)]="password" name="password" id="password"  placeholder="Contraseña" required>
+                            <input type="password " class="campo-contrasena" [(ngModel)]="password" name="password" id="password"  placeholder="Contraseña" required>
                           
                         </div>
-                        <button type="submit" class="login_container_button" >Iniciar sesión</button>
+                        <button type="submit" (click)="loginVet(correo, password)" class="login_container_button" >Iniciar sesión</button>
                     </form>
                 </div>
                 <br>
