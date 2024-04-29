@@ -34,10 +34,9 @@ export class ListaGatosComponent {
 
 
   ListaGatos: Gato[] = [];
-  constructor(private gatoService: GatoService, private http: HttpClient,
+  constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService
   ) {
     const vetDataString = sessionStorage.getItem("veterinario");
-    private sharedService: SharedService
 
     if (vetDataString !== null) {
       // Convertir el JSON del sessionStorage en un objeto de tipo VeterinarioData
