@@ -67,10 +67,6 @@ export class ListaGatosComponent {
     }
   }
 
-
-  
-  
-
   vet: Veterinario | null = null;
 
   ngOnInit(): void {

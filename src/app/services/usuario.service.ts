@@ -25,8 +25,6 @@ export class UsuarioService {
     return this.http.get<Usuario[]>('http://localhost:8090/cliente/login');
   }
 
-  
-
   actualizar(usuario: Usuario): Promise<AxiosResponse<Usuario>> {
     return axios.put<Usuario>(`${'http://localhost:8090/cliente/update'}/${usuario.id}`, usuario);
   }
