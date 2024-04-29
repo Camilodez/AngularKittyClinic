@@ -11,6 +11,8 @@ import { Usuario } from 'src/app/models/usuario.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  MostrarOcultar = false;
   listaUsuarios!: Usuario[];
   cedula!: number;
 

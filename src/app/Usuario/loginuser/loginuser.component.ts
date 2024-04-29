@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Gato } from 'src/app/models/gato.model';
+import { SharedService } from 'src/app/shared.service';
 
 
 
@@ -12,7 +13,10 @@ import { Gato } from 'src/app/models/gato.model';
 })
 export class LoginuserComponent implements OnInit{
 
-  constructor(private route: ActivatedRoute, private usuarioService: UsuarioService) { 
+
+  constructor(private route: ActivatedRoute, 
+    private usuarioService: UsuarioService,
+    private sharedService: SharedService) { 
   }
 
   // cliente!: Usuario;
@@ -30,5 +34,7 @@ export class LoginuserComponent implements OnInit{
         }
       );
     });
+
+    this.sharedService.mostrarOcultar = false;
   }
 }
