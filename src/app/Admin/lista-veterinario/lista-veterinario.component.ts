@@ -12,7 +12,7 @@ import { VeterinarioService } from 'src/app/services/veterinario.service';
 export class ListaVeterinarioComponent {
 
 
-
+  vet: Veterinario | null = null;
   
   
   constructor(
@@ -26,11 +26,22 @@ export class ListaVeterinarioComponent {
 
   ngOnInit(): void {
     this.searchVets();
+    this.obtenerDatosVeterinario();
   }
 
   async searchVets() {
     this.ListaVeterinarios = (await this.veterinarioService.findAll()).data;
     console.log(this.ListaVeterinarios);
+  }
+
+
+  obtenerDatosVeterinario(): void {
+    const vetDataString = sessionStorage.getItem("veterinario");
+
+    if (vetDataString !== null) {
+      const vetData: Veterinario = JSON.parse(vetDataString);
+      this.vet = vetData; // Asigna los datos del veterinario a 'vet'
+    }
   }
 
 
@@ -47,12 +58,12 @@ export class ListaVeterinarioComponent {
     
   }
 
-  CambiarEstado(id: number) {
+  CambiarEstado(id: number): void {
     this.veterinarioService.cambiarEstado(id).subscribe({
       next: (response) => {
         window.location.reload();
       }
     });
-}
+  }
 
 }
