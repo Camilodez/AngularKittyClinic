@@ -28,4 +28,10 @@ export class DrogaService {
   tratamientosCanti(){
     return this.http.get<Object[]>('http://localhost:8090/tratamiento/por_droga');
   }
+
+  drogas(): Observable<string[]>{
+    return this.http.get<string[]>('http://localhost:8090/droga/nombre');
+  }
+
+
 }

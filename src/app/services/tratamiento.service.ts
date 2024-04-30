@@ -22,12 +22,14 @@ export class TratamientoService {
     return axios.get(`http://localhost:8090/tratamiento/gato/${id}`);
   }
 
-  ObtenerTratamientosGato(id: number): Observable<Tratamiento[]>{
-    return this.http.get<Tratamiento[]>(`http://localhost:8090/tratamiento/gato/${id}`);
+  ObtenerTratamientosGato(id: number){
+    return this.http.get<any[]>(`http://localhost:8090/tratamiento/informacion/gato/${id}`);
   }
 
   obtenerTratamientosVet(id: number) {
     return this.http.get<Object[]>(`http://localhost:8090/tratamiento/informacion/veterinario/${id}`);
   }
+
+ 
 
 }

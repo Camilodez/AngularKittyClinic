@@ -1,1 +1,15 @@
-<p>crear-tratamiento works!</p>
+
+
+
+<!-- crear-tratamiento.component.html -->
+
+<form [formGroup]="tratamientoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="droga">Droga:</label>
+      <select formControlName="droga" id="droga" class="form-control">
+        <option *ngFor="let droga of drogas" [value]="droga">{{ droga }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Tratamiento</button>
+  </form>
+  
