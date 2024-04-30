@@ -1,41 +1,35 @@
 <div class="contenedor">
     <div class="cajaPrincipal">
-
         <div class="cajaFondo">
             <img src="../assets/img/veterinariologin.jpg" alt="Gato Login" class="gatoLogin">
         </div>
-
-
         <div class="login">
-
             <div class="login__container">
                 <img src="../assets/img/logo.png" alt="Gato logo" class="logo">
                 <br>
-                <h1 class = "titulo">Inicio</h1>
-               
+                <h1 class="titulo">Inicio</h1>
                 <p></p>
-                <div class="formdesign">
 
+                <div class="formdesign">
 
                     <form name="form" action="/cliente/registro" method="post">
                         <div class="login_container_input">
-
                             <i class="fas fa-user"></i>
-
                             <input class="campo-correo" [(ngModel)]="correo" type="text" name="username" id="username" placeholder="Correo Electronico" required>
-                            <i class="fa-solid fa-lock"></i> 
-                            <input type="password " class="campo-contrasena" [(ngModel)]="password" name="password" id="password"  placeholder="Contraseña" required>
-                          
+                            <br>
+                            <span class="mostrar-contrasena" (click)="toggleMostrarContrasena()">
+                                <i class="far" [ngClass]="{'fa-eye': !mostrarContrasena, 'fa-eye-slash': mostrarContrasena}"></i>
+                            </span>
+                            <input type="{{ mostrarContrasena ? 'text' : 'password' }}" class="campo-contrasena" [(ngModel)]="password" name="password" id="password" placeholder="Contraseña" required>
+                            
                         </div>
-                        <button type="submit" (click)="loginVet(correo, password)" class="login_container_button" >Iniciar sesión</button>
+                        <button type="submit" (click)="loginVet(correo, password)" class="login_container_button">Iniciar sesión</button>
                     </form>
                 </div>
                 <br>
                 <br>
-                <p class="frase1">Eres un Usuario? puedes iniciar sesión haciendo click </p> <p class="frase2" [routerLink]="['/login']">aquí</p>
-               
+                <p class="frase1">Eres un Usuario? Puedes iniciar sesión haciendo click </p> <p class="frase2" [routerLink]="['/login']">aquí</p>
             </div>
         </div>
-
     </div>
 </div>

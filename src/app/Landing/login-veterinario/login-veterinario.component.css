@@ -11,22 +11,7 @@
 }
 
 
-@keyframes zoomIn {
-    from { opacity: 0; transform: scale(0.5); }
-    to { opacity: 1; transform: scale(1); }
-}
 
-.animated {
-    opacity: 0; /* Inicia los elementos como invisibles */
-    animation: fadeIn 0.8s ease forwards; /* Aplica la animación */
-}
-
-/* Ejemplo de clases con diferentes retrasos */
-.delay-1 { animation-delay: 0.4s; }
-.delay-2 { animation-delay: 0.8s; }
-.delay-3 { animation-delay: 1.2s; }
-.delay-4 { animation-delay: 1.6s; }
-.delay-5 { animation-delay: 2.0s; }
 
 .contenedor{
     margin: 0;
@@ -151,17 +136,6 @@
 }
 
 
-@keyframes pulse {
-    from {
-        transform: scale(1);
-        box-shadow: none;
-    }
-    to {
-        transform: scale(1.05);
-        box-shadow: 0 0 8px rgba(255, 206, 86, 0.8);
-    }
-}
-
 
 /* Estilos al enfocar */
 .campo-correo:focus {
@@ -196,7 +170,11 @@
     margin-right:  8px;
 }
 
-.fa-lock{
+.fa-eye{
+    margin-right:  8px;
+}
+
+.fa-eye-slash{
     margin-right:  8px;
 }
 
