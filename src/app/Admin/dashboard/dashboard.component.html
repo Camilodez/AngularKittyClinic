@@ -69,11 +69,26 @@
     </div>
 
 
-
-
     <div class="tablaprinci">
+        <div class="botonesadmin">
+            <div class="vervets">
+                <a [routerLink]="['/veterinarios']">
+                    <i class="fa-solid fa-user-doctor">  Veterinarios  </i>
+                </a>
+            </div>
 
+            <div class="vermasco">
+                <a [routerLink]="['/mascotas']">
+                    <i class="fa-solid fa-cat">  Mascotas  </i>
+                </a>
+            </div>
 
+            <div class="veruser">
+                <a [routerLink]="['/lista-usuarios']">
+                    <i class="fa-solid fa-users">  Usuarios  </i>
+                </a>
+            </div>
+        </div>
 
         <table id="mytabla" class="tabla">
             <thead>
@@ -100,4 +115,7 @@
             </div>
         </div>
     </div>
+
+
+    
     
