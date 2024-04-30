@@ -26,6 +26,12 @@ import { LoginuserComponent } from './Usuario/loginuser/loginuser.component';
 import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-veterinario.component';
 import { CrearTratamientoComponent } from './Mascotas/crear-tratamiento/crear-tratamiento.component';
 import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratamientos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -49,13 +55,19 @@ import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratam
     LoginuserComponent,
     LoginVeterinarioComponent,
     CrearTratamientoComponent,
-    VerTratamientosComponent
+    VerTratamientosComponent,
+    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

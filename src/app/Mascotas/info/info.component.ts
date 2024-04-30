@@ -36,8 +36,8 @@ export class InfoComponent {
     this.gatoForm.patchValue(this.gato);
     console.log(this.gato)
   }
-
-  tratamientos: Tratamiento[] = [];
+  nombresDrogas: string[] = [];
+  tratamientos: any[] = [];
   
   gatoForm!: FormGroup;
 
@@ -58,9 +58,10 @@ export class InfoComponent {
   }
 
   cargarTratamientos(): void {
-    this.tratamientoService.ObtenerTratamientosGato(this.gato.id).subscribe({
+    const gatoId = this.gato.id;  // Asegúrate de que gato.id esté disponible
+    this.tratamientoService.ObtenerTratamientosGato(gatoId).subscribe({
       next: (data) => {
-        this.tratamientos = data;
+        this.nombresDrogas = data.map(item => item[1]);  // Extraer nombre de la droga, asumiendo que siempre está en posición 1 de cada sub-array
       },
       error: (e) => console.error(e)
     });

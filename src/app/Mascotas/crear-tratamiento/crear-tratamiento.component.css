@@ -1,0 +1,15 @@
+/* crear-tratamiento.component.css */
+.form-group {
+    width: 25%;
+    height: 20%;
+    margin: auto; /* Centra el formulario en la página */
+}
+
+/* Estilizar el formulario en sí, si deseas que todo el formulario se ajuste */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 304px; /* Esto hace que tome toda la altura de la pantalla */
+}

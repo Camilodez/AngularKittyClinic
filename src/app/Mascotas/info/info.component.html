@@ -4,6 +4,10 @@
 
 <br><br><br>
 
+
+<button><a [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a></button>
+
+
 <section id="historial" class="infogatuna">
     <div class="part1">
         <!-- Nuevo contenedor para datos-gato y foto-gato -->
@@ -11,11 +15,11 @@
         <div class="contenedor-gatos">
             <div class="obersaciones-gato"> 
                 <h3 class="h3-obser">Tratamientos</h3>
-               <ul>
-                <li *ngFor="let tratamiento of tratamientos">
-                    {{ tratamiento.id }} - {{ tratamiento.veterinario }}
-                </li>
-               </ul>
+                <ul>
+                    <li *ngFor="let nombreDroga of nombresDrogas">
+                      {{ nombreDroga }}
+                    </li>
+                  </ul>
             </div>
             <div class="foto-gato">
                 <img class="gatos" [src]="gato.foto" alt="">
