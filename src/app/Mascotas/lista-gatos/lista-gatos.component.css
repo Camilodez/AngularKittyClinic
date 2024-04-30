@@ -2,6 +2,49 @@
 
 /*-------------------------------------------------------------------------------------------------*/
 
+.estilobarra{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 100px;
+    gap: 10%;
+}
+
+.barrabusqueda {
+    width: 400px; /* Ancho ajustable según tu preferencia */
+    height: 40px; /* Altura ajustable según tu preferencia */
+    background-color: #f2f2f2; /* Color de fondo similar al de Google */
+    border: 1px solid #ccc; /* Borde delgado */
+    border-radius: 50px; /* Bordes redondeados */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 0 10px; /* Espacio interno para el contenido */
+    margin-top: 1%;
+  }
+  
+  .barrabusqueda input[type="text"] {
+    flex: 1; /* El input ocupa todo el espacio restante */
+    height: 100%;
+    border: none; /* Sin borde para el input */
+    outline: none; /* Sin contorno de enfoque */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  .barrabusqueda button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno de enfoque */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  }
+
+
+h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+}
 
 .estado{
     font-family: 'Pacifico', cursive;

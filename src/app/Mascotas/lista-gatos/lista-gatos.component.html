@@ -1,15 +1,15 @@
 <app-header></app-header>
 
 <div id="linea"></div>
-<br>
+<br><br>
 
-<input type="text" placeholder="Buscar por nombre" [(ngModel)]="filtroNombre">
+<div class="estilobarra">
+    <h1 class="titulo">Lista de Pacientes</h1>
+    <input class="barrabusqueda" type="text" placeholder="Busca por nombre" [(ngModel)]="filtroNombre">
+</div>
 
-
-<h1 class="titulo">Lista de Pacientes</h1>
 
 <div class="tabla-pacientes">
-    <input type="text" placeholder="Buscar por nombre" [(ngModel)]="filtroNombre">
     <table>
         <thead>
             <tr>

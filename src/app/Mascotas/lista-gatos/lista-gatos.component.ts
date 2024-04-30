@@ -14,9 +14,6 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class ListaGatosComponent {
 
-  
-
-
   // para el sidebar de vineta
   @ViewChild('sidebar') sidebar!: ElementRef;
   @ViewChild('vineta') vineta!: ElementRef;

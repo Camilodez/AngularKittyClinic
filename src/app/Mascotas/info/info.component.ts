@@ -32,9 +32,11 @@ export class InfoComponent {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.gatoForm.patchValue(this.gato);
+    this.trat = (await this.tratamientoService.TratamientoGato(this.gato.id)).data;
     console.log(this.gato)
+    console.log("Tratamiento"+ this.trat)
   }
   nombresDrogas: string[] = [];
   tratamientos: any[] = [];
@@ -52,6 +54,8 @@ export class InfoComponent {
     usuario: undefined,
     tratamientos: []
   };
+
+  trat?: Tratamiento;
 
   async displayinfo(id: number) {
     this.gato = (await this.gatoService.findById(id)).data;
