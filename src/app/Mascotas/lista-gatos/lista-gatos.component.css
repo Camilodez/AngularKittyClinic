@@ -3,6 +3,17 @@
 /*-------------------------------------------------------------------------------------------------*/
 
 
+.estado{
+    font-family: 'Pacifico', cursive;
+    font-size: 14px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color:#24778c;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 .titulo{
     text-align: center;
 }
