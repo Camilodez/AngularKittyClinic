@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { DrogaService } from 'src/app/services/droga.service';
-import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-crear-tratamiento',
@@ -9,28 +8,28 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./crear-tratamiento.component.css']
 })
 export class CrearTratamientoComponent implements OnInit {
-  tratamientoForm!: FormGroup;
-  drogas: string[] = [];  // Ajusta esto si las drogas son objetos
+  // Declaración correcta de tratamientoForm como propiedad de la clase.
+  tratamientoForm = new FormGroup({
+    fecha: new FormControl(''),
+    veterinario: new FormControl(''),
+    gato: new FormControl(''),
+    droga: new FormControl('')
+  });
 
-  constructor(private drogaService: DrogaService) { }
+  drogas: string[] = [];
+  gato = { nombre: '' };  // Asegúrate de inicializar esto correctamente, posiblemente con datos de un servicio
+  veterinario = { nombre: '' }; // Inicializa de forma similar si es necesario
+
+  constructor(private drogaService: DrogaService) {}
 
   ngOnInit(): void {
-    this.tratamientoForm = new FormGroup({
-      droga: new FormControl('', Validators.required)
-    });
-
     this.drogaService.drogas().subscribe(
-      (data) => {
-        this.drogas = data;
-      },
-      (error) => {
-        console.error('Error al cargar las drogas', error);
-        // Mostrar algún mensaje de error en la UI
-      }
+      drogas => this.drogas = drogas,
+      error => console.error('Error al cargar las drogas', error)
     );
   }
 
   onSubmit(): void {
-    console.log(this.tratamientoForm.value);
+    console.log(this.tratamientoForm.value);  // Esto imprimirá correctamente el valor del formulario
   }
 }

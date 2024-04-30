@@ -32,6 +32,11 @@ export class VeterinarioService {
     searchbyId(id: number):Promise<AxiosResponse<Veterinario>> {
       return axios.get(`http://localhost:8090/admin/veterinario/${id}`);
     }
+
+    findById(id: number): Observable<Veterinario> {
+        return this.http.get<Veterinario>(`http://localhost:8090/admin/veterinario/${id}`);
+        
+    }
     
 
     update(veterinario:Veterinario): Observable<Veterinario> {

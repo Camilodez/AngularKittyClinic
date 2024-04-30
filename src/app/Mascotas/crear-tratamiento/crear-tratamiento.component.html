@@ -1,10 +1,14 @@
-
-
-
-<!-- crear-tratamiento.component.html -->
-
 <form [formGroup]="tratamientoForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
+      <label for="fecha">Fecha:</label>
+      <input type="date" formControlName="fecha" id="fecha" class="form-control">
+  
+      <label for="veterinario">Veterinario</label>
+      <input type="text" formControlName="veterinario" id="veterinario" class="form-control" placeholder="Nombre del veterinario">
+  
+      <label for="gato">Gato</label>
+      <input type="text" formControlName="gato" id="gato" class="form-control" placeholder="Nombre del gato">
+  
       <label for="droga">Droga:</label>
       <select formControlName="droga" id="droga" class="form-control">
         <option *ngFor="let droga of drogas" [value]="droga">{{ droga }}</option>
