@@ -13,4 +13,8 @@ export class TratamientoService {
     return axios.get(`http://localhost:8090/tratamiento/veterinario/${id}`);
   }
 
+  TratamientoGato(id : number): Promise<AxiosResponse<Tratamiento>> {
+    return axios.get(`http://localhost:8090/tratamiento/gato/${id}`);
+  }
+
 }
