@@ -3,11 +3,13 @@
 <div id="linea"></div>
 <br>
 
+<input type="text" placeholder="Buscar por nombre" [(ngModel)]="filtroNombre">
 
 
 <h1 class="titulo">Lista de Pacientes</h1>
 
 <div class="tabla-pacientes">
+    <input type="text" placeholder="Buscar por nombre" [(ngModel)]="filtroNombre">
     <table>
         <thead>
             <tr>
@@ -22,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            <ng-container *ngFor="let gato of ListaGatos">
+            <ng-container *ngFor="let gato of filtrarGatosPorNombre()">
             <tr>
                 <td>{{gato.nombre}}</td>
                 <td>{{gato.edad}}</td>

@@ -14,6 +14,8 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class ListaGatosComponent {
 
+  
+
 
   // para el sidebar de vineta
   @ViewChild('sidebar') sidebar!: ElementRef;
@@ -36,6 +38,7 @@ export class ListaGatosComponent {
   }
 
 
+  filtroNombre: string = '';
   ListaGatos: Gato[] = [];
   constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService, private route: ActivatedRoute
   ) {
@@ -92,6 +95,16 @@ export class ListaGatosComponent {
         window.location.reload();
       }
     });
+  }
+
+
+  filtrarGatosPorNombre(): Gato[] {
+    if (!this.filtroNombre.trim()) {
+      return this.ListaGatos;
+    }
+    return this.ListaGatos.filter(gato =>
+      gato.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase())
+    );
   }
 
 }
