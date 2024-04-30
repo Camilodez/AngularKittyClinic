@@ -15,6 +15,8 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { LoginComponent } from './Landing/login/login.component';
 import { LoginuserComponent } from './Usuario/loginuser/loginuser.component';
 import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-veterinario.component';
+import { CrearTratamientoComponent } from './Mascotas/crear-tratamiento/crear-tratamiento.component';
+import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratamientos.component';
 
 
 const routes: Routes = [
@@ -34,7 +36,9 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent },
   {path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
   {path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
-  {path: 'login-veterinario', component: LoginVeterinarioComponent }
+  {path: 'login-veterinario', component: LoginVeterinarioComponent },
+  {path: 'veterinario/:id/crear-tratamiento', component: CrearTratamientoComponent},
+  {path: 'ver-tratamientos/veterinario/:id', component: VerTratamientosComponent}
 
 ];
 

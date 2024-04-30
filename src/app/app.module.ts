@@ -24,6 +24,8 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 import { LoginuserComponent } from './Usuario/loginuser/loginuser.component';
 import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-veterinario.component';
+import { CrearTratamientoComponent } from './Mascotas/crear-tratamiento/crear-tratamiento.component';
+import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratamientos.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-vet
     ModificarVeterinarioComponent,
     DashboardComponent,
     LoginuserComponent,
-    LoginVeterinarioComponent
+    LoginVeterinarioComponent,
+    CrearTratamientoComponent,
+    VerTratamientosComponent
   ],
   imports: [
     BrowserModule,
