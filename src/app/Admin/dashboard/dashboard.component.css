@@ -6,7 +6,8 @@ h1{
     text-align: center;
     padding-top: 35px;
 }
-  
+
+
   
   /*comportamiento de todas las cajas*/
 .cajas {
@@ -40,6 +41,10 @@ h1{
 .caja6:hover{
     cursor: pointer;
     box-shadow: 0 0 10px 5px rgba(192, 161, 121, 0.7);
+}
+.caja7:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(109, 190, 208, 0.7);
 }
 
 /*cajas*/
@@ -131,10 +136,7 @@ h1{
 }
 
 .tam7{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    margin-top: 60px;
 }
   
 .fondo {
@@ -172,10 +174,13 @@ h1{
 
 
 .tablaprinci {
-    margin: 20px auto; /* Centra la tabla horizontalmente */
+    margin-top: 20px; /* Centra la tabla horizontalmente */
+    margin-left: 40px;
+    margin-right: 40px;
     width: 60%; /* Ancho de la tabla */
     display: flex;
-    gap: 230px;
+    gap: 40px;
+
   }
   
   .tabla {
@@ -211,4 +216,78 @@ h1{
     color: #4CAF50; /* Color del texto de las celdas de cantidad */
     font-weight: bold; /* Texto en negrita en las celdas de cantidad */
   }
+
+  #mytabla{
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .botonesadmin{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    caret-color: transparent;
+  }
+
+
+  
+.vervets{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.fa-user-doctor{
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+    gap: 4%;
+}
+  
+.veruser{
+    text-align: center;
+}
+
+.fa-users{
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+    gap: 4%;
+}
+  
+
+.vermasco{
+    text-align: center;
+}
+
+.fa-cat{
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+    gap: 4%;
+}
+
+
+.fa-user-doctor:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(192, 121, 121, 0.7);
+    background-color: rgba(192, 121, 121, 0.301)
+}
+  
+.fa-users:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(121, 192, 134, 0.7);
+    background-color: rgba(121, 192, 134, 0.301)
+}
+
+.fa-cat:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(187, 192, 121, 0.7);
+    background-color: rgba(187, 192, 121, 0.301)
+}
   
