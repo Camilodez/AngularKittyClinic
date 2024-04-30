@@ -60,12 +60,7 @@ export class ListaGatosComponent {
       };
 
       this.vet = veterinario;
-  } else {
-      // Si el valor es null, puedes asignar un valor predeterminado o lanzar una alerta
-      // Por ejemplo:
-      // this.vet = new Veterinario("Nombre Predeterminado", 0, "Especialidad Predeterminada");
-      alert("No se encontraron datos de veterinario en el sessionStorage.");
-    }
+  }
   }
 
   vet: Veterinario | null = null;
