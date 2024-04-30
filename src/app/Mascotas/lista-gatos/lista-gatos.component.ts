@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Gato } from 'src/app/models/gato.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
 import { GatoService } from 'src/app/services/gato.service';
@@ -36,7 +37,7 @@ export class ListaGatosComponent {
 
 
   ListaGatos: Gato[] = [];
-  constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService
+  constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService, private route: ActivatedRoute
   ) {
     const vetDataString = sessionStorage.getItem("veterinario");
 
@@ -73,6 +74,12 @@ export class ListaGatosComponent {
     this.sharedService.mostrarOcultar = true;
     this.buscarGatos();
     console.log("Veterinario:", this.vet);
+
+    this.route.params.subscribe(params => {
+      if (this.vet) {
+        this.vet.id = params['id'];
+      }
+    });
   }
   buscarGatos() {
     this.gatoService.findAll().subscribe(

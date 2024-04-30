@@ -3,6 +3,8 @@ import { Gato } from '../../models/gato.model';
 import { GatoService } from 'src/app/services/gato.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TratamientoService } from 'src/app/services/tratamiento.service';
+import { Tratamiento } from 'src/app/models/tratamiento.model';
 
 
 @Component({
@@ -12,8 +14,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class InfoComponent {
 
-  constructor(private gatoService: GatoService, private route: ActivatedRoute, 
-    public formBuilder: FormBuilder, public router: Router) {
+  constructor(private gatoService: GatoService, private route: ActivatedRoute, private tratamientoService: TratamientoService, 
+    public formBuilder: FormBuilder, public router: Router, ) {
 
     this.route.params.subscribe(params => {
     this.displayinfo(parseInt(params['id']));
@@ -35,6 +37,8 @@ export class InfoComponent {
     console.log(this.gato)
   }
 
+  tratamientos: Tratamiento[] = [];
+  
   gatoForm!: FormGroup;
 
   gato: Gato = {
@@ -53,4 +57,12 @@ export class InfoComponent {
     this.gato = (await this.gatoService.findById(id)).data;
   }
 
+  cargarTratamientos(): void {
+    this.tratamientoService.ObtenerTratamientosGato(this.gato.id).subscribe({
+      next: (data) => {
+        this.tratamientos = data;
+      },
+      error: (e) => console.error(e)
+    });
+  }
 }
