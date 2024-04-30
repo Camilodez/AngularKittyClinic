@@ -12,21 +12,23 @@ import { VeterinarioService } from 'src/app/services/veterinario.service';
 export class ListaVeterinarioComponent {
 
 
-  vet: Veterinario | null = null;
   
   
   constructor(
     private veterinarioService: VeterinarioService,
     private http: HttpClient,
     public router: Router
-  ) { }
+  ) {
+
+
+    
+   }
   
   
   ListaVeterinarios : Veterinario[] = [];
 
   ngOnInit(): void {
     this.searchVets();
-    this.obtenerDatosVeterinario();
   }
 
   async searchVets() {
@@ -34,15 +36,6 @@ export class ListaVeterinarioComponent {
     console.log(this.ListaVeterinarios);
   }
 
-
-  obtenerDatosVeterinario(): void {
-    const vetDataString = sessionStorage.getItem("veterinario");
-
-    if (vetDataString !== null) {
-      const vetData: Veterinario = JSON.parse(vetDataString);
-      this.vet = vetData; // Asigna los datos del veterinario a 'vet'
-    }
-  }
 
 
   delete(id: number) {
