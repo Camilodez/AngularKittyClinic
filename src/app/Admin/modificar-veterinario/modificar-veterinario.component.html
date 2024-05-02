@@ -18,6 +18,11 @@
         <label for="apellido" class="form-label">Apellido:</label>
         <input type="text" class="form-control" id="apellido" name="apellido" value="{{veterinario.apellido}}" [(ngModel)]="veterinario.apellido" #apellido="ngModel" required>
       </div>
+
+      <div class="mb-3">
+        <label for="apellido" class="form-label">Correo:</label>
+        <input type="text" class="form-control" id="correo" name="correo" value="{{veterinario.correo}}" [(ngModel)]="veterinario.correo" #apellido="ngModel" required>
+      </div>
   
       <div class="mb-3">
         <label for="password" class="form-label">Password:</label>
