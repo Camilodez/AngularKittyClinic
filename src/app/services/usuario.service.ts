@@ -24,7 +24,7 @@ export class UsuarioService {
   }
 
   findAll(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>('http://localhost:8090/cliente/login');
+    return this.http.get<Usuario[]>('http://localhost:8090/cliente/lista');
   }
 
   actualizar(usuario: Usuario): Promise<AxiosResponse<Usuario>> {
@@ -42,6 +42,10 @@ export class UsuarioService {
 
   login(cedula: number): Observable<Usuario> {
     return this.http.post<Usuario>(`${'/http://localhost:8090'}/${cedula}`, cedula);
+  }
+
+   findbyCedula(cedula: number): Promise<AxiosResponse<Usuario>> {
+    return  axios.get("http://localhost:8090/cliente/cedula/"+cedula);
   }
 }
 

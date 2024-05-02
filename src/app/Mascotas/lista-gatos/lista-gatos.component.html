@@ -32,7 +32,7 @@
                 <td><img class="gatos" [src]="gato.foto" alt=""></td> 
                 <td><a [routerLink]="['/info',gato.id]" class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
                 <td><a [routerLink]="['/modificar-gato',gato.id]" ><img src="/assets/img/editar.png" alt=""></a></td>
-                <td><button class="estado" (click)="CambiarEstado(gato.id)"><i class="fa-solid fa-pen-clip">cambiar</i></button></td>
+                <td><button class="estado" (click)="CambiarEstado(gato.id!)"><i class="fa-solid fa-pen-clip">cambiar</i></button></td>
                 
           
                 <td>{{gato.estado}}</td>

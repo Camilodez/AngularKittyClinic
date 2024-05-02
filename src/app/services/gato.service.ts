@@ -34,8 +34,8 @@ export class GatoService {
   }
 
 
-  save(gato: Gato): Promise<AxiosResponse<Gato>> {
-    return axios.post('http://localhost:8090/mascota/agregar', gato);
+  save(gato: Gato): Promise<Gato> {
+    return axios.post("http://localhost:8090/mascota/agregar", gato);
   }
 
   delete(id:number){

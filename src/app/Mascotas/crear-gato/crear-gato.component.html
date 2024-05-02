@@ -7,34 +7,31 @@
     <form #gatoForm="ngForm" (ngSubmit)="onSubmit(gatoForm)">
         <div class="form-field">
             <label for="nombre"></label>
-            <input id="nombre"  name="nombre" type="text" [(ngModel)]="gato.nombre" placeholder="Ingresa el nombre del gato">
+            <input id="nombre"  name="nombre" type="text" [(ngModel)]="gato.nombre" #nombre="ngModel" placeholder="Ingresa el nombre del gato">
         </div>
 
         <div class="form-field">
             <label for="raza"></label>
-            <input id="raza" name="raza" type="text" [(ngModel)]="gato.raza" placeholder="Ingresa la raza del gato">
+            <input id="raza" name="raza" type="text" [(ngModel)]="gato.raza" #raza="ngModel" placeholder="Ingresa la raza del gato">
         </div>
 
         <div class="form-field">
             <label for="edad"></label>
-            <input  id="edad" name="edad" type="number" [(ngModel)]="gato.edad" placeholder="Ingresa la edad del gato">
+            <input  id="edad" name="edad" type="number" [(ngModel)]="gato.edad" #edad="ngModel" placeholder="Ingresa la edad del gato">
         </div>
         <div class="form-field">
             <label for="cedula"></label>
-            <input type="number" id="cedula" name="cedula" [(ngModel)]="gato.usuario" placeholder="Cedula del dueño">
+            <input type="number" id="cedula" name="cedula" [(ngModel)]="cedula" placeholder="Cedula del dueño">
         </div>
+
         <div class="form-field">
-            <label for="catNeutered"></label>
-            <select id="catNeutered" name="catNeutered" class="uniform-select">
-                <option value="neutered">¿Esta castrado?</option>
-                <option value="yes">Sí</option>
-                <option value="no">No</option>
-            </select>
+            <label for="Enfermedad"></label>
+            <input type="text" id="Enfermedad" name="Enfermedad" [(ngModel)]="gato.enfermedad" #enfermedad="ngModel" placeholder="Enfermedad del gato">
         </div>
 
         <div class="form-field">
             <label for="foto"></label>
-            <input type="text" id="foto" [(ngModel)]="gato.foto" placeholder="Ingresa una foto del gato URL">
+            <input type="text" name="foto" id="foto" [(ngModel)]="gato.foto" #foto="ngModel" placeholder="Ingresa una foto del gato URL">
         </div>
 
         <div class="form-field">

@@ -34,7 +34,7 @@ export class InfoComponent {
 
   async ngOnInit() {
     this.gatoForm.patchValue(this.gato);
-    this.trat = (await this.tratamientoService.TratamientoGato(this.gato.id)).data;
+    this.trat = (await this.tratamientoService.TratamientoGato(this.gato.id!)).data;
     console.log(this.gato)
     console.log("Tratamiento"+ this.trat)
   }
@@ -63,7 +63,7 @@ export class InfoComponent {
 
   cargarTratamientos(): void {
     const gatoId = this.gato.id;  // Asegúrate de que gato.id esté disponible
-    this.tratamientoService.ObtenerTratamientosGato(gatoId).subscribe({
+    this.tratamientoService.ObtenerTratamientosGato(gatoId!).subscribe({
       next: (data) => {
         this.nombresDrogas = data.map(item => item[1]);  // Extraer nombre de la droga, asumiendo que siempre está en posición 1 de cada sub-array
       },
