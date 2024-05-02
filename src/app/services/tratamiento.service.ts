@@ -3,6 +3,7 @@ import { Tratamiento } from '../models/tratamiento.model';
 import axios, { AxiosResponse } from "axios";
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { EnviarTratamiento } from '../models/enviartrat.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,7 @@ export class TratamientoService {
     return this.http.get<Object[]>(`http://localhost:8090/tratamiento/informacion/veterinario/${id}`);
   }
 
- 
-
+  agregarTratamiento(tratamiento: EnviarTratamiento): Promise<EnviarTratamiento> {
+      return axios.post(`http://localhost:8090/tratamiento/agregar`,tratamiento);
+  }
 }

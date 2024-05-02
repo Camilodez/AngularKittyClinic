@@ -33,5 +33,9 @@ export class DrogaService {
     return this.http.get<string[]>('http://localhost:8090/droga/nombre');
   }
 
+  drogaNombre(droga: string): Promise<AxiosResponse<Droga>>{
+    return axios.get(`http://localhost:8090/droga/nombre/${droga}`);
+  }
+
 
 }
