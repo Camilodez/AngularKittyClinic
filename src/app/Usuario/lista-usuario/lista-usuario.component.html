@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 
-<button><a [routerLink]="['/modificar-usuario']">Crear usuario</a></button>
+<button><a [routerLink]="['/modificar-usuario']" id ="boton_crearUsuario">Crear usuario</a></button>
 
 
 <div>
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let usuario of ListaUsuario">
-                <td>{{ usuario.nombre }}</td>
+                <td class="liStudentName">{{ usuario.nombre }}</td>
                 <td>{{ usuario.edad }}</td>
                 <td>{{ usuario.genero }}</td>
                 <td>{{ usuario.cedula }}</td>

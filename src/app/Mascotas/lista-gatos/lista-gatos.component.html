@@ -7,7 +7,7 @@
     <h1 class="titulo">Lista de Pacientes</h1>
     <input class="barrabusqueda" type="text" placeholder="Busca por nombre" [(ngModel)]="filtroNombre">
 </div>
-
+<button class="boton_usuarios"><a [routerLink]="['/lista-usuarios']" type="button" ><span><p>Usuarios</span></a></button>
 
 <div class="tabla-pacientes">
     <table>
@@ -57,6 +57,7 @@
             <li><a [routerLink]="['/crear-gato']" type="button" ><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
         
         <li><a type="button"  [routerLink]="['/ver-tratamientos/veterinario', vet?.cedula]"><span><p>Ver tratamientos</p> <img src="/assets/img/tratamientos.png" alt="tramamiento"></span></a></li>
+
         </div>
        
     </ul>
