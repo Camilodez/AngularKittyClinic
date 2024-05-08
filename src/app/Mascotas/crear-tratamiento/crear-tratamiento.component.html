@@ -1,18 +1,33 @@
-<form #tratamientoForm="ngForm" (ngSubmit)="onSubmit(tratamientoForm)">
-    <div class="form-group">
-      <p for="veterinario">{{vet.nombre}} {{vet.apellido}}</p>
+<app-header></app-header>
 
-      <p for="gato">{{gato.nombre}} {{gato.raza}}</p>
+<form #tratamientoForm="ngForm" (ngSubmit)="onSubmit(tratamientoForm)" class="containerform">
+  <div class="form-container">
 
-      <label for="fecha">Fecha:</label>
-      <input type="date" name="fecha" [(ngModel)]="tratamiento.fecha" #fecha="ngModel" id="fecha" class="form-control" required>
-  
-      <label for="droga">Droga:</label>
-      <select type="text" name="droga" [(ngModel)]="droga"  id="droga" class="form-control" required>
-        <option *ngFor="let droga of drogas" [value]="droga">{{ droga }}</option>
-      </select>
-
+    <!-- Información del veterinario y el gato -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p>{{ vet.nombre }} {{ vet.apellido }}</p>
+      </div>
+      <div class="form-group col-md-6">
+        <p>{{ gato.nombre }} {{ gato.raza }}</p>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Crear Tratamiento</button>
-  </form>
-  
+
+    <!-- Fecha y droga -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" [(ngModel)]="tratamiento.fecha" #fecha="ngModel" id="fecha" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="droga">Droga:</label>
+        <select name="droga" [(ngModel)]="droga" id="droga" class="form-control" required>
+          <option *ngFor="let droga of drogas" [value]="droga">{{ droga }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-primary" [routerLink]="['/info',gato.id]" >Crear Tratamiento</button>
+  </div>
+</form>

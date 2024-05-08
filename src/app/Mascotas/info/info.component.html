@@ -16,7 +16,7 @@
         <h2>{{gato.nombre}}</h2>
         <div class="contenedor-gatos">
             <div class="obersaciones-gato"> 
-
+                <h3 class="h3-obser">Tratamientos</h3>
                 <table class="table">
                     <thead>
                       <tr>
@@ -36,14 +36,14 @@
                 <img class="gatos" [src]="gato.foto" alt="">
             </div>
             <div class=" datos-gato">
-                <h3 class="h3-obser">Caracteristicas</h3> <p class="raza">Su raza es :{{gato.raza}}</p><p class="raza">Tiene la enfermedad de :</p>
-                <p>{{gato.enfermedad}}</p>
+                <h3 class="h3-obser">Caracteristicas</h3> <p class="raza">Su raza es :{{gato.raza}}</p><p class="raza">Tiene la enfermedad de :{{gato.enfermedad}}</p>
+           
               
 
             </div>
 
         </div>
-        <!-- contenedor edad-gato se mantiene aquí -->
+      
         <div class="edad-gato">
             <h3 class="h3-obser">Edad</h3> <p>{{ gato.edad }}</p>
             <p><strong>Última cita: </strong> <span>{{ ultimaFechaTratamiento }}</span></p>
@@ -51,3 +51,4 @@
     </div>
  
 </section>
+<br>
