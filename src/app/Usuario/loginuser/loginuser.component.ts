@@ -14,6 +14,13 @@ import { SharedService } from 'src/app/shared.service';
 export class LoginuserComponent implements OnInit{
 
 
+  sidebarVisible: boolean = false;
+
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
+  }
+
+
   constructor(private route: ActivatedRoute, 
     private usuarioService: UsuarioService,
     private sharedService: SharedService) { 

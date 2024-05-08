@@ -41,22 +41,10 @@ table tbody tr:hover {
 }
 
 
-
-.usuario-info{
-    margin-left: 15%;
-    margin-right: 250px;
-    padding: 1rem;
-    background: #F5F5DC;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-
 #buton_info_gato{
     background-color: #4ea9bd;
     border-color: none;
 }
-
-
 
 
 /*Barra lateral*/
@@ -71,17 +59,10 @@ table tbody tr:hover {
     padding: 20px;
     box-sizing: border-box;
     transition: right 0.3s ease; /* Suaviza la transición */
-    right: -230px; /* Inicialmente oculto, excepto el handle */
+    right: -250px; /* Inicialmente oculto, excepto el handle */
     font-family: Arial, Helvetica, sans-serif;
 }
-.sidebar-right.active {
-    right: 0; /* Sidebar se muestra */
-}
-.sidebar-right {
-    /* Otros estilos */
-    transition: right 0.3s ease; /* Asegúrate de tener una transición suave */
-    right: -250px; /* Comienza oculto */
-}
+
 
 .sidebar-right.active {
     right: 0; /* Se muestra */
@@ -102,6 +83,17 @@ table tbody tr:hover {
     /* Evita la selección del texto al arrastrar */
 }
 
+.handle:hover{
+    cursor: pointer;
+}
+
+
+.usuarioi{
+    padding: 1rem;
+    background: #F5F5DC;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
 
 
 

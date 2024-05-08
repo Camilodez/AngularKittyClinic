@@ -1,19 +1,22 @@
 <app-header></app-header>
 
 <div id="linea"></div>
-    
-<div class="sidebar-right">
-    <div class="handle">&#9776;</div> 
-    <div class="usuario-info">
-        <!-- <img src="/img/usuariodecoracion.png" alt="icono usuario">
-        <h2 {{usuario.nombre}}></h2>
-        <p {{usuario.genero}}></p>
-        <p {{usuario.edad}}></p>
-        <p {{usuario.cedula}}></p>
-        <p {{usuario.correo}}></p> -->
-      
+
+<div class="sidebar-right" 
+     [ngClass]="{ 'active': sidebarVisible }">
+    <div class="handle" (click)="toggleSidebar()">&#9776;</div> 
+    <div class="usuarioi">
+        <img src="assets/img/usuariodecoracion.png" alt="icono usuario">
+    </div>
+    <div class="sidebar-content" *ngIf="sidebarVisible">
+        Contenido de la barra desplegable...
     </div>
 </div>
+
+
+
+
+
 
 
 
