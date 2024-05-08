@@ -35,7 +35,7 @@
                 <td><button class="estado" (click)="CambiarEstado(gato.id!)"><i class="fa-solid fa-pen-clip">cambiar</i></button></td>
                 
           
-                <td>{{gato.estado}}</td>
+                <td>{{ gato.estado ? 'Activo' : 'Desactivado' }}</td>
               
             </tr>
             </ng-container>

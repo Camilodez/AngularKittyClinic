@@ -89,6 +89,7 @@ export class ListaGatosComponent {
   CambiarEstado(id: number) {
     this.gatoService.cambiarEstado(id).subscribe({
       next: (response) => {
+        
         window.location.reload();
       }
     });
