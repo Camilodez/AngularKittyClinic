@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Gato } from '../../models/gato.model';
 import { GatoService } from 'src/app/services/gato.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,10 +12,22 @@ import { Tratamiento } from 'src/app/models/tratamiento.model';
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css']
 })
-export class InfoComponent {
+export class InfoComponent implements OnInit{
 
-  constructor(private gatoService: GatoService, private route: ActivatedRoute, private tratamientoService: TratamientoService, 
-    public formBuilder: FormBuilder, public router: Router, ) {
+
+  isVeterinario: boolean = false;
+
+  private currentUser: any;
+  ultimaFechaTratamiento: any;
+
+  
+
+
+  constructor(private gatoService: GatoService, 
+    private route: ActivatedRoute, 
+    private tratamientoService: TratamientoService, 
+    public formBuilder: FormBuilder, 
+    public router: Router, ) {
 
     this.route.params.subscribe(params => {
     this.displayinfo(parseInt(params['id']));
@@ -37,6 +49,11 @@ export class InfoComponent {
     this.trat = (await this.tratamientoService.TratamientoGato(this.gato.id!)).data;
     console.log(this.gato)
     console.log("Tratamiento"+ this.trat)
+    
+    this.route.params.subscribe(params => {
+      const id = +params['id']; // El '+' convierte el parámetro de string a número
+      this.obtenerTratamientosGato(id);
+    });
   }
   nombresDrogas: string[] = [];
   tratamientos: any[] = [];
@@ -57,17 +74,31 @@ export class InfoComponent {
 
   trat?: Tratamiento;
 
+
+
   async displayinfo(id: number) {
     this.gato = (await this.gatoService.findById(id)).data;
   }
 
-  cargarTratamientos(): void {
-    const gatoId = this.gato.id;  // Asegúrate de que gato.id esté disponible
-    this.tratamientoService.ObtenerTratamientosGato(gatoId!).subscribe({
-      next: (data) => {
-        this.nombresDrogas = data.map(item => item[1]);  // Extraer nombre de la droga, asumiendo que siempre está en posición 1 de cada sub-array
+  obtenerTratamientosGato(id: number) {
+    this.tratamientoService.ObtenerTratamientosGato(id).subscribe(
+      (data) => {
+        console.log(data);  // Verifica qué estás recibiendo exactamente aquí
+        this.tratamientos = data;
+        this.ultimaFechaTratamiento = this.obtenerUltimaFecha(data);
       },
-      error: (e) => console.error(e)
-    });
+      (error) => {
+        console.error('Error al obtener los tratamientos', error);
+      }
+    );
   }
+
+
+  obtenerUltimaFecha(tratamientos: any[]): string {
+    if (!tratamientos.length) return '';  // Asegura que haya tratamientos antes de procesar
+    const ultimaFecha = tratamientos.reduce((max, t) => t[0] > max ? t[0] : max, tratamientos[0][0]);
+    console.log('Última fecha calculada:', ultimaFecha);
+    return ultimaFecha;
+  }
+
 }

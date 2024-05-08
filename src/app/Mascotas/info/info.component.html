@@ -5,7 +5,9 @@
 <br><br><br>
 
 
-<button><a [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a></button>
+<button >
+    <a [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a>
+  </button>
 
 
 <section id="historial" class="infogatuna">
@@ -14,12 +16,21 @@
         <h2>{{gato.nombre}}</h2>
         <div class="contenedor-gatos">
             <div class="obersaciones-gato"> 
-                <h3 class="h3-obser">Tratamientos</h3>
-                <ul>
-                    <li *ngFor="let nombreDroga of nombresDrogas">
-                      {{ nombreDroga }}
-                    </li>
-                  </ul>
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>Nombre del Tratamiento</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let tratamiento of tratamientos">
+                        <td>{{ tratamiento[0] }}</td>
+                        <td>{{ tratamiento[1] }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </div>
             <div class="foto-gato">
                 <img class="gatos" [src]="gato.foto" alt="">
@@ -34,8 +45,8 @@
         </div>
         <!-- contenedor edad-gato se mantiene aquí -->
         <div class="edad-gato">
-            <h3 class="h3-obser">Edad</h3> <p>{{gato.edad}}</p>
-            <p><strong>Última cita: </strong> <span>Fecha de Ultimo Tratamiento</span></p>
+            <h3 class="h3-obser">Edad</h3> <p>{{ gato.edad }}</p>
+            <p><strong>Última cita: </strong> <span>{{ ultimaFechaTratamiento }}</span></p>
         </div>
     </div>
  
