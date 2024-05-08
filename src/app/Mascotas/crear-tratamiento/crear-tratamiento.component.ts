@@ -18,7 +18,7 @@ import { SharedService } from 'src/app/shared.service';
 export class CrearTratamientoComponent implements OnInit {
   // Declaración correcta de tratamientoForm como propiedad de la clase.
   constructor(private drogaService: DrogaService, private sharedService: SharedService, private route: ActivatedRoute,
-     private gatoService: GatoService, private tratamientoService: TratamientoService) {
+     private gatoService: GatoService, private tratamientoService: TratamientoService,public router: Router) {
     const vetDataString = sessionStorage.getItem("veterinario");
 
     if (vetDataString !== null) {
@@ -41,8 +41,6 @@ export class CrearTratamientoComponent implements OnInit {
 
       this.vet = veterinario;
     }
-
-
 
 
   }
@@ -75,8 +73,11 @@ export class CrearTratamientoComponent implements OnInit {
     this.tratamiento.droga = (await this.drogaService.drogaNombre(this.droga)).data;
     this.tratamiento.felino = this.gato;
     this.tratamiento.veterinario = this.vet;
-    console.log(this.tratamiento);
+
+    console.log("Tratamiento: ", this.tratamiento);
+    
     this.tratamientoService.agregarTratamiento(this.tratamiento);
+    this.router.navigate(['/mascotas']);
   }
 
   async obtenerGato(id: number) {
