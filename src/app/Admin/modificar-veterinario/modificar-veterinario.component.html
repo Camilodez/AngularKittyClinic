@@ -43,8 +43,10 @@
               <label for="especialidad">Especialidad:</label>
               <input type="text" class="form-control" id="especialidad" name="especialidad" [(ngModel)]="veterinario.especialidad" #especialidad="ngModel" required>
             </div>
-            
-            <button type="submit"  class="btn custom-btn" [disabled]="!veterinarioForm.valid">Enviar</button>
+            <div class ="buttoncontainer">
+              <button type="submit"  class="btn custom-btn" [disabled]="!veterinarioForm.valid">Enviar</button>
+            </div>
+           
           </form>
         </div>
       </div>

@@ -1,12 +1,17 @@
 .custom-btn {
     text-align: center;
-    background-color: #4a535d; /* Bootstrap primary blue by default, change as needed */
-    border-color: #a2aeb9; /* Same as background for a solid look */
+    background-color: #4fa9ba; /* Bootstrap primary blue by default, change as needed */
+    border-color: #4fa9ba; /* Same as background for a solid look */
     color: white; /* Text color, change as needed */
   }
   
   .custom-btn:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
-    border-color: #0056b3;
+    background-color: #307280; /* Darker shade for hover effect */
+    border-color: #307280;
+  }
+
+  .buttoncontainer {
+    text-align: center; /* Centers the button horizontally */
+    margin-top: 20px;   /* Adds some space above the button */
   }
   
