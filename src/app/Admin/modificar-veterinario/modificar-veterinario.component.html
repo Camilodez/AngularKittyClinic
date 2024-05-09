@@ -1,44 +1,55 @@
-<div class="container mt-3">
-    <h2>Formulario de Veterinario</h2>
+<app-header></app-header>
 
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-8 col-lg-6"> 
+      <div class="card">
+        <div class="card-header">
+          <h2>Formulario de Veterinario</h2>
+        </div>
+        <div class="card-body">
+          <form #veterinarioForm="ngForm" (ngSubmit)="onSubmit(veterinarioForm)">
+            <div class="form-group">
+              <label for="cedula">Cédula:</label>
+              <input type="number" class="form-control" id="cedula" name="cedula" [(ngModel)]="veterinario.cedula" #cedula="ngModel" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="veterinario.nombre" #nombre="ngModel" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="apellido">Apellido:</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="veterinario.apellido" #apellido="ngModel" required>
+            </div>
 
-    <form #veterinarioForm="ngForm" (ngSubmit)="onSubmit(veterinarioForm)">
-  
-      <div class="mb-3">
-        <label for="cedula" class="form-label">Cédula:</label>
-        <input type="number" class="form-control" id="cedula" name="cedula" value ="{{veterinario.cedula}}" [(ngModel)]="veterinario.cedula" #cedula="ngModel" required>
-      </div>
-  
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" value="{{veterinario.nombre}}" [(ngModel)]="veterinario.nombre" #nombre="ngModel" required>
-      </div>
-  
-      <div class="mb-3">
-        <label for="apellido" class="form-label">Apellido:</label>
-        <input type="text" class="form-control" id="apellido" name="apellido" value="{{veterinario.apellido}}" [(ngModel)]="veterinario.apellido" #apellido="ngModel" required>
-      </div>
+            <div class="form-group">
+              <label for="correo">Correo:</label>
+              <input type="email" class="form-control" id="correo" name="correo" [(ngModel)]="veterinario.correo" #correo="ngModel" required>
+            </div>
 
-      <div class="mb-3">
-        <label for="apellido" class="form-label">Correo:</label>
-        <input type="text" class="form-control" id="correo" name="correo" value="{{veterinario.correo}}" [(ngModel)]="veterinario.correo" #apellido="ngModel" required>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="veterinario.password" #password="ngModel" required>
+            </div>
+
+            <div class="form-group">
+              <label for="foto">Foto (URL):</label>
+              <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="veterinario.foto" #foto="ngModel">
+            </div>
+
+            <div class="form-group">
+              <label for="especialidad">Especialidad:</label>
+              <input type="text" class="form-control" id="especialidad" name="especialidad" [(ngModel)]="veterinario.especialidad" #especialidad="ngModel" required>
+            </div>
+            <div class ="buttoncontainer">
+              <button type="submit"  class="btn custom-btn" [disabled]="!veterinarioForm.valid">Enviar</button>
+            </div>
+           
+          </form>
+        </div>
       </div>
-  
-      <div class="mb-3">
-        <label for="password" class="form-label">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" value="{{veterinario.password}}" [(ngModel)]="veterinario.password" #password="ngModel" required>
-      </div>
-  
-      <div class="mb-3">
-        <label for="foto" class="form-label">Foto (URL):</label>
-        <input type="text" class="form-control" id="foto" name="foto" value="{{veterinario.foto}}" [(ngModel)]="veterinario.foto" #foto="ngModel">
-      </div>
-  
-      <div class="mb-3">
-        <label for="especialidad" class="form-label">Especialidad:</label>
-        <input type="text" class="form-control" id="especialidad" name="especialidad" value="{{veterinario.especialidad}}" [(ngModel)]="veterinario.especialidad" #especialidad="ngModel" required>
-      </div>
-  
-      <button type="submit" class="btn btn-primary" [disabled]="!veterinarioForm.form.valid">Enviar</button>
-    </form>
+    </div>
   </div>
+</div>

@@ -32,9 +32,10 @@ export class ListaVeterinarioComponent {
   }
 
   async searchVets() {
-    this.ListaVeterinarios = (await this.veterinarioService.findAll()).data;
+    const allVets = (await this.veterinarioService.findAll()).data;
+    this.ListaVeterinarios = allVets.filter(vet => !(vet.nombre === "admin" && vet.apellido === "admin"));
     console.log(this.ListaVeterinarios);
-  }
+}
 
 
 

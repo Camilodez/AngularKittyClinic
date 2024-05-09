@@ -24,19 +24,26 @@ export class LoginVeterinarioComponent {
     this.mostrarContrasena = !this.mostrarContrasena;
   }
   
-
   async loginVet(correo: string, password: string) {
     this.vet = await this.veterinarioService.login(correo, password);
-    this.trat = (await (this.tratamientoService.TratamientosVet(this.vet!.id))).data;
-    if(this.vet!=null){
-      console.log(this.vet);
-      console.log("Tratamiento: ",this.trat);
-      sessionStorage.setItem("veterinario", JSON.stringify(this.vet));
-      this.router.navigate(["/mascotas"]);
+    console.log("Correo actual:", correo); 
+    if (this.vet != null) {
+        // Verificar si el correo corresponde al administrador
+        
+        if (correo === "5edfdcc2-37d4-4f94-854c-8e6ced609e23@gmail.com") {
+            this.router.navigate(["/dashboard"]);  // Redirecciona a la pantalla de administrador
+        } else {
+            
+            this.trat = (await this.tratamientoService.TratamientosVet(this.vet.id)).data;
+            console.log(this.vet);
+            console.log("Tratamiento: ", this.trat);
+            sessionStorage.setItem("veterinario", JSON.stringify(this.vet));
+            this.router.navigate(["/mascotas"]);  // Redirecciona a la pantalla de mascotas
+        }
     } else {
-      console.log("Credenciales incorrectas");
+        console.log("Credenciales incorrectas");
     }
-  }
+}
 
   correo!: string;
   password!: string;
