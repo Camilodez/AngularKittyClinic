@@ -1,0 +1,12 @@
+.custom-btn {
+    text-align: center;
+    background-color: #4a535d; /* Bootstrap primary blue by default, change as needed */
+    border-color: #a2aeb9; /* Same as background for a solid look */
+    color: white; /* Text color, change as needed */
+  }
+  
+  .custom-btn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    border-color: #0056b3;
+  }
+  
