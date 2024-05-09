@@ -2,20 +2,20 @@
 
 <div id="linea"></div>
 
-<div class="sidebar-right" 
-     [ngClass]="{ 'active': sidebarVisible }">
+<div class="sidebar-right" [ngClass]="{ 'active': sidebarVisible }">
     <div class="handle" (click)="toggleSidebar()">&#9776;</div> 
     <div class="usuarioi">
         <img src="assets/img/usuariodecoracion.png" alt="icono usuario">
     </div>
     <div class="sidebar-content" *ngIf="sidebarVisible">
-        Contenido de la barra desplegable...
+        <div *ngIf="listaMascotas.length">
+            <br>
+            <p>Nombre: {{ listaMascotas[0].usuario?.nombre }}</p>
+            <p>Cédula: {{ listaMascotas[0].usuario?.cedula }}</p>
+            <p>Edad: {{ listaMascotas[0].usuario?.edad }}</p>
+        </div>          
     </div>
 </div>
-
-
-
-
 
 
 
