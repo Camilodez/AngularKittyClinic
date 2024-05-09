@@ -63,13 +63,12 @@ h1{
 /* Estilos para la barra lateral */
 .sidebar {
     border: 2px solid #104c5a;
-    width: 280px;
+    width: 290px;
     height: 444px;
     position: fixed;
     top: 0;
     right: 0;
     margin-top: 11%;
-   
     padding-top: 20px;
     background-color: #4ea9bd;
     padding-bottom: 2%;
