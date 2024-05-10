@@ -33,7 +33,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let mascota of listaMascotas">
-                <td><button class= "buton_info_gato"[routerLink]="['/info',mascota.id]"><img [src]="mascota.foto" alt="Foto de {{ mascota.nombre }}"></button></td>
+                <td><a class= "buton_info_gato"[routerLink]="['/info',mascota.id]"><img [src]="mascota.foto" alt="Foto de {{ mascota.nombre }}"></a></td>
                 <td>{{ mascota.nombre }}</td>
                 <td>{{ mascota.raza }}</td>
                 <td>{{ mascota.edad }}</td>
