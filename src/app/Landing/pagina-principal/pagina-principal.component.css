@@ -368,6 +368,7 @@ img{
     text-decoration-thickness: 0.1em;
     text-underline-offset: 0.4em;
     text-decoration-color: rgb(243, 179, 60);
+    padding-bottom: 20px;
 }
 
 .bloggatos {
@@ -414,7 +415,7 @@ img{
   background-color: #fee6b9be;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 65vh;
 }
 
 .gatico{
