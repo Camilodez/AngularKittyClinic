@@ -200,4 +200,14 @@ p{
     animation: fadeInRight 2s ease-out forwards;
   }
     
+.table{
   
+}
+
+.table th, .table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: #F5F5DC;
+  border: none;
+}
