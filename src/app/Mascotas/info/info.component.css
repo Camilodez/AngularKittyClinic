@@ -3,7 +3,7 @@
 .infogatuna {
     display: flex;
     flex-direction: row;
-    max-width: 1200px;
+    max-width: 1000px;
     background-color: #F5F5DC;
     margin: 50px ;
     padding: 20px;
@@ -198,11 +198,8 @@ p{
   }
   .datos-gato {
     animation: fadeInRight 2s ease-out forwards;
+    max-width: 200px;
   }
-    
-.table{
-  
-}
 
 .table th, .table td {
   padding: 8px;
