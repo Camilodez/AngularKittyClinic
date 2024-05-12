@@ -59,16 +59,15 @@ export class VeterinarioService {
         return this.http.put(`http://localhost:8090/admin/estado/${id}`, null);
       }
 
-    async login(correo: string, password: string): Promise<Veterinario|null> {
-        try{
-            const response = await axios.post<Veterinario>(`${this.URL}/login`, { correo, password });
-            return response.data;
-        }
-        catch(error){
-            console.error(error);
-            return null;
-        }
+    
+    
+      
+    
+     login(Veterinario:Veterinario): Observable<Veterinario> {
+        return this.http.post<Veterinario>('http://localhost:8090/admin/login', Veterinario);
     }
+    
+   
     
 
 

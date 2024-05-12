@@ -16,33 +16,32 @@ export class LoginVeterinarioComponent {
 
   constructor(private veterinarioService: VeterinarioService,private router: Router,private tratamientoService: TratamientoService) { } 
 
-  vet: Veterinario | null = null;
 
-  trat: Tratamiento | null = null;
+
+  formVeterinario: Veterinario = {
+    id: 0,
+    cedula: 0,
+    nombre: '',
+    apellido: '',
+    correo: '',
+    password: '',
+    foto: '',
+    especialidad: '',
+    estado: false
+  }
 
   toggleMostrarContrasena(): void {
     this.mostrarContrasena = !this.mostrarContrasena;
   }
   
-  async loginVet(correo: string, password: string) {
-    this.vet = await this.veterinarioService.login(correo, password);
-    console.log("Correo actual:", correo); 
-    if (this.vet != null) {
-        // Verificar si el correo corresponde al administrador
-        
-        if (correo === "5edfdcc2-37d4-4f94-854c-8e6ced609e23@gmail.com") {
-            this.router.navigate(["/dashboard"]);  // Redirecciona a la pantalla de administrador
-        } else {
-            
-            this.trat = (await this.tratamientoService.TratamientosVet(this.vet.id)).data;
-            console.log(this.vet);
-            console.log("Tratamiento: ", this.trat);
-            sessionStorage.setItem("veterinario", JSON.stringify(this.vet));
-            this.router.navigate(["/mascotas"]);  // Redirecciona a la pantalla de mascotas
-        }
-    } else {
-        console.log("Credenciales incorrectas");
-    }
+ 
+
+    login (correo: string, password: string) {
+        this.veterinarioService.login(this.formVeterinario).subscribe(
+         data => {
+            this.router.navigate(["/mascotas"]);
+          }
+          )
 }
 
   correo!: string;
