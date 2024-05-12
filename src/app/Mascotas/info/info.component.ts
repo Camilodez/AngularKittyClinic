@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TratamientoService } from 'src/app/services/tratamiento.service';
 import { Tratamiento } from 'src/app/models/tratamiento.model';
+import { SharedService } from 'src/app/shared.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Tratamiento } from 'src/app/models/tratamiento.model';
 })
 export class InfoComponent implements OnInit{
 
-
+  MuestrarOculta = false;
   isVeterinario: boolean = false;
 
   private currentUser: any;
@@ -27,7 +28,8 @@ export class InfoComponent implements OnInit{
     private route: ActivatedRoute, 
     private tratamientoService: TratamientoService, 
     public formBuilder: FormBuilder, 
-    public router: Router, ) {
+    public router: Router,
+    public sharedService: SharedService) {
 
     this.route.params.subscribe(params => {
     this.displayinfo(parseInt(params['id']));

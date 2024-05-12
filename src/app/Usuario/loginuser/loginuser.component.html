@@ -2,20 +2,20 @@
 
 <div id="linea"></div>
 
-<div class="sidebar-right" 
-     [ngClass]="{ 'active': sidebarVisible }">
+<div class="sidebar-right" [ngClass]="{ 'active': sidebarVisible }">
     <div class="handle" (click)="toggleSidebar()">&#9776;</div> 
     <div class="usuarioi">
         <img src="assets/img/usuariodecoracion.png" alt="icono usuario">
     </div>
     <div class="sidebar-content" *ngIf="sidebarVisible">
-        Contenido de la barra desplegable...
+        <div *ngIf="listaMascotas.length">
+            <br>
+            <p>Nombre: {{ listaMascotas[0].usuario?.nombre }}</p>
+            <p>Cédula: {{ listaMascotas[0].usuario?.cedula }}</p>
+            <p>Edad: {{ listaMascotas[0].usuario?.edad }}</p>
+        </div>          
     </div>
 </div>
-
-
-
-
 
 
 
@@ -33,7 +33,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let mascota of listaMascotas">
-                <td><button class= "buton_info_gato"[routerLink]="['/info',mascota.id]"><img [src]="mascota.foto" alt="Foto de {{ mascota.nombre }}"></button></td>
+                <td><a class= "buton_info_gato"[routerLink]="['/info',mascota.id]"><img [src]="mascota.foto" alt="Foto de {{ mascota.nombre }}"></a></td>
                 <td>{{ mascota.nombre }}</td>
                 <td>{{ mascota.raza }}</td>
                 <td>{{ mascota.edad }}</td>

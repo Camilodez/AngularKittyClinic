@@ -53,14 +53,11 @@
     </div>
     <ul>
         <div class="botonesvi">
-            <li><a [routerLink]="['/crear-gato']" type="button" ><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
-        
+        <li><a [routerLink]="['/crear-gato']" type="button" ><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
         <li><a type="button"  [routerLink]="['/ver-tratamientos/veterinario', vet?.cedula]"><span><p>Ver tratamientos</p> <img src="/assets/img/tratamientos.png" alt="tramamiento"></span></a></li>
-        <li><button class="boton_usuarios"><a [routerLink]="['/modificar-usuario']" type="button" ><span><p>Crear Usuario</span></a></button>
-        </li>
+        <li><a  type="button" [routerLink]="['/modificar-usuario']"><span><p>Crear Usuario</p> <img src="/assets/img/agregarusuario.png" alt="agregar usuario"></span></a></li>
 
         </div>
-       
     </ul>
 </div>
 <div class="vineta" #vineta (mouseenter)="mostrarSidebar()" (transitionend)="mostrarVineta()">

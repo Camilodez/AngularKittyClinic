@@ -75,6 +75,8 @@ export class ListaGatosComponent {
         this.vet.id = params['id'];
       }
     });
+
+    this.sharedService.muestraOculta = true;
   }
   buscarGatos() {
     this.gatoService.findAll().subscribe(

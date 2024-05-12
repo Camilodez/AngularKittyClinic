@@ -5,9 +5,9 @@
 <br><br><br>
 
 
-<button >
-    <a [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a>
-  </button>
+<div *ngIf="sharedService.muestraOculta">
+  <a [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a>
+</div>
 
 
 <section id="historial" class="infogatuna">
@@ -30,16 +30,13 @@
                         <td>{{ tratamiento[1] }}</td>
                       </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
             <div class="foto-gato">
                 <img class="gatos" [src]="gato.foto" alt="">
             </div>
             <div class=" datos-gato">
                 <h3 class="h3-obser">Caracteristicas</h3> <p class="raza">Su raza es :{{gato.raza}}</p><p class="raza">Tiene la enfermedad de :{{gato.enfermedad}}</p>
-           
-              
-
             </div>
 
         </div>
@@ -52,3 +49,5 @@
  
 </section>
 <br>
+
+<app-footer></app-footer>

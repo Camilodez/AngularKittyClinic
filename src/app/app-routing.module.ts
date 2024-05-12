@@ -18,10 +18,12 @@ import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-vet
 import { CrearTratamientoComponent } from './Mascotas/crear-tratamiento/crear-tratamiento.component';
 import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratamientos.component';
 import { LoginAdminComponent } from './Admin/login-admin/login-admin.component';
+import { ComunicacionComponent } from './Landing/comunicacion/comunicacion.component';
 
 
 const routes: Routes = [
   {path: 'mascotas', component: ListaGatosComponent},
+  {path: 'comunicacion', component: ComunicacionComponent},
   {path: 'info/:id', component: InfoComponent },
   {path: 'home', component: PaginaPrincipalComponent},
   {path: 'modificar-gato/:id', component: ModificarGatoComponent},
