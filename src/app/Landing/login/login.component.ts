@@ -21,18 +21,20 @@ export class LoginComponent {
     private router: Router) { }
 
     ngOnInit(): void {
-      this.usuarioservice.findAll().subscribe(data => {
-        this.listaUsuarios = data;
-      });
+    
     }
 
-    loginUsuario(cedula:number): void {
-    const clienteEncontrado = this.listaUsuarios.find(cliente => cliente.cedula === cedula);
+    loginUsuario(cedula: number): void {
+      console.log(cedula); // Crear objeto Usuario
+      this.usuarioservice.login(cedula).subscribe(
+        (data) => {
+          this.router.navigate(['/loginuser']);
+        },
+        (error) => {
 
-    if (clienteEncontrado) {
-      this.router.navigate(['/loginuser/' + clienteEncontrado.id]);
-    } else {
-      
-    }
+          console.log(cedula);
+          console.error('Error en la solicitud:', error); // Manejar errores de solicitud
+        }
+      );
     }
 }

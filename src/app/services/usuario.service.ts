@@ -41,9 +41,9 @@ export class UsuarioService {
   }
 
   login(cedula: number): Observable<Usuario> {
-    return this.http.post<Usuario>(`${'/http://localhost:8090'}/${cedula}`, cedula);
+    return this.http.post<Usuario>('http://localhost:8090/cliente/cedula',  cedula );
   }
-
+  
    findbyCedula(cedula: number): Promise<AxiosResponse<Usuario>> {
     return  axios.get("http://localhost:8090/cliente/cedula/"+cedula);
   }
