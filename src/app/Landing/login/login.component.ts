@@ -28,7 +28,7 @@ export class LoginComponent {
       console.log(cedula); // Crear objeto Usuario
       this.usuarioservice.login(cedula).subscribe(
         (data) => {
-          this.router.navigate(['/loginuser']);
+          this.router.navigate(['/loginuser',cedula]);
         },
         (error) => {
 
