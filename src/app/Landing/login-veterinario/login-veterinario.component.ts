@@ -40,9 +40,7 @@ export class LoginVeterinarioComponent {
 
       this.formVeterinario.correo = correo;
       this.formVeterinario.password = password;
-      console.log("Correo:" + this.formVeterinario.correo);
-      console.log("Contraseña: " + this.formVeterinario.password);
-
+  
         this.veterinarioService.login(this.formVeterinario).subscribe(
          data => {
             this.router.navigate(["/mascotas"]);
