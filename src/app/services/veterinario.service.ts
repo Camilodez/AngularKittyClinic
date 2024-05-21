@@ -66,6 +66,11 @@ export class VeterinarioService {
      login(Veterinario:Veterinario): Observable<Veterinario> {
         return this.http.post<Veterinario>('http://localhost:8090/admin/login', Veterinario);
     }
+
+
+    VeterinarioHome(): Observable<Veterinario> {
+        return  this.http.get<Veterinario>("http://localhost:8090/veterinario/details");
+      }
     
    
     

@@ -47,6 +47,15 @@ export class UsuarioService {
    findbyCedula(cedula: number): Promise<AxiosResponse<Usuario>> {
     return  axios.get("http://localhost:8090/cliente/cedula/"+cedula);
   }
+
+  UsuarioHome(): Observable<Usuario> {
+    return  this.http.get<Usuario>("http://localhost:8090/cliente/details");
+  }
+
+
+
+
+
 }
 
 export { Usuario };
