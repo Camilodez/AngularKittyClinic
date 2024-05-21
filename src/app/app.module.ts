@@ -10,7 +10,7 @@ import { ListaGatosComponent } from './Mascotas/lista-gatos/lista-gatos.componen
 import { LoginComponent } from './Landing/login/login.component';
 import { HeaderComponent } from './Landing/header/header.component';
 import { FooterComponent } from './Landing/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
 import { FormsModule } from '@angular/forms';
 import { InfoComponent } from './Mascotas/info/info.component';
@@ -32,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginAdminComponent } from './Admin/login-admin/login-admin.component';
 import { ComunicacionComponent } from './Landing/comunicacion/comunicacion.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 
 
@@ -73,7 +74,11 @@ import { ComunicacionComponent } from './Landing/comunicacion/comunicacion.compo
     MatAutocompleteModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
