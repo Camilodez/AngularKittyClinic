@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
 import { Gato } from '../models/gato.model';
 import axios, { AxiosResponse } from 'axios';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -40,12 +41,18 @@ export class UsuarioService {
     return this.http.delete(`${'http://localhost:8090/cliente/delete'}/${id}`);
   }
 
-  login(cedula: number): Observable<Usuario> {
-    return this.http.post<Usuario>('http://localhost:8090/cliente/cedula',  cedula );
+  login(user: User): Observable<String> {
+    return this.http.post('http://localhost:8090/cliente/cedula',  user, {
+      responseType: 'text'
+    });
   }
   
    findbyCedula(cedula: number): Promise<AxiosResponse<Usuario>> {
     return  axios.get("http://localhost:8090/cliente/cedula/"+cedula);
+  }
+
+  usuarioHome(): Observable<Usuario> {
+    return this.http.get<Usuario>('http://localhost:8090/cliente/details');
   }
 }
 

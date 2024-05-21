@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Veterinario } from "../models/veterinario.model";
 import { Observable } from "rxjs";
 import axios, { AxiosResponse } from "axios";
+import { User } from "../models/user";
 @Injectable({
     providedIn: 'root'
   })
@@ -59,15 +60,15 @@ export class VeterinarioService {
         return this.http.put(`http://localhost:8090/admin/estado/${id}`, null);
       }
 
-    
-    
-      
-    
-     login(Veterinario:Veterinario): Observable<Veterinario> {
-        return this.http.post<Veterinario>('http://localhost:8090/admin/login', Veterinario);
+     login(user:User): Observable<String> {
+        return this.http.post('http://localhost:8090/admin/login', user,{
+            responseType: 'text'
+        });
     }
     
-   
+    veterinarioHome(): Observable<Veterinario> {
+        return this.http.get<Veterinario>('http://localhost:8090/admin/veterinario/details');
+    }
     
 
 
