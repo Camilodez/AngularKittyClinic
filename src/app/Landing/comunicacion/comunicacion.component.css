@@ -3,3 +3,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.titulo{
+    font-family: "Garet", sans-serif; /* Asegúrate de que "Garet" esté instalado y disponible */
+    font-weight: bold;
+    text-align: center;
+} 
+
