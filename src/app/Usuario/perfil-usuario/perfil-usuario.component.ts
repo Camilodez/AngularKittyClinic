@@ -18,18 +18,13 @@ export class PerfilUsuarioComponent implements OnInit{
 
   // cliente!: Usuario;
   listaMascotas: Gato[] = [];
+  cliente!: Usuario;
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
-      
-      this.usuarioService.buscarPorId(id).subscribe(
-        (llegaCliente) => {
-          console.log(llegaCliente);
-          // this.cliente = llegaCliente; 
-          this.listaMascotas = llegaCliente;
-        }
-      );
-    });
+    this.usuarioService.UsuarioHome().subscribe(
+      (data) => {
+        this.cliente = data;
+      }
+    );
   }
 }

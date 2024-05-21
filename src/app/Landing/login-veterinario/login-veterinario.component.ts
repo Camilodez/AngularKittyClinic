@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Tratamiento } from 'src/app/models/tratamiento.model';
-import { Veterinario } from 'src/app/models/veterinario.model';
+import { User } from 'src/app/models/user';
 import { TratamientoService } from 'src/app/services/tratamiento.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
 
@@ -14,20 +13,13 @@ export class LoginVeterinarioComponent {
 
   mostrarContrasena: boolean = false; // Añade esta línea aquí
 
-  constructor(private veterinarioService: VeterinarioService,private router: Router,private tratamientoService: TratamientoService) { } 
+  constructor(private veterinarioService: VeterinarioService,private router: Router) { } 
 
 
 
-  formVeterinario: Veterinario = {
-    id: 0,
-    cedula: 0,
-    nombre: '',
-    apellido: '',
+  formVeterinario: User = {
     correo: '',
     password: '',
-    foto: '',
-    especialidad: '',
-    estado: false
   }
 
   toggleMostrarContrasena(): void {
@@ -43,9 +35,9 @@ export class LoginVeterinarioComponent {
   
         this.veterinarioService.login(this.formVeterinario).subscribe(
          data => {
-            this.router.navigate(["/mascotas"]);
-          }
-          )
+            localStorage.setItem("token", String(data));
+            this.router.navigate(["/veterinario/home"]);
+          })
 }
 
   correo!: string;
