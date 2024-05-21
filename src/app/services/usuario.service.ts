@@ -51,9 +51,11 @@ export class UsuarioService {
     return  axios.get("http://localhost:8090/cliente/cedula/"+cedula);
   }
 
-  usuarioHome(): Observable<Usuario> {
-    return this.http.get<Usuario>('http://localhost:8090/cliente/details');
+
+  UsuarioHome(): Observable<Usuario> {
+    return  this.http.get<Usuario>("http://localhost:8090/cliente/details");
   }
+
 }
 
 export { Usuario };

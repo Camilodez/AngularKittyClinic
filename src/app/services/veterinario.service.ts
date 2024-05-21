@@ -65,6 +65,11 @@ export class VeterinarioService {
             responseType: 'text'
         });
     }
+
+
+    VeterinarioHome(): Observable<Veterinario> {
+        return  this.http.get<Veterinario>("http://localhost:8090/veterinario/details");
+      }
     
     veterinarioHome(): Observable<Veterinario> {
         return this.http.get<Veterinario>('http://localhost:8090/admin/veterinario/details');
