@@ -52,8 +52,8 @@ export class ListaVeterinarioComponent {
     
   }
 
-  CambiarEstado(id: number): void {
-    this.veterinarioService.cambiarEstado(id).subscribe({
+  CambiarEstado(correo: string): void {
+    this.veterinarioService.cambiarEstado(correo).subscribe({
       next: (response) => {
         window.location.reload();
       }
