@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'modificar-usuario/:id', component: ModificarUsuarioComponent },
   {path: 'veterinarios', component: ListaVeterinarioComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'loginuser/:id', component: LoginuserComponent },
+  { path: 'loginuser/:cedula', component: LoginuserComponent },
   {path: 'dashboard', component: DashboardComponent },
   {path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
   {path: 'modificar-veterinario', component: ModificarVeterinarioComponent },

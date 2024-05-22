@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario.model';
 import { Gato } from '../models/gato.model';
@@ -12,6 +12,7 @@ import { User } from '../models/user';
 export class UsuarioService {
 
   private baseUrl = 'http://localhost:8090';
+  private baseUrls = 'http://localhost:8090/cliente';
 
 
   constructor(private http: HttpClient) { }
@@ -22,6 +23,10 @@ export class UsuarioService {
 
   buscarPorIdAxios(id: number): Promise<AxiosResponse<Usuario>> {
     return axios.get(`http://localhost:8090/cliente/usuario/${id}`);
+  }
+
+  buscarPorCedula(cedula: string): Observable<Gato[]> {
+    return this.http.get<Gato[]>(`${this.baseUrls}/misgatos/${cedula}`);
   }
 
   findAll(): Observable<Usuario[]> {
@@ -41,8 +46,9 @@ export class UsuarioService {
     return this.http.delete(`${'http://localhost:8090/cliente/delete'}/${id}`);
   }
 
-  login(user: User): Observable<String> {
-    return this.http.post('http://localhost:8090/cliente/cedula',  user, {
+  login(user: User): Observable<string> {
+    return this.http.post(this.baseUrls + '/login', user, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       responseType: 'text'
     });
   }

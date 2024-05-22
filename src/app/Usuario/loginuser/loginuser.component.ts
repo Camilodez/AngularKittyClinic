@@ -23,9 +23,9 @@ export class LoginuserComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
+      const cedula = params.get('cedula')!;  // Operador de aserción no nulo
       
-      this.usuarioService.buscarPorId(id).subscribe(
+      this.usuarioService.buscarPorCedula(cedula).subscribe(
         (llegaCliente) => {
           console.log(llegaCliente);
           this.listaMascotas = llegaCliente;

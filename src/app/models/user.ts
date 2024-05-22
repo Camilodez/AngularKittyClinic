@@ -1,4 +1,4 @@
 export interface User {
-    correo: String
+    cedula: String
     password: String
 }

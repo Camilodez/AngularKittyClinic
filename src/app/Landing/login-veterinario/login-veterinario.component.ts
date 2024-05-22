@@ -18,7 +18,7 @@ export class LoginVeterinarioComponent {
 
 
   formVeterinario: User = {
-    correo: '',
+    cedula: '',
     password: '',
   }
 
@@ -30,7 +30,7 @@ export class LoginVeterinarioComponent {
 
     login (correo: string, password: string) {
 
-      this.formVeterinario.correo = correo;
+      this.formVeterinario.cedula = correo;
       this.formVeterinario.password = password;
   
         this.veterinarioService.login(this.formVeterinario).subscribe(
