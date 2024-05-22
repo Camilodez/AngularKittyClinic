@@ -13,10 +13,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let tratamiento of tratamientos">
-        <td>{{ tratamiento[0].id }}</td>
-        <td>{{ tratamiento[0].fecha }}</td>
-        <td>{{ tratamiento[1] }}</td>
-        <td>{{ tratamiento[2] }}</td>
+        <td>{{ tratamiento.id }}</td>
+        <td>{{ tratamiento.fecha }}</td>
+        <td>{{ tratamiento.droga.nombre }}</td>
+        <td>{{ tratamiento.felino.nombre }}</td>
       </tr>
     </tbody>
   </table>
