@@ -1,52 +1,56 @@
 <app-header></app-header>
 
-
 <br>
 
 <h1 class="titulo">Lista de Veterinarios</h1>
 
-<a class="btn btn-info"  [routerLink]="['/modificar-veterinario']">Agregar veterinario</a>
+<a class="btn btn-info" [routerLink]="['/modificar-veterinario']">Agregar veterinario</a>
 
 <div>
-    
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Cédula</th>
-                    <th>Correo</th>
-                    <th>Especialidad</th>
-                    <th>Foto</th>
-                    <th>Actualizar</th>
-                    <th>Tratamientos</th>
-                    <th>Cambiar Estado</th>
-                    <th>Eliminar</th>
-                   
-                </tr>
-            </thead>
-            <tbody>
-                <ng-container *ngFor="let veterinario of ListaVeterinarios">
-                <tr>
-                    <td>{{veterinario.nombre}}</td>
-                    <td>{{veterinario.apellido}}</td>
-                    <td>{{veterinario.cedula}}</td>
-                    <td>{{veterinario.correo}}</td>
-                    <td>{{veterinario.especialidad}}</td>
-            
-                    <td><img class="veterinarios" [src]="veterinario.foto" alt="Foto de {{veterinario.nombre}}"></td> 
-                    
-                    <td><a class="btn btn-info" [routerLink]="['/modificar-veterinario',veterinario.id]" ><img src="/assets/img/editar.png" alt="Editar"></a></td>
-                    <td><a type="button"  [routerLink]="['/ver-tratamientos/veterinario', veterinario.id]">Ver Tratamientos</a></td>
-                    <td><a class="btn btn-info" (click)="CambiarEstado(veterinario.correo)">{{veterinario.estado?'Activo':'Desactivado'}}</a></td>
-                    
-                    <td><a class="btn btn-danger" (click)="delete(veterinario.id)">Eliminar</a></td>
-                </tr>
-                </ng-container>
-                
-            </tbody>
-            
-        </table>  
-  
-    
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cédula</th>
+        <th>Correo</th>
+        <th>Especialidad</th>
+        <th>Foto</th>
+        <th>Actualizar</th>
+        <th>Tratamientos</th>
+        <th>Cambiar Estado</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let veterinario of ListaVeterinarios">
+        <tr>
+          <td>{{ veterinario.nombre }}</td>
+          <td>{{ veterinario.apellido }}</td>
+          <td>{{ veterinario.cedula }}</td>
+          <td>{{ veterinario.correo }}</td>
+          <td>{{ veterinario.especialidad }}</td>
+          <td><img class="veterinarios" [src]="veterinario.foto" alt="Foto de {{ veterinario.nombre }}"></td>
+          <td>
+            <a class="btn btn-info" [routerLink]="['/modificar-veterinario', veterinario.id]">
+              <img src="/assets/img/editar.png" alt="Editar">
+            </a>
+          </td>
+          <td>
+            <a type="button" [routerLink]="['/ver-tratamientos/veterinario', veterinario.id]">Ver Tratamientos</a>
+          </td>
+          <td>
+            <a class="btn btn-info" (click)="CambiarEstado(veterinario.correo)">
+              {{ veterinario.estado ? 'Activo' : 'Desactivado' }}
+            </a>
+          </td>
+          <td>
+            <a class="btn btn-danger" (click)="delete(veterinario.id)">Eliminar</a>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
 </div>
+
+<app-footer></app-footer>

@@ -55,7 +55,11 @@ export class ListaVeterinarioComponent {
   CambiarEstado(correo: string): void {
     this.veterinarioService.cambiarEstado(correo).subscribe({
       next: (response) => {
+        console.log('Estado cambiado exitosamente', response);
         window.location.reload();
+      },
+      error: (error) => {
+        console.error('Error al cambiar el estado', error);
       }
     });
   }
