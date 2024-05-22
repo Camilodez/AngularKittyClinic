@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user';
-import { TratamientoService } from 'src/app/services/tratamiento.service';
+import { Uservet } from 'src/app/models/uservet';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
 
 @Component({
@@ -11,36 +10,31 @@ import { VeterinarioService } from 'src/app/services/veterinario.service';
 })
 export class LoginVeterinarioComponent {
 
-  mostrarContrasena: boolean = false; // Añade esta línea aquí
+  mostrarContrasena: boolean = false;
 
-  constructor(private veterinarioService: VeterinarioService,private router: Router) { } 
+  constructor(private veterinarioService: VeterinarioService, private router: Router) { }
 
-
-
-  formVeterinario: User = {
-    cedula: '',
-    password: '',
-  }
+  correoVeterinario: string = "";
+  passwordVeterinario: string = "";
 
   toggleMostrarContrasena(): void {
     this.mostrarContrasena = !this.mostrarContrasena;
   }
-  
- 
 
-    login (correo: string, password: string) {
+  login() {
+    let user: Uservet = {
+      correo: this.correoVeterinario,
+      password: this.passwordVeterinario
+    };
 
-      this.formVeterinario.cedula = correo;
-      this.formVeterinario.password = password;
-  
-        this.veterinarioService.login(this.formVeterinario).subscribe(
-         data => {
-            localStorage.setItem("token", String(data));
-            this.router.navigate(["/veterinario/home"]);
-          })
-}
-
-  correo!: string;
-  password!: string;
-
+    this.veterinarioService.login(user).subscribe(
+      data => {
+        localStorage.setItem("token", data);
+        this.router.navigate(["/veterinario/home"]);
+      },
+      error => {
+        console.error('Login failed', error);
+      }
+    );
+  }
 }

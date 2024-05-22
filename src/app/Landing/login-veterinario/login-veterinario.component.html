@@ -15,15 +15,15 @@
                     <form name="form" action="/cliente/registro" method="post">
                         <div class="login_container_input">
                             <i class="fas fa-user"></i>
-                            <input class="campo-correo" [(ngModel)]="correo" type="text" name="username" id="username" placeholder="Correo Electronico" required>
+                            <input class="campo-correo" [(ngModel)]="correoVeterinario" type="text" name="username" id="username" placeholder="Correo Electronico" required>
                             <br>
                             <span class="mostrar-contrasena" (click)="toggleMostrarContrasena()">
                                 <i class="far" [ngClass]="{'fa-eye': !mostrarContrasena, 'fa-eye-slash': mostrarContrasena}"></i>
                             </span>
-                            <input type="{{ mostrarContrasena ? 'text' : 'password' }}" class="campo-contrasena" [(ngModel)]="password" name="password" id="password" placeholder="Contraseña" required>
+                            <input type="{{ mostrarContrasena ? 'text' : 'password' }}" class="campo-contrasena" [(ngModel)]="passwordVeterinario" name="password" id="password" placeholder="Contraseña" required>
                             
                         </div>
-                        <button type="submit" (click)="login(correo, password)" class="login_container_button" id="login-veterinario">Iniciar sesión</button>
+                        <button type="submit" (click)="login()" class="login_container_button" id="login-veterinario">Iniciar sesión</button>
                     </form>
                 </div>
                 <br>

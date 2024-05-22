@@ -1,9 +1,10 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Veterinario } from "../models/veterinario.model";
 import { Observable } from "rxjs";
 import axios, { AxiosResponse } from "axios";
 import { User } from "../models/user";
+import { Uservet } from "../models/uservet";
 @Injectable({
     providedIn: 'root'
   })
@@ -12,6 +13,8 @@ import { User } from "../models/user";
 export class VeterinarioService {
 
     private URL: string = "http://localhost:8090/admin"
+
+    private baseUrl = 'http://localhost:8090/veterinario';
 
 
 
@@ -60,11 +63,12 @@ export class VeterinarioService {
         return this.http.put(`http://localhost:8090/admin/estado/${id}`, null);
       }
 
-     login(user:User): Observable<String> {
-        return this.http.post('http://localhost:8090/admin/login', user,{
-            responseType: 'text'
+      login(user: Uservet): Observable<string> {
+        return this.http.post(`${this.baseUrl}/login`, user, {
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+          responseType: 'text' // Asegúrate de que la respuesta se maneje como texto
         });
-    }
+      }
 
 
     VeterinarioHome(): Observable<Veterinario> {
