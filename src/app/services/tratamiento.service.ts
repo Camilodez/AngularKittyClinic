@@ -14,6 +14,7 @@ export class TratamientoService {
 
 
   private baseURL = 'http://localhost:8090/tratamiento';
+  private baseUrl = 'http://localhost:8090/tratamiento';
 
   TratamientosVet(id : number): Promise<AxiosResponse<Tratamiento>> {
     return axios.get(`http://localhost:8090/tratamiento/veterinario/${id}`);
@@ -23,8 +24,8 @@ export class TratamientoService {
     return axios.get(`http://localhost:8090/tratamiento/gato/${id}`);
   }
 
-  ObtenerTratamientosGato(id: number){
-    return this.http.get<any[]>(`http://localhost:8090/tratamiento/informacion/gato/${id}`);
+  ObtenerTratamientosGato(id: number): Observable<Tratamiento[]> {
+    return this.http.get<Tratamiento[]>(`${this.baseUrl}/veterinario/${id}`);
   }
 
   obtenerTratamientosVet(id: number) {
