@@ -27,6 +27,7 @@ export class LoginComponent {
       (token) => {
         if (token) {
           localStorage.setItem("token", String(token));
+          console.log("token: " + token)
           this.router.navigate([`/loginuser/${this.cedulaCliente}`]);
         } else {
           console.error('Login failed');

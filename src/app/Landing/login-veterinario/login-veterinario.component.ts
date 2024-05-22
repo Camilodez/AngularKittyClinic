@@ -30,6 +30,7 @@ export class LoginVeterinarioComponent {
     this.veterinarioService.login(user).subscribe(
       data => {
         localStorage.setItem("token", data);
+        console.log("token: " + data);
         this.router.navigate(["/veterinario/home"]);
       },
       error => {

@@ -70,15 +70,8 @@ export class VeterinarioService {
         });
       }
 
-
-    VeterinarioHome(): Observable<Veterinario> {
-        return  this.http.get<Veterinario>("http://localhost:8090/veterinario/details");
-      }
-    
     veterinarioHome(): Observable<Veterinario> {
-        return this.http.get<Veterinario>('http://localhost:8090/admin/veterinario/details');
+        return this.http.get<Veterinario>('http://localhost:8090/veterinario/details');
     }
-    
-
-
+  
 }

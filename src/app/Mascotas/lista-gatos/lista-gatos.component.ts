@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Gato } from 'src/app/models/gato.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
 import { GatoService } from 'src/app/services/gato.service';
+import { VeterinarioService } from 'src/app/services/veterinario.service';
 import { SharedService } from 'src/app/shared.service';
 
 
@@ -37,35 +38,28 @@ export class ListaGatosComponent {
 
   filtroNombre: string = '';
   ListaGatos: Gato[] = [];
-  constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService, private route: ActivatedRoute
-  ) {
-    const vetDataString = sessionStorage.getItem("veterinario");
+  constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService,
+     private route: ActivatedRoute, private vetService: VeterinarioService) {
 
-    if (vetDataString !== null) {
-      // Convertir el JSON del sessionStorage en un objeto de tipo VeterinarioData
-      const vetData: Veterinario = JSON.parse(vetDataString);
-  
-      // Crear un objeto de tipo Veterinario usando los datos obtenidos del sessionStorage
-      
-      const veterinario: Veterinario = {
-        id: vetData.id, // Este campo podría no ser necesario en el formulario, dependiendo de tu lógica
-        cedula: vetData.cedula,
-        nombre: vetData.nombre,
-        apellido: vetData.apellido,
-        correo: vetData.correo,
-        password: vetData.password,
-        foto: vetData.foto,
-        especialidad: vetData.especialidad,
-        estado: vetData.estado
-      };
-
-      this.vet = veterinario;
-  }
+    const vetDataString = localStorage.getItem("token");
   }
 
-  vet: Veterinario | null = null;
+  vet: Veterinario = {
+    id: 0,
+    cedula: 0,
+    nombre: '',
+    apellido: '',
+    correo: '',
+    password: '',
+    foto: '',
+    especialidad: '',
+    estado: false
+  };
 
   ngOnInit(): void {
+
+    
+
     this.sharedService.mostrarOcultar = true;
     this.buscarGatos();
     console.log("Veterinario:", this.vet);
@@ -77,6 +71,17 @@ export class ListaGatosComponent {
     });
 
     this.sharedService.muestraOculta = true;
+
+
+    this.vetService.veterinarioHome().subscribe(
+      (vetData: any) => {
+        this.vet = vetData;
+        console.log("Veterinario recibido:", this.vet);
+      },
+      (error) => {
+        console.error('An error occurred:', error);
+      }
+    );
   }
   buscarGatos() {
     this.gatoService.findAll().subscribe(
@@ -106,5 +111,7 @@ export class ListaGatosComponent {
       gato.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase())
     );
   }
+
+
 
 }
