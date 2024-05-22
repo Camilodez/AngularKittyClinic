@@ -21,7 +21,7 @@ export class VeterinarioService {
     constructor(private http: HttpClient) { }
 
     findAll(): Promise<AxiosResponse<Veterinario[]>> {
-        return axios.get(`${this.URL}/veterinario`);
+        return axios.get(`http://localhost:8090/veterinario/veterinario`);
     }
 
     add(veterinario: Veterinario): Observable<Veterinario> {
@@ -34,7 +34,7 @@ export class VeterinarioService {
 
 
     searchbyId(id: number):Promise<AxiosResponse<Veterinario>> {
-      return axios.get(`http://localhost:8090/admin/veterinario/${id}`);
+      return axios.get(`http://localhost:8090/veterinario/find/${id}`);
     }
 
     findById(id: number): Observable<Veterinario> {
@@ -59,8 +59,8 @@ export class VeterinarioService {
         return this.http.get<number>('http://localhost:8090/admin/veterinario/inactivos/count');
     }
 
-    cambiarEstado(id: number): Observable<any> {
-        return this.http.put(`http://localhost:8090/admin/estado/${id}`, null);
+    cambiarEstado(correo: string): Observable<any> {
+        return this.http.put(`http://localhost:8090/veterinario/estado/${correo}`, null);
       }
 
       login(user: Uservet): Observable<string> {

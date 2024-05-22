@@ -52,10 +52,14 @@ export class ListaVeterinarioComponent {
     
   }
 
-  CambiarEstado(id: number): void {
-    this.veterinarioService.cambiarEstado(id).subscribe({
+  CambiarEstado(correo: string): void {
+    this.veterinarioService.cambiarEstado(correo).subscribe({
       next: (response) => {
+        console.log('Estado cambiado exitosamente', response);
         window.location.reload();
+      },
+      error: (error) => {
+        console.error('Error al cambiar el estado', error);
       }
     });
   }
