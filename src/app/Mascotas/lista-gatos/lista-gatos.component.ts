@@ -44,6 +44,8 @@ export class ListaGatosComponent {
     const vetDataString = localStorage.getItem("token");
   }
 
+  isAdmin: boolean = false;
+
   vet: Veterinario = {
     id: 0,
     cedula: 0,
@@ -57,11 +59,7 @@ export class ListaGatosComponent {
   };
 
   ngOnInit(): void {
-
-    
-
     this.sharedService.mostrarOcultar = true;
-    this.buscarGatos();
     console.log("Veterinario:", this.vet);
 
     this.route.params.subscribe(params => {
@@ -77,6 +75,8 @@ export class ListaGatosComponent {
       (vetData: any) => {
         this.vet = vetData;
         console.log("Veterinario recibido:", this.vet);
+        this.buscarGatos();
+        this.isAdmin = true;
       },
       (error) => {
         console.error('An error occurred:', error);

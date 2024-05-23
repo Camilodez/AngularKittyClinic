@@ -53,9 +53,9 @@
     </div>
     <ul>
         <div class="botonesvi">
-        <li><a [routerLink]="['/crear-gato']" type="button" ><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
-        <li><a type="button"  [routerLink]="['/ver-tratamientos/veterinario']"><span><p>Ver tratamientos</p> <img src="/assets/img/tratamientos.png" alt="tramamiento"></span></a></li>
-        <li><a  type="button" [routerLink]="['/modificar-usuario']"><span><p>Crear Usuario</p> <img src="/assets/img/agregarusuario.png" alt="agregar usuario"></span></a></li>
+        <li><a *ngIf="isAdmin" [routerLink]="['/crear-gato']" type="button" ><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
+        <li><a *ngIf="isAdmin" type="button"  [routerLink]="['/ver-tratamientos/veterinario']"><span><p>Ver tratamientos</p> <img src="/assets/img/tratamientos.png" alt="tramamiento"></span></a></li>
+        <li><a  *ngIf="isAdmin" type="button" [routerLink]="['/modificar-usuario']"><span><p>Crear Usuario</p> <img src="/assets/img/agregarusuario.png" alt="agregar usuario"></span></a></li>
 
         </div>
     </ul>
