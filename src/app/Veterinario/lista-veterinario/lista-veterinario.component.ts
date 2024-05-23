@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Admin } from 'src/app/models/admin.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
+import { AdminService } from 'src/app/services/admin.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
 
 @Component({
@@ -13,11 +15,26 @@ export class ListaVeterinarioComponent implements OnInit {
 
   constructor(
     private veterinarioService: VeterinarioService,
-    private router: Router
+    private router: Router,
+    private adminService: AdminService
   ) {}
 
+  admin!: Admin
+  isAdmin = false
+
   ngOnInit(): void {
-    this.buscarVets();
+    this.adminService.adminDetails().subscribe(
+      (data) => {
+        this.admin = data;
+        console.log(this.admin);
+        this.isAdmin = true;  
+        this.buscarVets();
+      },
+      (error) => {
+        console.error('An error occurred:', error);
+        this.router.navigate(['/admin-access-4f5e9d90-93e0-4c6b-88b1-711454a5b611']);
+      }
+    );
   }
 
   buscarVets() {
