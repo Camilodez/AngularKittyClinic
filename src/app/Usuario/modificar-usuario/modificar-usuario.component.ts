@@ -3,6 +3,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Usuario } from 'src/app/models/usuario.model';
+import { Veterinario } from 'src/app/models/veterinario.model';
+import { VeterinarioService } from 'src/app/services/veterinario.service';
+import { AdminService } from 'src/app/services/admin.service';
+import { Admin } from 'src/app/models/admin.model';
 
 @Component({
   selector: 'app-modificar-usuario',
@@ -23,10 +27,36 @@ export class ModificarUsuarioComponent implements OnInit {
     private usuarioService: UsuarioService, 
     private route: ActivatedRoute, 
     public formBuilder: FormBuilder, 
-    public router: Router
+    public router: Router,
+    private vetService: VeterinarioService,
+    private adminService: AdminService
   ) { }
 
+
+  isAdmin = false;
+  vet! : Veterinario;
+  admin!: Admin;
+
   ngOnInit() {
+
+
+    this.adminService.adminDetails().subscribe((data) => {
+      this.admin = data;
+      console.log(this.admin);
+      this.isAdmin = true;
+    });
+
+    this.vetService.veterinarioHome().subscribe(
+      (vetData: any) => {
+        this.vet = vetData;
+        console.log("Veterinario recibido:", this.vet);
+        this.isAdmin = true;
+      },
+      (error) => {
+        console.error('An error occurred:', error);
+      }
+    );
+
     this.route.params.subscribe(params => {
       const id = parseInt(params['id']);
       if (id === 0) {
