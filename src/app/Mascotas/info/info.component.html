@@ -25,7 +25,7 @@
           <tbody>
             <tr *ngFor="let tratamiento of tratamientos">
               <td>{{ tratamiento.fecha }}</td>
-              <td>{{ tratamiento.id }}</td> <!-- Adjust based on your Droga model -->
+              <td>{{ tratamiento.droga.nombre }}</td> <!-- Adjust based on your Droga model -->
             </tr>
           </tbody>
         </table>

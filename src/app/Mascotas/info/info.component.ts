@@ -14,9 +14,13 @@ import { SharedService } from 'src/app/shared.service'; // Import SharedService
 })
 export class InfoComponent implements OnInit {
   MuestrarOculta = false;
+
   isVeterinario = false;
+
   ultimaFechaTratamiento: any;
+
   gatoForm!: FormGroup;
+
   gato: Gato = {
     id: 0,
     nombre: '',
@@ -27,8 +31,9 @@ export class InfoComponent implements OnInit {
     estado: true,
     usuario: undefined,
     tratamientos: []
+
   };
-  tratamientos: Tratamiento[] = [];
+  tratamientos: any[] = [];
 
   constructor(
     private gatoService: GatoService, 
@@ -65,7 +70,7 @@ export class InfoComponent implements OnInit {
   obtenerTratamientosGato(id: number) {
     this.tratamientoService.ObtenerTratamientosGato(id).subscribe(
       (data: Tratamiento[]) => {
-        console.log(data);  // Check what data you are receiving here
+        console.log("Tratamientos en el gato: ", data);  // Check what data you are receiving here
         this.tratamientos = data;
         this.ultimaFechaTratamiento = this.obtenerUltimaFecha(data);
       },

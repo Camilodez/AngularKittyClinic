@@ -25,7 +25,7 @@ export class TratamientoService {
   }
 
   ObtenerTratamientosGato(id: number): Observable<Tratamiento[]> {
-    return this.http.get<Tratamiento[]>(`${this.baseUrl}/veterinario/${id}`);
+    return this.http.get<Tratamiento[]>(`http://localhost:8090/tratamiento/gato/${id}`);
   }
 
   obtenerTratamientosVet(id: number) {
