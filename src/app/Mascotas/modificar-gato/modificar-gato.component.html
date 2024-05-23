@@ -1,33 +1,42 @@
 <app-header></app-header>
-<br><br><br>
-<br>
-<img class="gatotier2" src="https://media-public.canva.com/XwNS0/MAE2hoXwNS0/1/s.png" alt="gato2">
-<img class="pelota" src="https://media-public.canva.com/3cOTo/MAFjDf3cOTo/1/tl.png" alt="pelota">
-<div class="contenedor-modificar">
 
-    <form #gatoForm="ngForm" (ngSubmit)="onSubmit(gatoForm)">
-        <div>
-            <label for="nombre">Nombre:</label>
-            <input value="{{gato.nombre}}" id="nombre"  name="nombre" type="text" [(ngModel)]="gato.nombre">
-        </div>
-        <img class="gatotier" src="https://media-public.canva.com/7o3nc/MAFsqp7o3nc/1/t.png" alt="gato">
+<div *ngIf="isAdmin">
+    <br><br><br>
+    <br>
+    <img class="gatotier2" src="https://media-public.canva.com/XwNS0/MAE2hoXwNS0/1/s.png" alt="gato2">
+    <img class="pelota" src="https://media-public.canva.com/3cOTo/MAFjDf3cOTo/1/tl.png" alt="pelota">
+    <div class="contenedor-modificar">
+    
+        <form #gatoForm="ngForm" (ngSubmit)="onSubmit(gatoForm)">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input value="{{gato.nombre}}" id="nombre"  name="nombre" type="text" [(ngModel)]="gato.nombre">
+            </div>
+            <img class="gatotier" src="https://media-public.canva.com/7o3nc/MAFsqp7o3nc/1/t.png" alt="gato">
+    
+            <div>
+                <label for="raza">Raza:</label>
+                <input value="{{gato.raza}}" id="raza" name="raza" type="text" [(ngModel)]="gato.raza">
+            </div>
+    
+            <div>
+                <label for="edad">Edad:</label>
+                <input value="{{gato.edad}}"  id="edad" name="edad" type="number" [(ngModel)]="gato.edad">
+            </div>
+    
+            <div>
+                <label for="foto">Imagen:</label>
+                <input value="{{gato.foto}}" id="foto" name="foto" type="text" [(ngModel)]="gato.foto">
+            </div>
+            
+            <div> <button type="submit" class="send">Enviar</button> </div>
+           
+        </form>
+    </div>
+</div>
 
-        <div>
-            <label for="raza">Raza:</label>
-            <input value="{{gato.raza}}" id="raza" name="raza" type="text" [(ngModel)]="gato.raza">
-        </div>
-
-        <div>
-            <label for="edad">Edad:</label>
-            <input value="{{gato.edad}}"  id="edad" name="edad" type="number" [(ngModel)]="gato.edad">
-        </div>
-
-        <div>
-            <label for="foto">Imagen:</label>
-            <input value="{{gato.foto}}" id="foto" name="foto" type="text" [(ngModel)]="gato.foto">
-        </div>
-        
-        <div> <button type="submit" class="send">Enviar</button> </div>
-       
-    </form>
+<div *ngIf="!isAdmin">
+    <h1>
+        Tu no ere veterinario
+    </h1>
 </div>

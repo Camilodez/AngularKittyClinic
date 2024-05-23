@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Gato } from '../../models/gato.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import axios, { AxiosResponse } from 'axios';
+import { VeterinarioService } from 'src/app/services/veterinario.service';
+import { Veterinario } from 'src/app/models/veterinario.model';
 
 
 @Component({
@@ -14,7 +16,7 @@ import axios, { AxiosResponse } from 'axios';
 })
 export class ModificarGatoComponent {
 
-  constructor(private gatoService: GatoService, private route: ActivatedRoute, 
+  constructor(private gatoService: GatoService, private route: ActivatedRoute, private vetService: VeterinarioService,
     public formBuilder: FormBuilder, public router: Router) {
 
       this.route.params.subscribe(params => {
@@ -24,9 +26,22 @@ export class ModificarGatoComponent {
       })
       console.log("entre al constructor")
     }
+
+    isAdmin = false;
+    vet!: Veterinario;
   
   
     ngOnInit() {
+      this.vetService.veterinarioHome().subscribe(
+        (vetData: any) => {
+          this.vet = vetData;
+          console.log("Veterinario recibido:", this.vet);
+          this.isAdmin = true
+        },
+        (error) => {
+          console.error('An error occurred:', error);
+        }
+      )
       console.log(this.gato)
     }
   

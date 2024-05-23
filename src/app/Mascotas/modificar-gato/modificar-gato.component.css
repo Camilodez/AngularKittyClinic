@@ -8,6 +8,15 @@ form {
     border-radius: 8px; /* Bordes redondeados del formulario */
 }
 
+h1{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 35px;
+}
+
 .gatocreado{
     position: relative;
 }
