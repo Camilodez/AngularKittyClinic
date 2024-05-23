@@ -15,6 +15,7 @@ export class PaginaPrincipalComponent {
 
   ngOnInit(): void {
     this.sharedService.mostrarOcultar = false;
+    this.sharedService.salir = false;
   }
 
 }

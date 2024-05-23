@@ -24,6 +24,8 @@ export class LoginuserComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.sharedService.salir = true;
+
       this.usuarioService.UsuarioHome().subscribe(
         (data) => {
           this.cliente = data;

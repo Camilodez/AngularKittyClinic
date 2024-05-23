@@ -11,6 +11,7 @@ import { VeterinarioService } from 'src/app/services/veterinario.service';
 export class LoginVeterinarioComponent {
 
   mostrarContrasena: boolean = false;
+  MostrarOcultar = true;
 
   constructor(private veterinarioService: VeterinarioService, private router: Router) { }
 
