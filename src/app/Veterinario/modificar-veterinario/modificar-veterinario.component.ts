@@ -28,15 +28,28 @@ export class ModificarVeterinarioComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      const id = +params['id'];
-      this.displayinfo(id);
+
+    const token = localStorage.getItem('token');
+
+    if (token) {
+       this.route.params.subscribe(params => {
+      const correo: string = params['correo'];
+      this.displayinfo(correo);
     });
+    }
+  
   }
 
-  async displayinfo(id: number) {
-    this.veterinario = (await this.veterinarioService.searchbyId(id)).data;
-    console.log(this.veterinario);
+  displayinfo(correo: string) {
+    this.veterinarioService.searchByCorreo(correo).subscribe({
+      next: (veterinario: Veterinario) => {
+        this.veterinario = veterinario;
+        console.log(this.veterinario);
+      },
+      error: (error) => {
+        console.error('Error al cargar los datos del veterinario', error);
+      }
+    });
   }
 
   onSubmit(form: any) {

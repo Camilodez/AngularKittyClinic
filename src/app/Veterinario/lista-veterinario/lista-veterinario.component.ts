@@ -24,7 +24,6 @@ export class ListaVeterinarioComponent implements OnInit {
     this.veterinarioService.findAllVets().subscribe({
       next: (veterinarios) => {
         this.ListaVeterinarios = veterinarios;
-       
       },
       error: (error) => {
         console.error('Error al cargar la lista de veterinarios', error);
@@ -32,8 +31,8 @@ export class ListaVeterinarioComponent implements OnInit {
     });
   }
 
-  delete(id: number) {
-    this.veterinarioService.delete(id).subscribe({
+  Delete(correo: string): void {
+    this.veterinarioService.delete(correo).subscribe({
       next: (resp) => {
         this.buscarVets(); // Volver a cargar la lista después de eliminar
       },
@@ -48,7 +47,6 @@ export class ListaVeterinarioComponent implements OnInit {
       next: (response) => {
         console.log('Estado cambiado exitosamente', response);
         this.buscarVets(); // Volver a cargar la lista después de cambiar el estado
-        
       },
       error: (error) => {
         console.error('Error al cambiar el estado', error);

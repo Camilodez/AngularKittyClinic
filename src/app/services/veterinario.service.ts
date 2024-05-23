@@ -29,42 +29,47 @@ export class VeterinarioService {
     }
 
     add(veterinario: Veterinario): Observable<Veterinario> {
-        return this.http.post<Veterinario>('http://localhost:8090/admin/agregar/veterinario', veterinario);
+        return this.http.post<Veterinario>('http://localhost:8090/veterinario/agregar', veterinario);
     }
 
     save(veterinario: Veterinario): Promise<Veterinario> {
-        return axios.post('http://localhost:8090/admin/agregar', veterinario);
+        return axios.post('http://localhost:8090/veterinario/agregar', veterinario);
       }
 
 
-    searchbyId(id: number):Promise<AxiosResponse<Veterinario>> {
-      return axios.get(`http://localhost:8090/veterinario/find/${id}`);
-    }
+      searchbyId(id: number): Observable<Veterinario> {
+        return this.http.get<Veterinario>(`${this.baseUrl}/find/${id}`);
+      }
+
+      searchByCorreo(correo: string): Observable<Veterinario> {
+        return this.http.get<Veterinario>(`${this.baseUrl}/find/${correo}`);
+      }
+
 
     findById(id: number): Observable<Veterinario> {
-        return this.http.get<Veterinario>(`http://localhost:8090/admin/veterinario/${id}`);
+        return this.http.get<Veterinario>(`http://localhost:8090/veterinario/veterinario/${id}`);
         
     }
     
     update(veterinario:Veterinario): Observable<Veterinario> {
-        return this.http.put<Veterinario>('http://localhost:8090/admin/update/veterinario', veterinario);
+        return this.http.put<Veterinario>('http://localhost:8090/veterinario/actualizar/veterinario', veterinario);
     }
 
-    delete(id: number){
-        return this.http.delete(`http://localhost:8090/admin/delete/${id}`);
+    delete(correo: string): Observable<any> {
+      return this.http.delete(`${this.baseUrl}/delete/${correo}`);
     }
 
     veterinariosActivo(){
-        return this.http.get<number>('http://localhost:8090/admin/veterinario/activos/count');
+        return this.http.get<number>('http://localhost:8090/veterinario/veterinario/activos/count');
     }
 
     veterinariosInactivo(){
-        return this.http.get<number>('http://localhost:8090/admin/veterinario/inactivos/count');
+        return this.http.get<number>('http://localhost:8090/veterinario/veterinario/inactivos/count');
     }
 
     cambiarEstado(correo: string): Observable<any> {
-        return this.http.put(`http://localhost:8090/veterinario/estado/${correo}`, null);
-      }
+      return this.http.put(`${this.baseUrl}/estado/${correo}`, null);
+    }
 
       login(user: Uservet): Observable<string> {
         return this.http.post(`${this.baseUrl}/login`, user, {

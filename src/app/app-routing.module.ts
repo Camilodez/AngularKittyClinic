@@ -37,11 +37,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginuser/:id', component: LoginuserComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
+  { path: 'modificar-veterinario/:correo', component: ModificarVeterinarioComponent },
   { path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
   { path: 'login-veterinario', component: LoginVeterinarioComponent },
   { path: 'veterinario/crear-tratamiento/:id', component: CrearTratamientoComponent },
   { path: 'ver-tratamientos/veterinario', component: VerTratamientosComponent },
+  { path: 'ver-tratamientos/veterinario/:correo', component: VerTratamientosComponent },
   { path: 'admin-access-4f5e9d90-93e0-4c6b-88b1-711454a5b611', component: LoginAdminComponent },
   { path: 'veterinario/home', component: ListaGatosComponent },
   { path: 'cliente/home', component: LoginuserComponent }

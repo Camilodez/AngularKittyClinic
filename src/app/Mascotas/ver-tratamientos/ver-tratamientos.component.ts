@@ -20,6 +20,7 @@ export class VerTratamientosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.vetService.veterinarioHome().subscribe(
       (vetData: any) => {
         this.vet = vetData;
