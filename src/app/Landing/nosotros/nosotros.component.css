@@ -1,0 +1,126 @@
+h1{
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(24, 176, 176);
+}
+
+h2{
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+h3{
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(24, 176, 176);
+    line-height: 1.2;
+}
+
+#linea{
+    border-top: 3px solid #104c5a;
+}
+
+p{
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: left;
+    color: rgb(35, 28, 19);
+    line-height: 1.6;
+    font-weight: 540;
+}
+
+.gatico{
+    position: relative;
+    height: auto;
+    width: 360px;
+}
+
+
+.banner-container {
+    display: flex;
+    width: 100%;
+}
+
+.part1, .part2 {
+    flex: 1; /* Distribuir el ancho en partes iguales */
+    padding: 20px;
+}
+
+.part1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.part2 {
+    text-align: center; /* Centrar texto */
+    position: relative; /* Contenedor relativo para la imagen y el botón */
+    display: inline-block;
+}
+
+.banner-text {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.gatico {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* button*/
+
+.custom-button {
+    background-color: #4CAF50; /* Verde */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Alineación centrada */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Inline-block para el espaciado */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Puntero al pasar sobre el botón */
+    border-radius: 12px; /* Bordes redondeados */
+    transition-duration: 0.4s; /* Duración de la transición */
+}
+
+.custom-button:hover {
+    background-color: white; /* Cambiar a blanco al pasar el cursor */
+    color: black; /* Cambiar el texto a negro al pasar el cursor */
+    border: 1px solid #4CAF50; /* Añadir un borde verde al pasar el cursor */
+}
+
+
+/* button play video */
+
+.play-button {
+    position: absolute; /* Posiciona el botón de manera absoluta dentro del contenedor */
+    top: 98%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centrar completamente */
+    background-color: transparent;
+    border: none; /* Sin borde */
+    color: #3cc941dc;
+    font-size: 60px; /* Tamaño del icono */
+    border-radius: 50%; /* Botón circular */
+    cursor: pointer; /* Puntero al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición para el cambio de color */
+}
+
+.play-button:hover {
+    color: #4CAF50;/* Color más oscuro al pasar el cursor */
+    transition: font-size 0.3s; /* Transición para el cambio de color */
+    font-size: 80px;
+}

@@ -19,6 +19,8 @@ import { CrearTratamientoComponent } from './Mascotas/crear-tratamiento/crear-tr
 import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratamientos.component';
 import { LoginAdminComponent } from './Admin/login-admin/login-admin.component';
 import { ComunicacionComponent } from './Landing/comunicacion/comunicacion.component';
+import { ServicioComponent } from './Landing/servicio/servicio.component';
+import { NosotrosComponent } from './Landing/nosotros/nosotros.component';
 
 
 const routes: Routes = [
@@ -45,6 +47,8 @@ const routes: Routes = [
   { path: 'ver-tratamientos/veterinario/:id', component: VerTratamientosComponent },
   { path: 'admin-access-4f5e9d90-93e0-4c6b-88b1-711454a5b611', component: LoginAdminComponent },
   { path: 'veterinario/home', component: ListaGatosComponent },
+  { path: 'servicio', component: ServicioComponent },
+  { path: 'nosotros', component: NosotrosComponent },
   { path: 'cliente/home', component: LoginuserComponent }
 
 ];
