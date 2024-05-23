@@ -7,7 +7,7 @@ import { PaginaPrincipalComponent } from './Landing/pagina-principal/pagina-prin
 import { LaboratoriosComponent } from './Landing/laboratorios/laboratorios.component';
 import { CirugiasComponent } from './Landing/cirugias/cirugias.component';
 import { ListaGatosComponent } from './Mascotas/lista-gatos/lista-gatos.component';
-import { LoginComponent } from './Landing/login/login.component';
+import { LoginComponent } from './Usuario/login/login.component';
 import { HeaderComponent } from './Landing/header/header.component';
 import { FooterComponent } from './Landing/footer/footer.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -18,12 +18,12 @@ import { CrearGatoComponent } from './Mascotas/crear-gato/crear-gato.component';
 import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.component';
 import { PerfilUsuarioComponent } from './Usuario/perfil-usuario/perfil-usuario.component';
 import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar-usuario.component';
-import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veterinario.component';
-import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
+import { ListaVeterinarioComponent } from './Veterinario/lista-veterinario/lista-veterinario.component';
+import { ModificarVeterinarioComponent } from './Veterinario/modificar-veterinario/modificar-veterinario.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 import { LoginuserComponent } from './Usuario/loginuser/loginuser.component';
-import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-veterinario.component';
+import { LoginVeterinarioComponent } from './Veterinario/login-veterinario/login-veterinario.component';
 import { CrearTratamientoComponent } from './Mascotas/crear-tratamiento/crear-tratamiento.component';
 import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratamientos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

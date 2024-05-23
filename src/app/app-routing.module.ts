@@ -9,12 +9,12 @@ import { ListaUsuarioComponent } from './Usuario/lista-usuario/lista-usuario.com
 import { PerfilUsuarioComponent } from './Usuario/perfil-usuario/perfil-usuario.component';
 import { ModificarGatoComponent } from './Mascotas/modificar-gato/modificar-gato.component';
 import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar-usuario.component';
-import { ListaVeterinarioComponent } from './Admin/lista-veterinario/lista-veterinario.component'; 
-import { ModificarVeterinarioComponent } from './Admin/modificar-veterinario/modificar-veterinario.component';
+import { ListaVeterinarioComponent } from './Veterinario/lista-veterinario/lista-veterinario.component'; 
+import { ModificarVeterinarioComponent } from './Veterinario/modificar-veterinario/modificar-veterinario.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
-import { LoginComponent } from './Landing/login/login.component';
+import { LoginComponent } from './Usuario/login/login.component';
 import { LoginuserComponent } from './Usuario/loginuser/loginuser.component';
-import { LoginVeterinarioComponent } from './Landing/login-veterinario/login-veterinario.component';
+import { LoginVeterinarioComponent } from './Veterinario/login-veterinario/login-veterinario.component';
 import { CrearTratamientoComponent } from './Mascotas/crear-tratamiento/crear-tratamiento.component';
 import { VerTratamientosComponent } from './Mascotas/ver-tratamientos/ver-tratamientos.component';
 import { LoginAdminComponent } from './Admin/login-admin/login-admin.component';

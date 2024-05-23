@@ -24,6 +24,10 @@ export class VeterinarioService {
         return axios.get(`http://localhost:8090/veterinario/veterinario`);
     }
 
+    findAllVets(): Observable<Veterinario[]> {
+        return this.http.get<Veterinario[]>('http://localhost:8090/veterinario/veterinario');
+    }
+
     add(veterinario: Veterinario): Observable<Veterinario> {
         return this.http.post<Veterinario>('http://localhost:8090/admin/agregar/veterinario', veterinario);
     }
