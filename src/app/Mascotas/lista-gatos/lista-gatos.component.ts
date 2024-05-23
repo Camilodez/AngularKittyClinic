@@ -6,8 +6,8 @@ import { Gato } from 'src/app/models/gato.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
 import { AdminService } from 'src/app/services/admin.service';
 import { GatoService } from 'src/app/services/gato.service';
+import { SharedService } from 'src/app/services/shared.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
-import { SharedService } from 'src/app/shared.service';
 
 
 @Component({
