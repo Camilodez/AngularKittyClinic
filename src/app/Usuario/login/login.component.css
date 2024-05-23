@@ -8,6 +8,7 @@
 .titulo{
     font-size: 50px;
     animation: zoomIn 1s ease forwards;
+    caret-color: transparent;
 }
 
 @keyframes zoomIn {
@@ -39,6 +40,7 @@
 .titulo{
     font-size: 50px;
     animation: zoomIn 1s ease forwards;
+    
 }
 
 
@@ -64,6 +66,8 @@
     display: inline;
     font-size: 20px;
     font-family: "Noto Sans JP", sans-serif;
+    caret-color: transparent;
+
     
 }
 
@@ -75,6 +79,8 @@
     cursor: pointer;
     font-size: 20px;
     font-family: "Noto Sans JP", sans-serif;
+    caret-color: transparent;
+
 }
 
 .formdesign{

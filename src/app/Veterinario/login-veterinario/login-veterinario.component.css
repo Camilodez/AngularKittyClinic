@@ -8,6 +8,8 @@
 .titulo{
     font-size: 50px;
     animation: zoomIn 1s ease forwards;
+    caret-color: transparent;
+
 }
 
 
@@ -44,6 +46,8 @@
     font-size: 20px;
     font-family: "Noto Sans JP", sans-serif;
     animation: zoomIn 3s ease forwards;
+    caret-color: transparent;
+
     
 }
 
@@ -56,6 +60,8 @@
     font-size: 20px;
     font-family: "Noto Sans JP", sans-serif;
     animation: zoomIn 3s ease forwards;
+    caret-color: transparent;
+
 }
 
 .formdesign{
@@ -108,6 +114,7 @@
 
 .campo-correo {
     /* Estilos básicos */
+    margin-left: 10px;
     border: 2px solid #ccc;
     border-radius: 5px;
     padding: 10px;
@@ -124,12 +131,14 @@
 
 .campo-contrasena {
     /* Estilos adicionales */
+    margin-top: 2px;
     border: 2px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     width: 300px; /* Ancho del campo de contrasena */
     background-color: #f9f9f9;
     color: #333; /* Color del texto */
+    margin-left: 8px;
 }
 .campo-contrasena:focus, .login_container_button:hover {
     animation: pulse 0.75s infinite alternate;
