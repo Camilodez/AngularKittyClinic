@@ -3,6 +3,8 @@ import { GatoService } from 'src/app/services/gato.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
 import { DrogaService } from 'src/app/services/droga.service';
 import { SharedService } from 'src/app/shared.service';
+import { AdminService } from 'src/app/services/admin.service';
+import { Admin } from 'src/app/models/admin.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,6 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit{
-
   cantiVetiActi: any;
   cantiVetiInacti: any;
   cantiMascoActi: any;
@@ -24,11 +25,26 @@ export class DashboardComponent implements OnInit{
     private veterinarioService: VeterinarioService,
     private drogaService: DrogaService,
     private gatoService: GatoService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private adminService: AdminService
   ) { }
 
 
+  isAdmin = false
+
+  admin! : Admin
+
   ngOnInit(): void {
+    this.cargarDatos();
+    this.adminService.adminDetails().subscribe((data) => {
+      this.admin = data;
+      console.log(this.admin);
+      this.isAdmin = true;  
+    })
+
+  }
+
+  cargarDatos(){
     this.veterinarioService.veterinariosActivo().subscribe((data) => {
       this.cantiVetiActi = data;
     });
@@ -79,6 +95,7 @@ export class DashboardComponent implements OnInit{
     });
 
     this.sharedService.mostrarOcultar = true;
-
   }
+
+
 }
