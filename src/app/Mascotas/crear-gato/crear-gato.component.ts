@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Gato } from 'src/app/models/gato.model';
+import { Veterinario } from 'src/app/models/veterinario.model';
 import { GatoService } from 'src/app/services/gato.service';
 import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
+import { VeterinarioService } from 'src/app/services/veterinario.service';
 
 @Component({
   selector: 'app-crear-gato',
@@ -11,7 +13,11 @@ import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
 })
 export class CrearGatoComponent {
 
-  constructor(private gatoService: GatoService, public router: Router, private usuarioService: UsuarioService) { }
+  constructor(private gatoService: GatoService, public router: Router, private usuarioService: UsuarioService,
+    private vetService: VeterinarioService
+  ) { }
+
+    isAdmin = false;
 
     cedula?: number;
 
@@ -27,6 +33,21 @@ export class CrearGatoComponent {
       usuario: undefined,
       id: 0,
     };
+
+    vet!: Veterinario;
+
+    ngOnInit(): void {
+      this.vetService.veterinarioHome().subscribe(
+        (vetData: any) => {
+          this.vet = vetData;
+          console.log("Veterinario recibido:", this.vet);
+          this.isAdmin = true
+        },
+        (error) => {
+          console.error('An error occurred:', error);
+        }
+      );
+    }
     
       async onSubmit(form: any) {
       this.gato.usuario =  (await this.usuarioService.findbyCedula(this.cedula!)).data;
