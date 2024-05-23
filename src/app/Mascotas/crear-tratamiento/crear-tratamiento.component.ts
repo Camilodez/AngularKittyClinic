@@ -9,7 +9,6 @@ import { DrogaService } from 'src/app/services/droga.service';
 import { GatoService } from 'src/app/services/gato.service';
 import { TratamientoService } from 'src/app/services/tratamiento.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
-import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-crear-tratamiento',

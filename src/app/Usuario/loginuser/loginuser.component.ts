@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
 import { Gato } from 'src/app/models/gato.model';
-import { SharedService } from 'src/app/shared.service';
 import axios from 'axios';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-loginuser',

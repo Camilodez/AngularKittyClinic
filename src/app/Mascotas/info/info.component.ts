@@ -5,9 +5,9 @@ import { TratamientoService } from 'src/app/services/tratamiento.service';
 import { GatoService } from 'src/app/services/gato.service';
 import { Tratamiento } from 'src/app/models/tratamiento.model';
 import { Gato } from 'src/app/models/gato.model';
-import { SharedService } from 'src/app/shared.service'; // Import SharedService
 import { Veterinario } from 'src/app/models/veterinario.model';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-info',

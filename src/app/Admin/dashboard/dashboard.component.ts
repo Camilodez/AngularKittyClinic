@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { GatoService } from 'src/app/services/gato.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
 import { DrogaService } from 'src/app/services/droga.service';
-import { SharedService } from 'src/app/shared.service';
 import { AdminService } from 'src/app/services/admin.service';
 import { Admin } from 'src/app/models/admin.model';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-dashboard',
