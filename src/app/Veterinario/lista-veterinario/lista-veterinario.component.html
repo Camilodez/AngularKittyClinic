@@ -32,7 +32,7 @@
           <td>{{ veterinario.especialidad }}</td>
           <td><img class="veterinarios" [src]="veterinario.foto" alt="Foto de {{ veterinario.nombre }}"></td>
           <td>
-            <a class="btn btn-info" [routerLink]="['/modificar-veterinario', veterinario.id]">
+            <a class="btn btn-info" [routerLink]="['/modificar-veterinario', veterinario.correo]">
               <img src="/assets/img/editar.png" alt="Editar">
             </a>
           </td>
@@ -45,7 +45,7 @@
             </a>
           </td>
           <td>
-            <a class="btn btn-danger" (click)="delete(veterinario.id)">Eliminar</a>
+            <a class="btn btn-danger" (click)="Delete(veterinario.correo)">Eliminar</a>
           </td>
         </tr>
       </ng-container>
