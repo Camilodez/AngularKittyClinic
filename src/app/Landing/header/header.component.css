@@ -122,10 +122,10 @@ en la opción */
 
 
 .fa-cat:hover {
-    animation: colorChange 1s infinite alternate;
+    animation: colorChangeCat  1s infinite alternate;
 }
 
-@keyframes colorChange {
+@keyframes colorChangeCat  {
     from {
         color: #000; /* Color inicial */
     }
@@ -135,10 +135,10 @@ en la opción */
 }
 
 .fa-right-from-bracket:hover {
-    animation: colorChange 1s infinite alternate;
+    animation: colorChangeBracket  1s infinite alternate;
 }
 
-@keyframes colorChange {
+@keyframes colorChangeBracket  {
     from {
         color: #000; /* Color inicial */
     }

@@ -51,6 +51,7 @@ export class LoginuserComponent implements OnInit {
       );
 
     this.sharedService.mostrarOcultar = false;
+    this.sharedService.salir = true;
   }
 
   toggleSidebar() {
