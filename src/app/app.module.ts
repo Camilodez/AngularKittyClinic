@@ -35,6 +35,7 @@ import { ComunicacionComponent } from './Landing/comunicacion/comunicacion.compo
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { ServicioComponent } from './Landing/servicio/servicio.component';
 import { NosotrosComponent } from './Landing/nosotros/nosotros.component';
+import { LaboratorioComponent } from './Landing/laboratorio/laboratorio.component';
 
 
 
@@ -65,6 +66,7 @@ import { NosotrosComponent } from './Landing/nosotros/nosotros.component';
     ComunicacionComponent,
     ServicioComponent,
     NosotrosComponent,
+    LaboratorioComponent,
     
 
   ],
