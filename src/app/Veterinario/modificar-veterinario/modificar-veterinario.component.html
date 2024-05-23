@@ -13,37 +13,32 @@
             <form #veterinarioForm="ngForm" (ngSubmit)="onSubmit(veterinarioForm)">
               <div class="form-group">
                 <label for="cedula">Cédula:</label>
-                <input type="number" class="form-control" id="cedula" name="cedula" [(ngModel)]="veterinario.cedula" required>
+                <input type="number" value="{{veterinario.cedula}}" class="form-control" id="cedula" name="cedula" [(ngModel)]="veterinario.cedula" required>
               </div>
               
               <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="veterinario.nombre" required>
+                <input type="text" value="{{veterinario.nombre}}" class="form-control" id="nombre" name="nombre" [(ngModel)]="veterinario.nombre" required>
               </div>
               
               <div class="form-group">
                 <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="veterinario.apellido" required>
+                <input type="text" value="{{veterinario.apellido}}" class="form-control" id="apellido" name="apellido" [(ngModel)]="veterinario.apellido" required>
               </div>
   
               <div class="form-group">
                 <label for="correo">Correo:</label>
-                <input type="email" class="form-control" id="correo" name="correo" [(ngModel)]="veterinario.correo" required>
+                <input type="email" value="{{veterinario.correo}}" class="form-control" id="correo" name="correo" [(ngModel)]="veterinario.correo" required>
               </div>
-  
-              <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="veterinario.password" required>
-              </div>
-  
+              
               <div class="form-group">
                 <label for="foto">Foto (URL):</label>
-                <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="veterinario.foto">
+                <input type="text" value="{{veterinario.foto}}" class="form-control" id="foto" name="foto" [(ngModel)]="veterinario.foto">
               </div>
   
               <div class="form-group">
                 <label for="especialidad">Especialidad:</label>
-                <input type="text" class="form-control" id="especialidad" name="especialidad" [(ngModel)]="veterinario.especialidad" required>
+                <input type="text" value="{{veterinario.especialidad}}" class="form-control" id="especialidad" name="especialidad" [(ngModel)]="veterinario.especialidad" required>
               </div>
               <div class="buttoncontainer">
                 <button type="submit" class="btn custom-btn" [disabled]="!veterinarioForm.valid">Enviar</button>

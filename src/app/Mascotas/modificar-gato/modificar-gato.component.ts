@@ -23,7 +23,6 @@ export class ModificarGatoComponent {
       this.route.params.subscribe(params => {
         this.displayinfo(parseInt(params['id']));
         console.log(this.gato)
-  
       })
       console.log("entre al constructor")
     }

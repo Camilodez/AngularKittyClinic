@@ -31,4 +31,8 @@ export class AdminService {
         return this.http.get<Veterinario>('http://localhost:8090/admin/findVet/' + id);
     }
 
+    updateVet(veterinario:Veterinario): Observable<Veterinario>{
+        return this.http.put<Veterinario>('http://localhost:8090/admin/actualizar/veterinario', veterinario);
+    }
+
 }

@@ -21,7 +21,6 @@
           <th>Actualizar</th>
           <th>Tratamientos</th>
           <th>Cambiar Estado</th>
-          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -34,7 +33,7 @@
             <td>{{ veterinario.especialidad }}</td>
             <td><img class="veterinarios" [src]="veterinario.foto" alt="Foto de {{ veterinario.nombre }}"></td>
             <td>
-              <a class="btn btn-info" [routerLink]="['/modificar-veterinario', veterinario.correo]">
+              <a class="btn btn-info" [routerLink]="['/modificar-veterinario', veterinario.id]">
                 <img src="/assets/img/editar.png" alt="Editar">
               </a>
             </td>
@@ -45,9 +44,6 @@
               <a class="btn btn-info" (click)="CambiarEstado(veterinario.correo)">
                 {{ veterinario.estado ? 'Activo' : 'Desactivado' }}
               </a>
-            </td>
-            <td>
-              <a class="btn btn-danger" (click)="Delete(veterinario.correo)">Eliminar</a>
             </td>
           </tr>
         </ng-container>

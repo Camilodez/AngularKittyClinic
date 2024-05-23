@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'loginuser/:id', component: LoginuserComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'modificar-veterinario/:correo', component: ModificarVeterinarioComponent },
+  { path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
   { path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
   { path: 'login-veterinario', component: LoginVeterinarioComponent },
   { path: 'veterinario/crear-tratamiento/:id', component: CrearTratamientoComponent },
