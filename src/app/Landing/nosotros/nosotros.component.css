@@ -45,6 +45,13 @@ p{
     width: 360px;
 }
 
+.animalitos {
+    display: block; /* Asegura que la imagen se comporte correctamente */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 600px; /* Asegura que la imagen no se desborde */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
 
 .banner-container {
     display: flex;
@@ -54,6 +61,18 @@ p{
 .part1, .part2 {
     flex: 1; /* Distribuir el ancho en partes iguales */
     padding: 20px;
+}
+
+
+.respotext{
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+    color: rgb(35, 28, 19);
+    line-height: 1.8;
+    font-weight: 540;
 }
 
 .part1 {
