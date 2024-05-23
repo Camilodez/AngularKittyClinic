@@ -26,6 +26,8 @@ export class CrearTratamientoComponent implements OnInit {
 
   drogas: string[] = [];
 
+  isAdmin = false;
+
   gato!: Gato;
 
   tratamiento: EnviarTratamiento = {
@@ -40,6 +42,7 @@ export class CrearTratamientoComponent implements OnInit {
       (vetData: any) => {
         this.vet = vetData;
         console.log("Veterinario recibido:", this.vet);
+        this.isAdmin = true;
       },
       (error) => {
         console.error('An error occurred:', error);
