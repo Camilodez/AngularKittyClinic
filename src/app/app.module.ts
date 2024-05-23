@@ -33,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginAdminComponent } from './Admin/login-admin/login-admin.component';
 import { ComunicacionComponent } from './Landing/comunicacion/comunicacion.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { ServicioComponent } from './Landing/servicio/servicio.component';
+import { NosotrosComponent } from './Landing/nosotros/nosotros.component';
 
 
 
@@ -61,6 +63,8 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     VerTratamientosComponent,
     LoginAdminComponent,
     ComunicacionComponent,
+    ServicioComponent,
+    NosotrosComponent,
     
 
   ],
