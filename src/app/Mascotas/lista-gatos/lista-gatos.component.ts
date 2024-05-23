@@ -54,6 +54,8 @@ export class ListaGatosComponent {
 
   ngOnInit(): void {
     this.sharedService.muestraOculta = true;
+    this.sharedService.mostrarOcultar = true;
+    this.sharedService.salir = true;
 
     this.adminService.adminDetails().subscribe((data) => {
       this.admin = data;

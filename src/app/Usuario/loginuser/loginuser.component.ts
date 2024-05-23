@@ -40,6 +40,7 @@ export class LoginuserComponent implements OnInit {
       this.cargarFelinos(userId.toString());
     });
 
+
       this.usuarioService.UsuarioHome().subscribe(
         (data) => {
           this.cliente = data;

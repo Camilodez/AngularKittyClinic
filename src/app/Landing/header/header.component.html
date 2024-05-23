@@ -34,6 +34,13 @@
                     <i class="fas fa-user"></i>
                 </a>                    
             </div>
+
+            <div *ngIf="sharedService.salir">
+                <a [routerLink]="['/home']">
+                    <i class="fa-solid fa-right-from-bracket"></i>   
+                </a>             
+                    
+            </div>
         </div> <!-- Cierra el div de la clase "nav" -->
     </header>
 </div>
