@@ -47,7 +47,7 @@ export class VeterinarioService {
 
 
     findById(id: number): Observable<Veterinario> {
-        return this.http.get<Veterinario>(`http://localhost:8090/veterinario/veterinario/${id}`);
+        return this.http.get<Veterinario>(`http://localhost:8090/veterinario/find/${id}`);
         
     }
     
