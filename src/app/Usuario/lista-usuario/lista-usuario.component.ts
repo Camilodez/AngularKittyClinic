@@ -51,9 +51,6 @@ export class ListaUsuarioComponent {
       )
     }
 
-    
-
-
     buscarUsuario() {
       this.usuarioService.findAll().subscribe(
         (usuario: Usuario[]) => {
@@ -76,7 +73,6 @@ export class ListaUsuarioComponent {
               console.error('Error al eliminar el usuario', error);
             }
           });
-        
       }
 
 

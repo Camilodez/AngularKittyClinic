@@ -41,6 +41,7 @@ export class ListaVeterinarioComponent implements OnInit {
     this.veterinarioService.findAllVets().subscribe({
       next: (veterinarios) => {
         this.ListaVeterinarios = veterinarios;
+        console.log(this.ListaVeterinarios);
       },
       error: (error) => {
         console.error('Error al cargar la lista de veterinarios', error);

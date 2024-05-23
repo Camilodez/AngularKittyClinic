@@ -38,8 +38,6 @@ export class ModificarUsuarioComponent implements OnInit {
   admin!: Admin;
 
   ngOnInit() {
-
-
     this.adminService.adminDetails().subscribe(
       (data) => {
         this.admin = data;
