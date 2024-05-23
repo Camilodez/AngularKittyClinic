@@ -36,6 +36,7 @@ export class DashboardComponent implements OnInit{
 
   ngOnInit(): void {
     this.cargarDatos();
+    this.sharedService.salir = false;
     
     this.adminService.adminDetails().subscribe((data) => {
       this.admin = data;
@@ -96,6 +97,7 @@ export class DashboardComponent implements OnInit{
     });
 
     this.sharedService.mostrarOcultar = true;
+    this.sharedService.salir = true;
   }
 
 
