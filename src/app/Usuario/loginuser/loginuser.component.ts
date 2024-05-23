@@ -4,6 +4,7 @@ import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
 import { Gato } from 'src/app/models/gato.model';
 import axios from 'axios';
 import { SharedService } from 'src/app/services/shared.service';
+import { VeterinarioService } from 'src/app/services/veterinario.service';
 
 @Component({
   selector: 'app-loginuser',
@@ -18,7 +19,8 @@ export class LoginuserComponent implements OnInit {
     private route: ActivatedRoute,
     private usuarioService: UsuarioService,
     private sharedService: SharedService,
-    private router: Router
+    private router: Router,
+    private vetService: VeterinarioService
   ) { }
 
   isAdmin = false
@@ -32,6 +34,8 @@ export class LoginuserComponent implements OnInit {
     const token = localStorage.getItem('token');
     if (token) {
       this.isAdmin = true;
+    } else {
+      this.router.navigate(['/login']);
     }
 
     this.route.params.subscribe(params => {
@@ -51,8 +55,6 @@ export class LoginuserComponent implements OnInit {
         },
         (error) => {
           console.error('Error al cargar el cliente', error);
-          this.router.navigate(['/login']);
-
         }
       );
 
