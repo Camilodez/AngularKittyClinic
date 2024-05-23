@@ -22,6 +22,7 @@ export class InfoComponent implements OnInit {
   ultimaFechaTratamiento: any;
 
   isAdmin = false;
+  isLoggedIn = false;
 
   gatoForm!: FormGroup;
 
@@ -62,6 +63,15 @@ export class InfoComponent implements OnInit {
   vet!: Veterinario;
 
   async ngOnInit() {
+
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+
+    if(token) {
+      this.isLoggedIn = true
+    }
+
+
     this.route.params.subscribe(async params => {
       const id = +params['id'];
       this.gato = (await this.gatoService.findById(id)).data;

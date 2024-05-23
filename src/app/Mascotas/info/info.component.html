@@ -1,50 +1,64 @@
 <app-header></app-header>
 
-<div id="linea"></div>
+<div *ngIf="isLoggedIn">
 
-<br><br><br>
+  <div id="linea"></div>
+
+  <br><br><br>
 
   <a *ngIf="isAdmin" [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a>
 
-<section id="historial" class="infogatuna">
-  <div class="part1">
-    <!-- Nuevo contenedor para datos-gato y foto-gato -->
-    <h2>{{gato.nombre}}</h2>
-    <div class="contenedor-gatos">
-      <div class="obersaciones-gato"> 
-        <h3 class="h3-obser">Tratamientos</h3>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Nombre del Tratamiento</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let tratamiento of tratamientos">
-              <td>{{ tratamiento.fecha }}</td>
-              <td>{{ tratamiento.droga.nombre }}</td> <!-- Adjust based on your Droga model -->
-            </tr>
-          </tbody>
-        </table>
+  <section id="historial" class="infogatuna">
+    <div class="part1">
+      <!-- Nuevo contenedor para datos-gato y foto-gato -->
+      <h2>{{gato.nombre}}</h2>
+      <div class="contenedor-gatos">
+        <div class="obersaciones-gato">
+          <h3 class="h3-obser">Tratamientos</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Nombre del Tratamiento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tratamiento of tratamientos">
+                <td>{{ tratamiento.fecha }}</td>
+                <td>{{ tratamiento.droga.nombre }}</td> <!-- Adjust based on your Droga model -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="foto-gato">
+          <img class="gatos" [src]="gato.foto" alt="">
+        </div>
+        <div class="datos-gato">
+          <h3 class="h3-obser">Caracteristicas</h3>
+          <p class="raza">Su raza es :{{gato.raza}}</p>
+          <p class="raza">Tiene la enfermedad de :{{gato.enfermedad}}</p>
+        </div>
       </div>
-      <div class="foto-gato">
-        <img class="gatos" [src]="gato.foto" alt="">
-      </div>
-      <div class="datos-gato">
-        <h3 class="h3-obser">Caracteristicas</h3> 
-        <p class="raza">Su raza es :{{gato.raza}}</p>
-        <p class="raza">Tiene la enfermedad de :{{gato.enfermedad}}</p>
-      </div>
-    </div>
 
-    <div class="edad-gato">
-      <h3 class="h3-obser">Edad</h3> 
-      <p>{{ gato.edad }}</p>
-      <p><strong>Última cita: </strong> <span>{{ ultimaFechaTratamiento }}</span></p>
+      <div class="edad-gato">
+        <h3 class="h3-obser">Edad</h3>
+        <p>{{ gato.edad }}</p>
+        <p><strong>Última cita: </strong> <span>{{ ultimaFechaTratamiento }}</span></p>
+      </div>
     </div>
-  </div>
-</section>
-<br>
+  </section>
+  <br>
+</div>
+
+<div>
+
+  <br><br><br><br><br><br><br>
+  <h1>
+    Primero tienes que iniciar sesion 
+  </h1>
+  <br><br><br><br><br><br><br>
+
+</div>
+
 
 <app-footer></app-footer>
