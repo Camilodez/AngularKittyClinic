@@ -1,50 +1,59 @@
 <app-header></app-header>
 
-<div id="linea"></div>
+<div *ngIf="isAdmin">
 
-<div class="sidebar-right" [ngClass]="{ 'active': sidebarVisible }">
-    <div class="handle" (click)="toggleSidebar()">&#9776;</div> 
-    <div class="usuarioi">
-        <img src="assets/img/usuariodecoracion.png" alt="icono usuario">
+    <div id="linea"></div>
+    
+    <div class="sidebar-right" [ngClass]="{ 'active': sidebarVisible }">
+        <div class="handle" (click)="toggleSidebar()">&#9776;</div> 
+        <div class="usuarioi">
+            <img src="assets/img/usuariodecoracion.png" alt="icono usuario">
+        </div>
+        <div class="sidebar-content" *ngIf="sidebarVisible">
+            <div *ngIf="listaMascotas.length">
+                <br>
+                <p>Nombre: {{ cliente.nombre }}</p>
+                <p>Cédula: {{ cliente.cedula }}</p>
+                <p>Edad: {{ cliente.edad }}</p>
+            </div>          
+        </div>
     </div>
-    <div class="sidebar-content" *ngIf="sidebarVisible">
-        <div *ngIf="listaMascotas.length">
-            <br>
-            <p>Nombre: {{ cliente.nombre }}</p>
-            <p>Cédula: {{ cliente.cedula }}</p>
-            <p>Edad: {{ cliente.edad }}</p>
-        </div>          
+    
+    
+    
+    
+    <div class="tabla-contenedor">
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Edad</th>
+                    <th>Enfermedad</th>
+                </tr>   
+            </thead>
+            <tbody>
+                <tr *ngFor="let mascota of listaMascotas">
+                    <td><a class= "buton_info_gato"[routerLink]="['/info',mascota.id]"><img [src]="mascota.foto" alt="Foto de {{ mascota.nombre }}"></a></td>
+                    <td>{{ mascota.nombre }}</td>
+                    <td>{{ mascota.raza }}</td>
+                    <td>{{ mascota.edad }}</td>
+                    <td>{{ mascota.enfermedad }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    
+    
+    <div id="infoGatoContenedor1">
+        <h2 id="nombreGato"></h2>
+            
+    <div id="fondoOscuro"></div>
 </div>
 
-
-
-
-<div class="tabla-contenedor">
-    <table>
-        <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Nombre</th>
-                <th>Raza</th>
-                <th>Edad</th>
-                <th>Enfermedad</th>
-            </tr>   
-        </thead>
-        <tbody>
-            <tr *ngFor="let mascota of listaMascotas">
-                <td><a class= "buton_info_gato"[routerLink]="['/info',mascota.id]"><img [src]="mascota.foto" alt="Foto de {{ mascota.nombre }}"></a></td>
-                <td>{{ mascota.nombre }}</td>
-                <td>{{ mascota.raza }}</td>
-                <td>{{ mascota.edad }}</td>
-                <td>{{ mascota.enfermedad }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div *ngIf="!isAdmin">
+    <h1>
+        Primero tienes que iniciar sesión
+    </h1>
 </div>
-
-
-<div id="infoGatoContenedor1">
-    <h2 id="nombreGato"></h2>
-        
-<div id="fondoOscuro"></div>

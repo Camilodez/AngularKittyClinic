@@ -11,15 +11,11 @@ import { User } from '../models/user';
 })
 export class UsuarioService {
 
-  private baseUrl = 'http://localhost:8090';
   private baseUrls = 'http://localhost:8090/cliente';
 
 
   constructor(private http: HttpClient) { }
 
-  buscarPorId(id: number): Observable<Gato[]> {
-    return this.http.get<Gato[]>('http://localhost:8090/cliente/misgatos/'+id);
-  }
 
   buscarPorIdAxios(id: number): Promise<AxiosResponse<Usuario>> {
     return axios.get(`http://localhost:8090/cliente/usuario/${id}`);
@@ -55,6 +51,10 @@ export class UsuarioService {
   
    findbyCedula(cedula: number): Promise<AxiosResponse<Usuario>> {
     return  axios.get("http://localhost:8090/cliente/cedula/"+cedula);
+  }
+
+  encontrarPorCedula(cedula: string): Observable<Usuario> {
+    return  this.http.get<Usuario>("http://localhost:8090/cliente/cedula/"+cedula);
   }
 
 
