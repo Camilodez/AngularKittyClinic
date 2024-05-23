@@ -14,7 +14,7 @@ export class ModificarUsuarioComponent implements OnInit {
     id: 0,
     nombre: '',
     correo: '',
-    cedula: 0,
+    cedula: "",
     genero: '',
     edad: 0
   };

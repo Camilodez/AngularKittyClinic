@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
 import { Gato } from 'src/app/models/gato.model';
 import { SharedService } from 'src/app/shared.service';
 
@@ -14,29 +14,39 @@ export class LoginuserComponent implements OnInit {
   sidebarVisible: boolean = false;
 
   constructor(
-    private route: ActivatedRoute, 
     private usuarioService: UsuarioService,
     private sharedService: SharedService
   ) { }
 
   listaMascotas: Gato[] = [];
 
+  cliente!:Usuario
+
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const cedula = params.get('cedula')!;  // Operador de aserción no nulo
-      
-      this.usuarioService.buscarPorCedula(cedula).subscribe(
-        (llegaCliente) => {
-          console.log(llegaCliente);
-          this.listaMascotas = llegaCliente;
+
+      this.usuarioService.UsuarioHome().subscribe(
+        (data) => {
+          this.cliente = data;
+          console.log("Cliente llega:" + this.cliente);
+          this.cargarMascotas();
         }
       );
-    });
 
+      
+    
     this.sharedService.mostrarOcultar = false;
   }
 
   toggleSidebar() {
     this.sidebarVisible = !this.sidebarVisible;
+  }
+
+  cargarMascotas() {
+    this.usuarioService.buscarPorCedula(this.cliente.cedula).subscribe(
+      (llegaCliente) => {
+        console.log(llegaCliente);
+        this.listaMascotas = llegaCliente;
+      }
+    );
   }
 }

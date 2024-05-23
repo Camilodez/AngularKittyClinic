@@ -36,6 +36,7 @@ export class DashboardComponent implements OnInit{
 
   ngOnInit(): void {
     this.cargarDatos();
+    
     this.adminService.adminDetails().subscribe((data) => {
       this.admin = data;
       console.log(this.admin);

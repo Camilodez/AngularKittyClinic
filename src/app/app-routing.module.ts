@@ -35,7 +35,6 @@ const routes: Routes = [
   { path: 'modificar-usuario/:id', component: ModificarUsuarioComponent },
   { path: 'veterinarios', component: ListaVeterinarioComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'loginuser/:cedula', component: LoginuserComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'modificar-veterinario/:id', component: ModificarVeterinarioComponent },
   { path: 'modificar-veterinario', component: ModificarVeterinarioComponent },
@@ -44,7 +43,7 @@ const routes: Routes = [
   { path: 'ver-tratamientos/veterinario', component: VerTratamientosComponent },
   { path: 'admin-access-4f5e9d90-93e0-4c6b-88b1-711454a5b611', component: LoginAdminComponent },
   { path: 'veterinario/home', component: ListaGatosComponent },
-  { path: 'cliente/home', component: PerfilUsuarioComponent }
+  { path: 'cliente/home', component: LoginuserComponent }
 
 ];
 

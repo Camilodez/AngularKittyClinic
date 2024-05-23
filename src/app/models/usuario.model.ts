@@ -5,7 +5,7 @@ export interface Usuario {
   nombre: string;
   genero: string;
   edad: number;
-  cedula: number;
+  cedula: string;
   correo: string;
   mascotas?: Gato[];  // Relación con Gato
 }
