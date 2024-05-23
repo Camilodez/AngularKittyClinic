@@ -4,6 +4,7 @@ import { Admin } from '../models/admin.model';
 import { Useradmin } from '../models/useradmin';
 import { Observable } from 'rxjs';
 import { UsuarioService } from './usuario.service';
+import { Veterinario } from '../models/veterinario.model';
 
 @Injectable({
     providedIn: 'root'
@@ -24,6 +25,10 @@ export class AdminService {
 
     adminDetails(): Observable<Admin>{
         return this.http.get<Admin>('http://localhost:8090/admin/details');
+    }
+
+    findVetById(id: number): Observable<Veterinario>{
+        return this.http.get<Veterinario>('http://localhost:8090/admin/findVet/' + id);
     }
 
 }
