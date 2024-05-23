@@ -21,6 +21,8 @@ import { LoginAdminComponent } from './Admin/login-admin/login-admin.component';
 import { ComunicacionComponent } from './Landing/comunicacion/comunicacion.component';
 import { ServicioComponent } from './Landing/servicio/servicio.component';
 import { NosotrosComponent } from './Landing/nosotros/nosotros.component';
+import { LaboratorioComponent } from './Landing/laboratorio/laboratorio.component';
+import { FormlandingComponent } from './Landing/formlanding/formlanding.component';
 
 
 const routes: Routes = [
@@ -49,7 +51,9 @@ const routes: Routes = [
   { path: 'veterinario/home', component: ListaGatosComponent },
   { path: 'servicio', component: ServicioComponent },
   { path: 'nosotros', component: NosotrosComponent },
-  { path: 'cliente/home', component: LoginuserComponent }
+  { path: 'cliente/home', component: LoginuserComponent },
+  { path: 'laboratorio', component: LaboratorioComponent },
+  {path: 'formlanding', component: FormlandingComponent}
 
 ];
 
