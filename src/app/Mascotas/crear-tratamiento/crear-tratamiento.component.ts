@@ -8,6 +8,7 @@ import { Veterinario } from 'src/app/models/veterinario.model';
 import { DrogaService } from 'src/app/services/droga.service';
 import { GatoService } from 'src/app/services/gato.service';
 import { TratamientoService } from 'src/app/services/tratamiento.service';
+import { VeterinarioService } from 'src/app/services/veterinario.service';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -17,33 +18,9 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class CrearTratamientoComponent implements OnInit {
   // Declaración correcta de tratamientoForm como propiedad de la clase.
-  constructor(private drogaService: DrogaService, private sharedService: SharedService, private route: ActivatedRoute,
-     private gatoService: GatoService, private tratamientoService: TratamientoService,public router: Router) {
-    const vetDataString = sessionStorage.getItem("veterinario");
-
-    if (vetDataString !== null) {
-      // Convertir el JSON del sessionStorage en un objeto de tipo VeterinarioData
-      const vetData: Veterinario = JSON.parse(vetDataString);
-  
-      // Crear un objeto de tipo Veterinario usando los datos obtenidos del sessionStorage
-      
-      const veterinario: Veterinario = {
-        id: vetData.id, // Este campo podría no ser necesario en el formulario, dependiendo de tu lógica
-        cedula: vetData.cedula,
-        nombre: vetData.nombre,
-        apellido: vetData.apellido,
-        correo: vetData.correo,
-        password: vetData.password,
-        foto: vetData.foto,
-        especialidad: vetData.especialidad,
-        estado: vetData.estado
-      };
-
-      this.vet = veterinario;
-    }
-
-
-  }
+  constructor(private drogaService: DrogaService, private route: ActivatedRoute,
+     private gatoService: GatoService, private tratamientoService: TratamientoService,
+     public router: Router, private vetService: VeterinarioService) {  }
 
   vet!:Veterinario;
 
@@ -59,6 +36,15 @@ export class CrearTratamientoComponent implements OnInit {
   droga: string = '';
 
   ngOnInit() {
+    this.vetService.veterinarioHome().subscribe(
+      (vetData: any) => {
+        this.vet = vetData;
+        console.log("Veterinario recibido:", this.vet);
+      },
+      (error) => {
+        console.error('An error occurred:', error);
+      }
+    );
     this.drogaService.drogas().subscribe(
       drogas => this.drogas = drogas,
       error => console.error('Error al cargar las drogas', error)
