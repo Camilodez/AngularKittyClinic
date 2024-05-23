@@ -4,9 +4,7 @@
 
 <br><br><br>
 
-<div *ngIf="sharedService.muestraOculta">
-  <a [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a>
-</div>
+  <a *ngIf="isAdmin" [routerLink]="['/veterinario/crear-tratamiento', gato.id]">Crear Tratamiento</a>
 
 <section id="historial" class="infogatuna">
   <div class="part1">

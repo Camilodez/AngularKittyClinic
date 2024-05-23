@@ -6,6 +6,8 @@ import { GatoService } from 'src/app/services/gato.service';
 import { Tratamiento } from 'src/app/models/tratamiento.model';
 import { Gato } from 'src/app/models/gato.model';
 import { SharedService } from 'src/app/shared.service'; // Import SharedService
+import { Veterinario } from 'src/app/models/veterinario.model';
+import { VeterinarioService } from 'src/app/services/veterinario.service';
 
 @Component({
   selector: 'app-info',
@@ -18,6 +20,8 @@ export class InfoComponent implements OnInit {
   isVeterinario = false;
 
   ultimaFechaTratamiento: any;
+
+  isAdmin = false;
 
   gatoForm!: FormGroup;
 
@@ -40,7 +44,8 @@ export class InfoComponent implements OnInit {
     private route: ActivatedRoute, 
     private tratamientoService: TratamientoService, 
     public formBuilder: FormBuilder,
-    public sharedService: SharedService // Inject SharedService
+    public sharedService: SharedService, // Inject SharedService
+    private vetService: VeterinarioService
   ) {
     this.route.params.subscribe(params => {
       this.displayinfo(parseInt(params['id'], 10));
@@ -54,12 +59,25 @@ export class InfoComponent implements OnInit {
     });
   }
 
+  vet!: Veterinario;
+
   async ngOnInit() {
     this.route.params.subscribe(async params => {
       const id = +params['id'];
       this.gato = (await this.gatoService.findById(id)).data;
       this.gatoForm.patchValue(this.gato);
       this.obtenerTratamientosGato(id);
+
+      this.vetService.veterinarioHome().subscribe(
+        (vetData: any) => {
+          this.vet = vetData;
+          console.log("Veterinario recibido:", this.vet);
+          this.isAdmin = true
+        },
+        (error) => {
+          console.error('An error occurred:', error);
+        }
+      );
     });
   }
 
