@@ -5,19 +5,20 @@ import { DrogaService } from 'src/app/services/droga.service';
 import { AdminService } from 'src/app/services/admin.service';
 import { Admin } from 'src/app/models/admin.model';
 import { SharedService } from 'src/app/services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
   cantiVetiActi: any;
   cantiVetiInacti: any;
   cantiMascoActi: any;
   cantiMascoTotal: any;
   ventasTot: any;
-  ganancias:any;
+  ganancias: any;
   tratamientosUlti: any;
   tratamientos: any;
 
@@ -26,27 +27,32 @@ export class DashboardComponent implements OnInit{
     private drogaService: DrogaService,
     private gatoService: GatoService,
     private sharedService: SharedService,
-    private adminService: AdminService
+    private adminService: AdminService,
+    private router: Router
   ) { }
 
-
   isAdmin = false
-
-  admin! : Admin
+  admin!: Admin
 
   ngOnInit(): void {
-    this.cargarDatos();
     this.sharedService.salir = false;
-    
-    this.adminService.adminDetails().subscribe((data) => {
-      this.admin = data;
-      console.log(this.admin);
-      this.isAdmin = true;  
-    })
+
+    this.adminService.adminDetails().subscribe(
+      (data) => {
+        this.admin = data;
+        console.log(this.admin);
+        this.cargarDatos();
+        this.isAdmin = true;
+      },
+      (error) => {
+        console.error('An error occurred:', error);
+        this.router.navigate(['/admin-access-4f5e9d90-93e0-4c6b-88b1-711454a5b611']);
+      }
+    )
 
   }
 
-  cargarDatos(){
+  cargarDatos() {
     this.veterinarioService.veterinariosActivo().subscribe((data) => {
       this.cantiVetiActi = data;
     });
@@ -79,7 +85,7 @@ export class DashboardComponent implements OnInit{
       this.tratamientos = data;
       console.log(this.tratamientos);
     });
-    
+
 
     this.drogaService.tratamientosCanti().subscribe((data) => {
       this.tratamientos = data;
@@ -93,7 +99,7 @@ export class DashboardComponent implements OnInit{
       const listaElement1: any[] = this.tratamientos.map(
         (element: any) => element[1]
       );
-      
+
     });
 
     this.sharedService.mostrarOcultar = true;
