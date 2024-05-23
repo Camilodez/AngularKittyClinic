@@ -26,6 +26,7 @@ export class ListaUsuarioComponent {
     buscarUsuario() {
       this.usuarioService.findAll().subscribe(
         (usuario: Usuario[]) => {
+          console.log('Lista de usuarios:', usuario);
           this.ListaUsuario = usuario;
         },
         (error) => {
