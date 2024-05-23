@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaginaPrincipalComponent } from './Landing/pagina-principal/pagina-principal.component';
-import { LaboratoriosComponent } from './Landing/laboratorios/laboratorios.component';
+
 import { CirugiasComponent } from './Landing/cirugias/cirugias.component';
 import { ListaGatosComponent } from './Mascotas/lista-gatos/lista-gatos.component';
 import { LoginComponent } from './Usuario/login/login.component';
@@ -36,6 +36,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { ServicioComponent } from './Landing/servicio/servicio.component';
 import { NosotrosComponent } from './Landing/nosotros/nosotros.component';
 import { LaboratorioComponent } from './Landing/laboratorio/laboratorio.component';
+import { FormlandingComponent } from './Landing/formlanding/formlanding.component';
 
 
 
@@ -43,7 +44,6 @@ import { LaboratorioComponent } from './Landing/laboratorio/laboratorio.componen
   declarations: [
     AppComponent,
     PaginaPrincipalComponent,
-    LaboratoriosComponent,
     CirugiasComponent,
     ListaGatosComponent,
     LoginComponent,
@@ -67,6 +67,7 @@ import { LaboratorioComponent } from './Landing/laboratorio/laboratorio.componen
     ServicioComponent,
     NosotrosComponent,
     LaboratorioComponent,
+    FormlandingComponent,
     
 
   ],
