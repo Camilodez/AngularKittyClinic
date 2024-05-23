@@ -1,4 +1,13 @@
 
+h1{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 35px;
+  }
+
 /* Estilos Generales para la Tabla */
 .table {
     width: 60%;

@@ -24,9 +24,9 @@ export class ModificarUsuarioComponent implements OnInit {
   };
 
   constructor(
-    private usuarioService: UsuarioService, 
-    private route: ActivatedRoute, 
-    public formBuilder: FormBuilder, 
+    private usuarioService: UsuarioService,
+    private route: ActivatedRoute,
+    public formBuilder: FormBuilder,
     public router: Router,
     private vetService: VeterinarioService,
     private adminService: AdminService
@@ -34,29 +34,35 @@ export class ModificarUsuarioComponent implements OnInit {
 
 
   isAdmin = false;
-  vet! : Veterinario;
+  vet!: Veterinario;
   admin!: Admin;
 
   ngOnInit() {
 
 
-    this.adminService.adminDetails().subscribe((data) => {
-      this.admin = data;
-      console.log(this.admin);
-      this.isAdmin = true;
-    });
-
-    this.vetService.veterinarioHome().subscribe(
-      (vetData: any) => {
-        this.vet = vetData;
-        console.log("Veterinario recibido:", this.vet);
+    this.adminService.adminDetails().subscribe(
+      (data) => {
+        this.admin = data;
+        console.log(this.admin);
         this.isAdmin = true;
       },
       (error) => {
         console.error('An error occurred:', error);
+        this.vetService.veterinarioHome().subscribe(
+          (vetData: any) => {
+            this.vet = vetData;
+            console.log("Veterinario recibido:", this.vet);
+            this.isAdmin = true;
+          },
+          (error) => {
+            console.error('An error occurred:', error);
+            this.router.navigate(['/login-veterinario']);
+          }
+        );
       }
     );
 
+    
     this.route.params.subscribe(params => {
       const id = parseInt(params['id']);
       if (id === 0) {

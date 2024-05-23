@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Tratamiento } from 'src/app/models/tratamiento.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
 import { TratamientoService } from 'src/app/services/tratamiento.service';
@@ -15,8 +15,8 @@ export class VerTratamientosComponent implements OnInit {
 
   constructor(
     private tratamientoService: TratamientoService,
-    private route: ActivatedRoute,
-    private vetService: VeterinarioService
+    private vetService: VeterinarioService,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +29,7 @@ export class VerTratamientosComponent implements OnInit {
       },
       (error) => {
         console.error('An error occurred:', error);
+        this.router.navigate(['/login-veterinario']);
       }
     );
   }

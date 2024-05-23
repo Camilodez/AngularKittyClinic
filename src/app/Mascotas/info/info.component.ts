@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TratamientoService } from 'src/app/services/tratamiento.service';
 import { GatoService } from 'src/app/services/gato.service';
@@ -46,7 +46,8 @@ export class InfoComponent implements OnInit {
     private tratamientoService: TratamientoService, 
     public formBuilder: FormBuilder,
     public sharedService: SharedService, // Inject SharedService
-    private vetService: VeterinarioService
+    private vetService: VeterinarioService,
+    public router: Router
   ) {
     this.route.params.subscribe(params => {
       this.displayinfo(parseInt(params['id'], 10));
@@ -69,6 +70,8 @@ export class InfoComponent implements OnInit {
 
     if(token) {
       this.isLoggedIn = true
+    } else{
+       this.router.navigate(['/login']);
     }
 
 

@@ -16,7 +16,8 @@ import { Veterinario } from 'src/app/models/veterinario.model';
 })
 export class ModificarGatoComponent {
 
-  constructor(private gatoService: GatoService, private route: ActivatedRoute, private vetService: VeterinarioService,
+  constructor(private gatoService: GatoService, private route: ActivatedRoute,
+     private vetService: VeterinarioService,
     public formBuilder: FormBuilder, public router: Router) {
 
       this.route.params.subscribe(params => {
@@ -40,6 +41,7 @@ export class ModificarGatoComponent {
         },
         (error) => {
           console.error('An error occurred:', error);
+          this.router.navigate(['/login-veterinario']);
         }
       )
       console.log(this.gato)

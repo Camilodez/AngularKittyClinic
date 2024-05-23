@@ -45,6 +45,7 @@ export class CrearGatoComponent {
         },
         (error) => {
           console.error('An error occurred:', error);
+          this.router.navigate(['/login-veterinario']);
         }
       );
     }
