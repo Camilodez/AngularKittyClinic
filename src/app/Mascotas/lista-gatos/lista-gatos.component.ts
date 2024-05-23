@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Admin } from 'src/app/models/admin.model';
 import { Gato } from 'src/app/models/gato.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
+import { AdminService } from 'src/app/services/admin.service';
 import { GatoService } from 'src/app/services/gato.service';
 import { VeterinarioService } from 'src/app/services/veterinario.service';
 import { SharedService } from 'src/app/shared.service';
@@ -39,37 +41,27 @@ export class ListaGatosComponent {
   filtroNombre: string = '';
   ListaGatos: Gato[] = [];
   constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService,
-     private route: ActivatedRoute, private vetService: VeterinarioService) {
+     private route: ActivatedRoute, private vetService: VeterinarioService, private adminService: AdminService) {
 
     const vetDataString = localStorage.getItem("token");
   }
 
   isAdmin: boolean = false;
 
-  vet: Veterinario = {
-    id: 0,
-    cedula: 0,
-    nombre: '',
-    apellido: '',
-    correo: '',
-    password: '',
-    foto: '',
-    especialidad: '',
-    estado: false
-  };
+  vet!: Veterinario;
+
+  admin! : Admin;
 
   ngOnInit(): void {
-    this.sharedService.mostrarOcultar = true;
-    console.log("Veterinario:", this.vet);
-
-    this.route.params.subscribe(params => {
-      if (this.vet) {
-        this.vet.id = params['id'];
-      }
-    });
-
     this.sharedService.muestraOculta = true;
 
+
+
+    this.adminService.adminDetails().subscribe((data) => {
+      this.admin = data;
+      console.log(this.admin);
+      this.buscarGatos();
+    });
 
     this.vetService.veterinarioHome().subscribe(
       (vetData: any) => {
