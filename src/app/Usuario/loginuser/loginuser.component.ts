@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
 import { Gato } from 'src/app/models/gato.model';
 import axios from 'axios';
@@ -17,7 +17,8 @@ export class LoginuserComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private usuarioService: UsuarioService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private router: Router
   ) { }
 
   isAdmin = false
@@ -47,6 +48,11 @@ export class LoginuserComponent implements OnInit {
 
           console.log("Cliente llega:" + this.cliente);
           this.cargarMascotas();
+        },
+        (error) => {
+          console.error('Error al cargar el cliente', error);
+          this.router.navigate(['/login']);
+
         }
       );
 

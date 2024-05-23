@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Admin } from 'src/app/models/admin.model';
 import { Gato } from 'src/app/models/gato.model';
 import { Veterinario } from 'src/app/models/veterinario.model';
@@ -40,8 +40,9 @@ export class ListaGatosComponent {
 
   filtroNombre: string = '';
   ListaGatos: Gato[] = [];
-  constructor(private gatoService: GatoService, private http: HttpClient,private sharedService: SharedService,
-     private route: ActivatedRoute, private vetService: VeterinarioService, private adminService: AdminService) {
+  constructor(private gatoService: GatoService, private http: HttpClient, private sharedService: SharedService,
+    private route: ActivatedRoute, private vetService: VeterinarioService, private adminService: AdminService,
+    public router: Router) {
 
     const vetDataString = localStorage.getItem("token");
   }
@@ -50,28 +51,32 @@ export class ListaGatosComponent {
 
   vet!: Veterinario;
 
-  admin! : Admin;
+  admin!: Admin;
 
   ngOnInit(): void {
     this.sharedService.muestraOculta = true;
     this.sharedService.mostrarOcultar = true;
     this.sharedService.salir = true;
 
-    this.adminService.adminDetails().subscribe((data) => {
-      this.admin = data;
-      console.log(this.admin);
-      this.buscarGatos();
-    });
-
-    this.vetService.veterinarioHome().subscribe(
-      (vetData: any) => {
-        this.vet = vetData;
-        console.log("Veterinario recibido:", this.vet);
+    this.adminService.adminDetails().subscribe(
+      (data) => {
+        this.admin = data;
+        console.log(this.admin);
         this.buscarGatos();
-        this.isAdmin = true;
       },
       (error) => {
-        console.error('An error occurred:', error);
+        this.vetService.veterinarioHome().subscribe(
+          (vetData: any) => {
+            this.vet = vetData;
+            console.log("Veterinario recibido:", this.vet);
+            this.buscarGatos();
+            this.isAdmin = true;
+          },
+          (error) => {
+            console.error('An error occurred:', error);
+            this.router.navigate(['/login-veterinario']);
+          }
+        );
       }
     );
   }
@@ -88,7 +93,7 @@ export class ListaGatosComponent {
   CambiarEstado(id: number) {
     this.gatoService.cambiarEstado(id).subscribe({
       next: (response) => {
-        
+
         window.location.reload();
       }
     });
@@ -103,7 +108,5 @@ export class ListaGatosComponent {
       gato.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase())
     );
   }
-
-
 
 }
