@@ -6,13 +6,13 @@
                 <a [routerLink]="['/home']">Inicio</a>
             </div>
             <div class="opciones">
-                <a href="">Servicios</a>
+                <a [routerLink]="['/servicio']">Servicios</a>
                 <ul class="lista" id="lista1">
-                    <li><a href="">Cirugías</a></li>
-                    <li><a href="">Exámenes</a></li>
-                    <li><a href="">Laboratorio Clínico</a></li>
-                    <li><a href="">Urgencias</a></li>
-                    <li><a href="">Peluquería</a></li>
+                    <li><a [routerLink]="'/servicio#cirugias'">Cirugías</a></li>
+                    <li><a [routerLink]="'/servicio#examenes'">Exámenes</a></li>
+                    <li><a [routerLink]="'/servicio#laboratorio-clinico'">Laboratorio Clínico</a></li>
+                    <li><a [routerLink]="'/servicio#urgencias'">Urgencias</a></li>
+                    <li><a [routerLink]="'/servicio#peluqueria'">Peluquería</a></li>
                 </ul>
             </div>
             <div class="opciones">

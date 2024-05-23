@@ -1,0 +1,43 @@
+#linea{
+    border-top: 3px solid #104c5a;
+}
+
+
+
+
+.servicios {
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.servicios h2 {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.servicios ul {
+    list-style: none;
+    padding: 0;
+}
+
+.servicios li {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.servicios h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.servicios p {
+    font-size: 16px;
+    margin: 0;
+}
