@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<div id="linea"></div>
+<br><br>
+
+<div class="estilobarra">
+    <h1 class="titulo">Lista de Pacientes</h1>
+    <input class="barrabusqueda" type="text" placeholder="Busca por nombre" [(ngModel)]="filtroNombre">
+</div>
+
+<div class="tabla-pacientes">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Raza</th>
+                <th>Foto</th>
+                <th>Info</th>
+                <th>Actualizar</th>
+                <th>Cambiar Estado</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let gato of filtrarGatosPorNombre()">
+            <tr>
+                <td>{{gato.nombre}}</td>
+                <td>{{gato.edad}}</td>
+                <td>{{gato.raza}}</td>
+                <td><img class="gatos" [src]="gato.foto" alt=""></td> 
+                <td><a [routerLink]="['/info',gato.id]" class="info"><img src="/assets/img/informacion.png" alt=""></a></td>
+                <td><a [routerLink]="['/modificar-gato',gato.id]" ><img src="/assets/img/editar.png" alt=""></a></td>
+                <td><button class="estado" (click)="CambiarEstado(gato.id!)"><i class="fa-solid fa-pen-clip">cambiar</i></button></td>
+                
+          
+                <td>{{ gato.estado ? 'Activo' : 'Desactivado' }}</td>
+              
+            </tr>
+            </ng-container>
+            
+        </tbody>
+        
+    </table>
+</div>
+
+<div class="sidebar"  #sidebar (mouseleave)="ocultarSidebar()">
+    <div *ngIf="vet" class="profile">
+        <img [src]="vet.foto" alt="Foto del Veterinario">
+        <h3>{{vet.nombre}} {{vet.apellido}}</h3>
+        <p class="ptexto">{{vet.especialidad}}</p>
+        <p class="ptexto">{{vet.correo}}</p>
+    </div>
+    <ul>
+        <div class="botonesvi">
+        <li><a *ngIf="isAdmin" [routerLink]="['/crear-gato']" type="button" ><span><p>Agregar felino</p> <img src="/assets/img/agregarfelino.png" alt="agregar felino"></span></a></li>
+        <li><a *ngIf="isAdmin" type="button"  [routerLink]="['/ver-tratamientos/veterinario']"><span><p>Ver tratamientos</p> <img src="/assets/img/tratamientos.png" alt="tramamiento"></span></a></li>
+        <li><a  *ngIf="isAdmin" type="button" [routerLink]="['/lista-usuarios']"><span><p>Crear Usuario</p> <img src="/assets/img/agregarusuario.png" alt="agregar usuario"></span></a></li>
+
+        </div>
+    </ul>
+</div>
+<div class="vineta" #vineta (mouseenter)="mostrarSidebar()" (transitionend)="mostrarVineta()">
+    <i class="fa-solid fa-shield-cat"></i>
+</div>
+    

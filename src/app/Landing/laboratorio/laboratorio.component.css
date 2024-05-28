@@ -1,0 +1,172 @@
+.laboratorio-container {
+   
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+
+
+  h1{
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(24, 176, 176);
+    caret-color: transparent;
+}
+  
+  .laboratorio-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .laboratorio-container p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .clinic-name {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .appointment-section {
+    margin: 20px 0;
+  }
+  
+  .appointment-button {
+    background-color: #4fa9ba;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  .appointment-button:hover {
+    background-color: #00a389;
+  }
+  
+  .footer-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .laboratorio-container::before, .laboratorio-container::after {
+    content: '';
+    position: absolute;
+    background-image: url('/assets/img/paw-print.png'); /* Ruta a la imagen de huella */
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+  }
+  
+  .laboratorio-container::before {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .laboratorio-container::after {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .analysis-info {
+    margin: 10%;
+  }
+  
+  .analysis-info-container {
+    display: flex;
+    background-color: #4fa9ba;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .analysis-info-content {
+    flex: 2;
+    padding-right: 20px;
+    color: #fff;
+  }
+  
+  .analysis-info-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .analysis-info-content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .analysis-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .analysis-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .analysis-info-container::before, .analysis-info-container::after {
+    content: '';
+    position: absolute;
+    background-image: url('/assets/img/paw-print.png'); /* Ruta a la imagen de huella */
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+  }
+  
+  .analysis-info-container::before {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .analysis-info-container::after {
+    bottom: 20px;
+    right: 20px;
+  }
+  .when-analysis-needed {
+    
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left; /* Cambiado a izquierda */
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .when-analysis-needed h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center; /* Mantener centrado */
+  }
+  
+  .when-analysis-needed p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .when-analysis-needed ul {
+    list-style-type: disc;
+    padding-left: 40px; /* Asegura suficiente espacio a la izquierda */
+  }
+  
+  .when-analysis-needed li {
+    margin-bottom: 10px;
+  }
+  

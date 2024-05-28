@@ -1,0 +1,128 @@
+<app-header></app-header>
+
+<div *ngIf="isAdmin">
+
+    <h1 class="titulo">Bienvenido Admin {{ admin.username }}</h1>
+    <br>
+
+
+    <div class="todo">
+        <div class="cajas">
+
+            <div class="tam1">
+                <div class="caja1">
+                    <i class="contenido contenido1"> {{ cantiVetiInacti }}<p class="cont">Veterinarios</p></i>
+                    <i class="fas fa-person-circle-xmark contenido"></i>
+                    <div class="fondo">
+                        <p class="fondocont">Veterinarios Inactivos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tam2">
+                <div class="caja2">
+                    <i class="contenido contenido1"> {{ cantiVetiActi }}<p class="cont">Veterinarios</p></i>
+                    <i class="fa-solid fa-person-circle-check contenido"></i>
+                    <div class="fondo">
+                        <p class="fondocont">Veterinarios Activos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tam3">
+                <div class="caja3">
+                    <i class="contenido contenido1"> {{ cantiMascoActi }}<p class="cont">Gatos</p></i>
+                    <i class="fa-solid fa-paw contenido"></i>
+                    <div class="fondo">
+                        <p class="fondocont">Mascotas Activas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tam4">
+                <div class="caja4">
+                    <i class="contenido contenido1"> {{ cantiMascoTotal }}<p class="cont">Gatos</p></i>
+                    <i class="fa-solid fa-star contenido"></i>
+                    <div class="fondo">
+                        <p class="fondocont">Total de Mascotas</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="caja5">
+                <i class="contenido contenido1"> {{ ventasTot }}<p class="cont">Ventas</p></i>
+                <i class="fa-solid fa-dollar-sign contenido"></i>
+                <div class="fondo">
+                    <p class="fondocont">Ventas Totales</p>
+                </div>
+
+            </div>
+
+            <div class="tam6">
+                <div class="caja6">
+                    <i class="contenido contenido1"> {{ ganancias }}<p class="cont">Ganancias</p></i>
+                    <i class="fa-solid fa-arrow-up-right-dots contenido"></i>
+                    <div class="fondo">
+                        <p class="fondocont">Ganancias Totales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tablaprinci">
+            <div class="botonesadmin">
+                <div class="vervets">
+                    <a [routerLink]="['/veterinarios']">
+                        <i class="fa-solid fa-user-doctor"> Veterinarios </i>
+                    </a>
+                </div>
+
+                <div class="vermasco">
+                    <a [routerLink]="['/mascotas']">
+                        <i class="fa-solid fa-cat"> Mascotas </i>
+                    </a>
+                </div>
+
+                <div class="veruser">
+                    <a [routerLink]="['/lista-usuarios']">
+                        <i class="fa-solid fa-users"> Usuarios </i>
+                    </a>
+                </div>
+            </div>
+
+            <table id="mytabla" class="tabla">
+                <thead>
+                    <tr>
+                        <th>Tratamientos</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let trat of tratamientos">
+                        <td>{{ trat[0] }}</td>
+                        <td>{{ trat[1] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tam7">
+                <div class="caja7">
+                    <i class="contenido contenido1"> {{ tratamientosUlti }}<p class="cont">Tratamientos</p></i>
+                    <i class="fa-solid fa-kit-medical contenido"></i>
+                    <div class="fondo">
+                        <p class="fondocont">Tratamientos Realizados en el ultimo mes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="!isAdmin">
+    <h1>
+        Tu no ere admin
+    </h1>
+</div>

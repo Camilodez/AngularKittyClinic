@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Dreaming+Outloud+Sans:wght@400;700&display=swap');
+
+
+
+#linea{
+    border-top: 3px solid #104c5a;
+}
+
+body {
+    font-family: 'Dreaming Outloud Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1{
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(24, 176, 176);
+    caret-color: transparent;
+}
+
+h2 {
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-style: italic;
+    width: 450px;
+    caret-color: transparent;
+}
+
+h3 {
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Dreaming Outloud Sans', sans-serif;
+    width: 440px;        
+    padding-bottom: 10px;
+    caret-color: transparent;
+}
+
+/* Main container */
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.mitad1, .mitad2 {
+    flex: 1 1 45%; /* Flex properties for responsive layout */
+    max-width: 600px; /* Ensure elements do not grow too large */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.mitad2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    caret-color: transparent;
+}
+
+.gatofeliz {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form container */
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 140%;
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group label span {
+    color: red;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+
+/* Map container */
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.mapa iframe {
+    width: 100%;
+    max-width: 1100px;
+    height: 350px;
+}

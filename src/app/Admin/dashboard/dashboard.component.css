@@ -1,0 +1,293 @@
+h1{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 35px;
+}
+
+
+  
+  /*comportamiento de todas las cajas*/
+.cajas {
+    display: flex;
+    flex-direction: row; /* Hace que los elementos se coloquen en columna */
+    gap: 15px; /* Espacio entre las cajas */
+    justify-content: center;
+    caret-color: transparent;
+}
+
+.caja1:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(192, 121, 121, 0.7);
+}
+.caja2:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(121, 192, 134, 0.7);
+}
+.caja3:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(187, 192, 121, 0.7);
+}
+.caja4:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(121, 151, 192, 0.7);
+}
+.caja5:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(159, 192, 121, 0.7);
+}
+.caja6:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(192, 161, 121, 0.7);
+}
+.caja7:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(109, 190, 208, 0.7);
+}
+
+/*cajas*/
+.caja1 {
+    position: relative;
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: left; /* Centra horizontalmente el contenido */
+    width: 230px;
+    height: 160px;
+    background-color: rgb(225, 80, 80); /* Solo para visualización */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+  
+
+.caja2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 230px;
+    height: 160px;  
+    background-color: rgb(80, 225, 119);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.caja3 {
+    position: relative; /* Establece la posición relativa para que los elementos absolutos se posicionen con respecto a esta caja */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 230px;
+    height: 160px;
+    background-color: rgb(225, 220, 80); /* Solo para visualización */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+  
+.caja4 {
+    position: relative; /* Establece la posición relativa para que los elementos absolutos se posicionen con respecto a esta caja */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 230px;
+    height: 160px;
+    background-color: rgb(82, 80, 225); /* Solo para visualización */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.caja5 {
+    position: relative; /* Establece la posición relativa para que los elementos absolutos se posicionen con respecto a esta caja */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 230px;
+    height: 160px;
+    background-color: rgb(152, 225, 80); /* Solo para visualización */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+  
+.caja6 {
+    position: relative; /* Establece la posición relativa para que los elementos absolutos se posicionen con respecto a esta caja */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 230px;
+    height: 160px;
+    background-color: rgb(225, 136, 80); /* Solo para visualización */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+  
+
+.caja7 {
+    position: absolute;
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 380px;
+    height: 194px;
+    background-color: rgb(80, 203, 225); /* Solo para visualización */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tam7{
+    margin-top: 60px;
+}
+  
+.fondo {
+    position: absolute; /* Establece la posición absoluta */
+    bottom: 0; /* Se posiciona en la parte inferior de la caja */
+    left: 0; /* Se posiciona en la esquina izquierda de la caja */
+    width: 100%; /* Ocupa todo el ancho de la caja */
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.fondocont{
+    margin: auto;
+    padding: 10px;
+}
+
+/*Para la caja 1*/
+.contenido{
+    font-size: 50px;
+    color: white;
+    margin: auto;
+}
+
+.contenido1{
+    font-size: 30px;
+    color: white;
+}
+
+.cont{
+    font-size: 15px;
+    color: white;
+}
+
+
+
+.tablaprinci {
+    margin-top: 20px; /* Centra la tabla horizontalmente */
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 60%; /* Ancho de la tabla */
+    display: flex;
+    gap: 40px;
+
+  }
+  
+  .tabla {
+    width: 100%;
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+  }
+  
+  .tabla th,
+  .tabla td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Borde inferior de las filas */
+  }
+  
+  .tabla th {
+    background-color: #4CAF50; /* Color de fondo del encabezado */
+    color: white; /* Color del texto del encabezado */
+  }
+  
+  /* Estilo para las filas impares */
+  .tabla tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Color de fondo de las filas impares */
+  }
+  
+  /* Estilo al pasar el cursor sobre las filas */
+  .tabla tbody tr:hover {
+    background-color: #ddd; /* Color de fondo al pasar el cursor */
+  }
+  
+  /* Estilo para las celdas de cantidad */
+  .tabla td:nth-child(2) {
+    text-align: center; /* Centra el texto en las celdas de cantidad */
+    color: #4CAF50; /* Color del texto de las celdas de cantidad */
+    font-weight: bold; /* Texto en negrita en las celdas de cantidad */
+  }
+
+  #mytabla{
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .botonesadmin{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    caret-color: transparent;
+  }
+
+
+  
+.vervets{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.fa-user-doctor{
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+    gap: 4%;
+}
+  
+.veruser{
+    text-align: center;
+}
+
+.fa-users{
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+    gap: 4%;
+}
+  
+
+.vermasco{
+    text-align: center;
+}
+
+.fa-cat{
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+    gap: 4%;
+}
+
+
+.fa-user-doctor:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(192, 121, 121, 0.7);
+    background-color: rgba(192, 121, 121, 0.301)
+}
+  
+.fa-users:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(121, 192, 134, 0.7);
+    background-color: rgba(121, 192, 134, 0.301)
+}
+
+.fa-cat:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px rgba(187, 192, 121, 0.7);
+    background-color: rgba(187, 192, 121, 0.301)
+}
+  

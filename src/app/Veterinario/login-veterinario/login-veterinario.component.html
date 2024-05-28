@@ -1,0 +1,40 @@
+<div class="contenedor">
+    <div class="cajaPrincipal">
+        <div class="cajaFondo">
+            <img src="../assets/img/veterinariologin.jpg" alt="Gato Login" class="gatoLogin">
+        </div>
+        <div class="login">
+            <div class="login__container">
+                <div class="login__container">
+                    <a [routerLink]="['/home']">
+                      <img src="../assets/img/logo.png" alt="Gato logo" class="logo">
+                  </a>
+                    <br>
+                    <br>
+                    <br>
+                <h1 class="titulo">Inicio</h1>
+                <p></p>
+
+                <div class="formdesign">
+
+                    <form name="form" action="/cliente/registro" method="post">
+                        <div class="login_container_input">
+                            <i class="fas fa-user"></i>
+                            <input class="campo-correo" [(ngModel)]="correoVeterinario" type="text" name="username" id="username" placeholder="Correo Electronico" required>
+                            <br>
+                            <span class="mostrar-contrasena" (click)="toggleMostrarContrasena()">
+                                <i class="far" [ngClass]="{'fa-eye': !mostrarContrasena, 'fa-eye-slash': mostrarContrasena}"></i>
+                            </span>
+                            <input type="{{ mostrarContrasena ? 'text' : 'password' }}" class="campo-contrasena" [(ngModel)]="passwordVeterinario" name="password" id="password" placeholder="Contraseña" required>
+                            
+                        </div>
+                        <button type="submit" (click)="login()" class="login_container_button" id="login-veterinario">Iniciar sesión</button>
+                    </form>
+                </div>
+                <br>
+                <br>
+                <p class="frase1">Eres un Usuario? Puedes iniciar sesión haciendo click </p> <p class="frase2" [routerLink]="['/login']">aquí</p>
+            </div>
+        </div>
+    </div>
+</div>

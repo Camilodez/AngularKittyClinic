@@ -1,0 +1,33 @@
+<div class="contenedor">
+    <div class="cajaPrincipal">
+      <div class="cajaFondo">
+        <img src="../assets/img/gatoFondoLogin.png" alt="Gato Login" class="gatoLogin">
+      </div>
+      <div class="login">
+        <div class="login__container">
+          <a [routerLink]="['/home']">
+            <img src="../assets/img/logo.png" alt="Gato logo" class="logo">
+        </a>
+          <br>
+          <br>
+          <br>
+
+          <h1 class="titulo">Inicio</h1>
+          <p></p>
+          <div class="formdesign">
+            <form name="form" (ngSubmit)="loginUsuario()">
+              <div class="login_container_input">
+                <i class="fas fa-user"></i>
+                <input class="ced" [(ngModel)]="cedulaCliente" type="text" name="username" id="username" placeholder="Cédula" required>
+              </div>
+              <button type="submit" class="login_container_button">Iniciar sesión</button>
+            </form>
+          </div>
+          <br>
+          <br>
+          <p class="frase1">Eres un veterinario? puedes iniciar sesión haciendo click </p> <p class="frase2" [routerLink]="['/login-veterinario']">aquí</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

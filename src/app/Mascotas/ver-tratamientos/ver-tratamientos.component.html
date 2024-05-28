@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Nombre de la Droga</th>
+        <th>Nombre del Gato</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tratamiento of tratamientos">
+        <td>{{ tratamiento.id }}</td>
+        <td>{{ tratamiento.fecha }}</td>
+        <td>{{ tratamiento.droga.nombre }}</td>
+        <td>{{ tratamiento.felino.nombre }}</td>
+      </tr>
+    </tbody>
+  </table>

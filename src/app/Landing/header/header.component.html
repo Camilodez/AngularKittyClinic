@@ -1,0 +1,48 @@
+<div class="inicio">
+    <header class="header contenedor">
+        <img src="/assets/img/logo.png" alt="logo" class="logo">
+        <div class="nav">
+            <div class="opciones">
+                <a [routerLink]="['/home']">Inicio</a>
+            </div>
+            <div class="opciones">
+                <a [routerLink]="['/servicio']">Servicios</a>
+                <ul class="lista" id="lista1">
+                    <li><a [routerLink]="'/servicio#cirugias'">Cirugías</a></li>
+                    <li><a [routerLink]="'/servicio#examenes'">Exámenes</a></li>
+                    <li><a [routerLink]="'/laboratorio'">Laboratorio Clínico</a></li>
+                    <li><a [routerLink]="'/servicio#urgencias'">Urgencias</a></li>
+                    <li><a [routerLink]="'/servicio#peluqueria'">Peluquería</a></li>
+                </ul>
+            </div>
+            <div class="opciones">
+                <a [routerLink]="['/comunicacion']">Contáctanos</a>
+            </div>
+            <div class="opciones">
+                <a [routerLink]="['/nosotros']">
+                    Sobre Nosotros
+                </a> 
+            </div>
+          
+            <!-- header.component.html -->
+            <div *ngIf="sharedService.mostrarOcultar">
+                <a [routerLink]="['/mascotas']">
+                    <i class="fas fa-cat"></i>
+                </a>
+            </div>
+
+            <div>
+                <a [routerLink]="['/login']">
+                    <i class="fas fa-user"></i>
+                </a>                    
+            </div>
+
+            <div *ngIf="sharedService.salir">
+                <a href="#" (click)="borrarDatos()">
+                    <i class="fa-solid fa-right-from-bracket"></i>   
+                </a>             
+                    
+            </div>
+        </div> <!-- Cierra el div de la clase "nav" -->
+    </header>
+</div>

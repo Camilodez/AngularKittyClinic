@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div *ngIf="isAdmin">
+
+    <button><a [routerLink]="['/modificar-usuario']" id ="boton_crearUsuario">Crear usuario</a></button>
+    
+    
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Género</th>
+                    <th>Cédula</th>
+                      
+                   <!--<th>Correo</th> -->
+                    <th>Opciones</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of ListaUsuario">
+                    <td class="liStudentName">{{ usuario.nombre }}</td>
+                    <td>{{ usuario.edad }}</td>
+                    <td>{{ usuario.genero }}</td>
+                    <td>{{ usuario.cedula }}</td>
+                    <!--<td>{{ usuario.correo }}</td>-->
+                    <td><a [routerLink]="['/loginuser', usuario.cedula]"><i class="fa-solid fa-circle-info"></i>Ver mascotas</a></td>
+                    <td>
+                        <a class="btn btn-info" [routerLink]="['/modificar-usuario',usuario.id]">Editar</a>
+                        <a class="btn btn-danger" (click)="delete(usuario.id)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="!isAdmin">
+    <h1>
+        Primero tienes que iniciar sesión
+    </h1>
+</div>
+

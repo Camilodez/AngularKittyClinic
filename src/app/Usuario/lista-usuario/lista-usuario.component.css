@@ -1,0 +1,110 @@
+
+h1{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 35px;
+  }
+
+/* Estilos Generales para la Tabla */
+.table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 3%;
+    margin-left: 20%;
+    margin-top: 5%;
+   
+}
+
+.table thead tr {
+    background-color: #4ea9bd;
+    color: #1F1F1F;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #4ea9bd;
+}
+
+.table tbody tr.active-row {
+    font-weight: bold;
+    color: #4ea9bd;
+}
+
+/* Estilos para los Botones */
+.btn {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.fa-circle-info {
+    margin-right: 5px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.table {
+    animation: fadeIn 1s ease-out;
+    /* Asegúrate de incluir todos los estilos previos de la tabla aquí */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Asegúrate de que este estilo se aplica solo una vez y no está siendo sobrescrito */
+.table tbody tr {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+

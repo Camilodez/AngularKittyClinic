@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<div *ngIf="isAdmin">
+
+    <div id="linea"></div>
+    
+    <div class="contenedordelform">
+    
+        <form #gatoForm="ngForm" (ngSubmit)="onSubmit(gatoForm)">
+            <div class="form-field">
+                <label for="nombre"></label>
+                <input id="nombre"  name="nombre" type="text" [(ngModel)]="gato.nombre" #nombre="ngModel" placeholder="Ingresa el nombre del gato">
+            </div>
+    
+            <div class="form-field">
+                <label for="raza"></label>
+                <input id="raza" name="raza" type="text" [(ngModel)]="gato.raza" #raza="ngModel" placeholder="Ingresa la raza del gato">
+            </div>
+    
+            <div class="form-field">
+                <label for="edad"></label>
+                <input  id="edad" name="edad" type="number" [(ngModel)]="gato.edad" #edad="ngModel" placeholder="Ingresa la edad del gato">
+            </div>
+            <div class="form-field">
+                <label for="cedula"></label>
+                <input type="number" id="cedula" name="cedula" [(ngModel)]="cedula" placeholder="Cedula del dueño">
+            </div>
+    
+            <div class="form-field">
+                <label for="Enfermedad"></label>
+                <input type="text" id="Enfermedad" name="Enfermedad" [(ngModel)]="gato.enfermedad" #enfermedad="ngModel" placeholder="Enfermedad del gato">
+            </div>
+    
+            <div class="form-field">
+                <label for="foto"></label>
+                <input type="text" name="foto" id="foto" [(ngModel)]="gato.foto" #foto="ngModel" placeholder="Ingresa una foto del gato URL">
+            </div>
+    
+            <div class="form-field">
+                <label for="catInfo"></label>
+                <textarea id="catInfo" name="catInfo"> </textarea>
+            </div>
+    
+            <div class="form-field">
+                <button type="submit">Registrar a tu gato</button>
+            </div>
+        </form>
+        <div class="comentariogato"><p class="reminder">Recuerda que puedes registrar a más peluditos!!</p></div>
+        <img class="gatoform" src="https://media-public.canva.com/81dxs/MAFmMg81dxs/1/t.png" alt="gatoform">
+        
+    </div>
+
+</div>
+
+<div *ngIf="!isAdmin" >
+    <h1>
+        Tu no ere veterinario
+    </h1>
+</div>
+
+
